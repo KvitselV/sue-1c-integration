@@ -46,8 +46,8 @@
 | Н11 | Структурные логи с идентификатором запроса | `sue.logging_config`, middleware | `SUE_LOG_JSON=true` |
 | Н12 | Конфигурация переменными окружения с проверкой значений | `sue.config`, `.env.example` | `tests/unit/test_paths_and_config.py` |
 | Н13 | Единая версия в пакете, образе и ответе API | `src/sue/__init__.py` как единственный источник | `GET /api/version`, `tests/api/test_api.py` |
-| Н14 | Автоматический контроль качества кода | Ruff, Mypy (строгий режим), pre-commit | конвейер CI |
-| Н15 | Тесты как условие приёмки изменений | 4 уровня тестов, порог покрытия | `.github/workflows/ci.yml`, [`testing.md`](testing.md) |
+| Н14 | Автоматический контроль качества кода | Ruff, Mypy (строгий режим), pre-commit | `tasks.ps1 check` |
+| Н15 | Тесты как условие приёмки изменений | 4 уровня тестов, порог покрытия | `tasks.ps1 check`, [`testing.md`](testing.md) |
 | Н16 | Документированные архитектурные решения | записи ADR | [`adr/`](adr/README.md) |
 | Н17 | Барьер доступа на изменяющих операциях, не мешающий пробам оркестратора | `sue.api.security`, `SUE_API_KEY`, `SUE_PROTECT_READ` | `tests/api/test_security.py` |
 | Н18 | Обоснование выбора источника данных результатами поиска альтернатив | [`data-sources-review.md`](data-sources-review.md) | [ADR 0005](adr/0005-synthetic-data-generator.md) |
