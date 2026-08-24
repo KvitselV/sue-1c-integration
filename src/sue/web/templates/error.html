@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="panel empty-state">
+  <div class="empty-code">{{ code }}</div>
+  <h1>{{ title }}</h1>
+  <p class="lead">{{ message }}</p>
+  <div class="hero-actions">
+    <a class="btn" href="/">
+      <svg class="icon"><use href="#i-home"></use></svg> На главную
+    </a>
+    <a class="btn ghost" href="/ui/etl">
+      <svg class="icon"><use href="#i-etl"></use></svg> Загрузка данных
+    </a>
+  </div>
+</section>
+{% endblock %}

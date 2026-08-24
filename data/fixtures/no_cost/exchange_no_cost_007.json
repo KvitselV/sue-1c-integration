@@ -1,0 +1,1851 @@
+{
+  "meta": {
+    "contractVersion": "2.0",
+    "exchangeId": "EX-NO_COST-007",
+    "sourceSystem": "1C:Retail",
+    "configuration": "1С:Розница 3.0 (контракт файлового обмена)",
+    "exportedAt": "2026-05-26T10:00:00Z",
+    "currency": "RUB",
+    "periodFrom": "2026-02-01",
+    "periodTo": "2026-02-28",
+    "comment": "Синтетические данные, структурно совместимые с контрактом обмена 1С:Розница. Не являются выгрузкой реальной информационной базы. Пакет 7 из 10, сценарий «no_cost»."
+  },
+  "stores": [
+    {
+      "ref": "store-01",
+      "code": "TT-01",
+      "name": "ТТ Центральная",
+      "city": "Казань",
+      "format": "супермаркет",
+      "isActive": true
+    },
+    {
+      "ref": "store-02",
+      "code": "TT-02",
+      "name": "ТТ Заречная",
+      "city": "Казань",
+      "format": "у дома",
+      "isActive": true
+    }
+  ],
+  "products": [
+    {
+      "ref": "nomen-01",
+      "sku": "MLK-1L",
+      "name": "Молоко 3,2% 1 л",
+      "category": "Молочная продукция",
+      "unit": "шт"
+    },
+    {
+      "ref": "nomen-02",
+      "sku": "BRD-500",
+      "name": "Хлеб белый 500 г",
+      "category": "Хлеб",
+      "unit": "шт"
+    },
+    {
+      "ref": "nomen-03",
+      "sku": "WTR-05",
+      "name": "Вода питьевая 0,5 л",
+      "category": "Напитки",
+      "unit": "шт"
+    },
+    {
+      "ref": "nomen-04",
+      "sku": "CHS-200",
+      "name": "Сыр полутвёрдый 200 г",
+      "category": "Молочная продукция",
+      "unit": "шт"
+    },
+    {
+      "ref": "nomen-05",
+      "sku": "APL-1KG",
+      "name": "Яблоки, кг",
+      "category": "Овощи и фрукты",
+      "unit": "кг"
+    },
+    {
+      "ref": "nomen-06",
+      "sku": "TEA-25",
+      "name": "Чай чёрный 25 пак.",
+      "category": "Бакалея",
+      "unit": "шт"
+    },
+    {
+      "ref": "nomen-07",
+      "sku": "CHK-1KG",
+      "name": "Курица охлаждённая, кг",
+      "category": "Мясо и птица",
+      "unit": "кг"
+    },
+    {
+      "ref": "nomen-08",
+      "sku": "PST-450",
+      "name": "Макароны 450 г",
+      "category": "Бакалея",
+      "unit": "шт"
+    },
+    {
+      "ref": "nomen-09",
+      "sku": "JUC-1L",
+      "name": "Сок яблочный 1 л",
+      "category": "Напитки",
+      "unit": "шт"
+    },
+    {
+      "ref": "nomen-10",
+      "sku": "EGG-10",
+      "name": "Яйцо куриное С1, 10 шт",
+      "category": "Яйцо",
+      "unit": "уп"
+    }
+  ],
+  "saleDocuments": [
+    {
+      "ref": "no_cost-doc-000436",
+      "number": "ОРП-000436",
+      "date": "2026-02-01",
+      "storeRef": "store-02",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "no_cost-line-0001513",
+          "productRef": "nomen-09",
+          "quantity": 234.0,
+          "amount": 29250.0
+        },
+        {
+          "ref": "no_cost-line-0001514",
+          "productRef": "nomen-04",
+          "quantity": 165.0,
+          "amount": 34650.0
+        }
+      ]
+    },
+    {
+      "ref": "no_cost-doc-000164",
+      "number": "ОРП-000164",
+      "date": "2026-02-02",
+      "storeRef": "store-01",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "no_cost-line-0000554",
+          "productRef": "nomen-03",
+          "quantity": 267.0,
+          "amount": 9345.0
+        },
+        {
+          "ref": "no_cost-line-0000555",
+          "productRef": "nomen-08",
+          "quantity": 164.0,
+          "amount": 12792.0
+        },
+        {
+          "ref": "no_cost-line-0000556",
+          "productRef": "nomen-07",
+          "quantity": 37.3,
+          "amount": 9698.0
+        },
+        {
+          "ref": "no_cost-line-0000557",
+          "productRef": "nomen-05",
+          "quantity": 56.9,
+          "amount": 6828.0
+        },
+        {
+          "ref": "no_cost-line-0000558",
+          "productRef": "nomen-01",
+          "quantity": 147.0,
+          "amount": 13083.0
+        }
+      ]
+    },
+    {
+      "ref": "no_cost-doc-000438",
+      "number": "ОРП-000438",
+      "date": "2026-02-02",
+      "storeRef": "store-02",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "no_cost-line-0001520",
+          "productRef": "nomen-02",
+          "quantity": 807.0,
+          "amount": 36315.0
+        },
+        {
+          "ref": "no_cost-line-0001521",
+          "productRef": "nomen-02",
+          "quantity": 593.0,
+          "amount": 26685.0
+        }
+      ]
+    },
+    {
+      "ref": "no_cost-doc-000163",
+      "number": "ОРП-000163",
+      "date": "2026-02-03",
+      "storeRef": "store-01",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "no_cost-line-0000551",
+          "productRef": "nomen-01",
+          "quantity": 127.0,
+          "amount": 11303.0
+        },
+        {
+          "ref": "no_cost-line-0000552",
+          "productRef": "nomen-03",
+          "quantity": 510.0,
+          "amount": 17850.0
+        },
+        {
+          "ref": "no_cost-line-0000553",
+          "productRef": "nomen-10",
+          "quantity": 197.0,
+          "amount": 22655.0
+        }
+      ]
+    },
+    {
+      "ref": "no_cost-doc-000166",
+      "number": "ОРП-000166",
+      "date": "2026-02-04",
+      "storeRef": "store-01",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "no_cost-line-0000561",
+          "productRef": "nomen-07",
+          "quantity": 104.55,
+          "amount": 27183.0
+        },
+        {
+          "ref": "no_cost-line-0000562",
+          "productRef": "nomen-03",
+          "quantity": 703.0,
+          "amount": 24605.0
+        }
+      ]
+    },
+    {
+      "ref": "no_cost-doc-000159",
+      "number": "ОРП-000159",
+      "date": "2026-02-05",
+      "storeRef": "store-01",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "no_cost-line-0000535",
+          "productRef": "nomen-01",
+          "quantity": 382.0,
+          "amount": 33998.0
+        },
+        {
+          "ref": "no_cost-line-0000536",
+          "productRef": "nomen-08",
+          "quantity": 228.0,
+          "amount": 17784.0
+        }
+      ]
+    },
+    {
+      "ref": "no_cost-doc-000162",
+      "number": "ОРП-000162",
+      "date": "2026-02-05",
+      "storeRef": "store-01",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "no_cost-line-0000546",
+          "productRef": "nomen-07",
+          "quantity": 42.7,
+          "amount": 11102.0
+        },
+        {
+          "ref": "no_cost-line-0000547",
+          "productRef": "nomen-01",
+          "quantity": 95.0,
+          "amount": 8455.0
+        },
+        {
+          "ref": "no_cost-line-0000548",
+          "productRef": "nomen-01",
+          "quantity": 79.0,
+          "amount": 7031.0
+        },
+        {
+          "ref": "no_cost-line-0000549",
+          "productRef": "nomen-06",
+          "quantity": 77.0,
+          "amount": 11550.0
+        },
+        {
+          "ref": "no_cost-line-0000550",
+          "productRef": "nomen-05",
+          "quantity": 113.95,
+          "amount": 13674.0
+        }
+      ]
+    },
+    {
+      "ref": "no_cost-doc-000167",
+      "number": "ОРП-000167",
+      "date": "2026-02-05",
+      "storeRef": "store-01",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "no_cost-line-0000563",
+          "productRef": "nomen-01",
+          "quantity": 136.0,
+          "amount": 12104.0
+        },
+        {
+          "ref": "no_cost-line-0000564",
+          "productRef": "nomen-02",
+          "quantity": 289.0,
+          "amount": 13005.0
+        },
+        {
+          "ref": "no_cost-line-0000565",
+          "productRef": "nomen-10",
+          "quantity": 134.0,
+          "amount": 15410.0
+        },
+        {
+          "ref": "no_cost-line-0000566",
+          "productRef": "nomen-01",
+          "quantity": 127.0,
+          "amount": 11303.0
+        }
+      ]
+    },
+    {
+      "ref": "no_cost-doc-000440",
+      "number": "ОРП-000440",
+      "date": "2026-02-05",
+      "storeRef": "store-02",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "no_cost-line-0001526",
+          "productRef": "nomen-01",
+          "quantity": 216.0,
+          "amount": 19224.0
+        },
+        {
+          "ref": "no_cost-line-0001527",
+          "productRef": "nomen-01",
+          "quantity": 255.0,
+          "amount": 22695.0
+        },
+        {
+          "ref": "no_cost-line-0001528",
+          "productRef": "nomen-07",
+          "quantity": 80.85,
+          "amount": 21021.0
+        }
+      ]
+    },
+    {
+      "ref": "no_cost-doc-000161",
+      "number": "ОРП-000161",
+      "date": "2026-02-06",
+      "storeRef": "store-01",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "no_cost-line-0000541",
+          "productRef": "nomen-01",
+          "quantity": 158.0,
+          "amount": 14062.0
+        },
+        {
+          "ref": "no_cost-line-0000542",
+          "productRef": "nomen-01",
+          "quantity": 80.0,
+          "amount": 7120.0
+        },
+        {
+          "ref": "no_cost-line-0000543",
+          "productRef": "nomen-01",
+          "quantity": 86.0,
+          "amount": 7654.0
+        },
+        {
+          "ref": "no_cost-line-0000544",
+          "productRef": "nomen-05",
+          "quantity": 98.4,
+          "amount": 11808.0
+        },
+        {
+          "ref": "no_cost-line-0000545",
+          "productRef": "nomen-08",
+          "quantity": 143.0,
+          "amount": 11154.0
+        }
+      ]
+    },
+    {
+      "ref": "no_cost-doc-000441",
+      "number": "ОРП-000441",
+      "date": "2026-02-06",
+      "storeRef": "store-02",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "no_cost-line-0001529",
+          "productRef": "nomen-01",
+          "quantity": 394.0,
+          "amount": 35066.0
+        },
+        {
+          "ref": "no_cost-line-0001530",
+          "productRef": "nomen-08",
+          "quantity": 358.0,
+          "amount": 27924.0
+        }
+      ]
+    },
+    {
+      "ref": "no_cost-doc-000442",
+      "number": "ОРП-000442",
+      "date": "2026-02-06",
+      "storeRef": "store-02",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "no_cost-line-0001531",
+          "productRef": "nomen-02",
+          "quantity": 302.0,
+          "amount": 13590.0
+        },
+        {
+          "ref": "no_cost-line-0001532",
+          "productRef": "nomen-03",
+          "quantity": 495.0,
+          "amount": 17325.0
+        },
+        {
+          "ref": "no_cost-line-0001533",
+          "productRef": "nomen-02",
+          "quantity": 213.0,
+          "amount": 9585.0
+        },
+        {
+          "ref": "no_cost-line-0001534",
+          "productRef": "nomen-03",
+          "quantity": 367.0,
+          "amount": 12845.0
+        },
+        {
+          "ref": "no_cost-line-0001535",
+          "productRef": "nomen-05",
+          "quantity": 80.55,
+          "amount": 9666.0
+        }
+      ]
+    },
+    {
+      "ref": "no_cost-doc-000160",
+      "number": "ОРП-000160",
+      "date": "2026-02-08",
+      "storeRef": "store-01",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "no_cost-line-0000537",
+          "productRef": "nomen-10",
+          "quantity": 131.0,
+          "amount": 15065.0
+        },
+        {
+          "ref": "no_cost-line-0000538",
+          "productRef": "nomen-06",
+          "quantity": 76.0,
+          "amount": 11400.0
+        },
+        {
+          "ref": "no_cost-line-0000539",
+          "productRef": "nomen-05",
+          "quantity": 138.0,
+          "amount": 16560.0
+        },
+        {
+          "ref": "no_cost-line-0000540",
+          "productRef": "nomen-07",
+          "quantity": 33.85,
+          "amount": 8801.0
+        }
+      ]
+    },
+    {
+      "ref": "no_cost-doc-000165",
+      "number": "ОРП-000165",
+      "date": "2026-02-08",
+      "storeRef": "store-01",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "no_cost-line-0000559",
+          "productRef": "nomen-08",
+          "quantity": 295.0,
+          "amount": 23010.0
+        },
+        {
+          "ref": "no_cost-line-0000560",
+          "productRef": "nomen-07",
+          "quantity": 110.85,
+          "amount": 28821.0
+        }
+      ]
+    },
+    {
+      "ref": "no_cost-doc-000439",
+      "number": "ОРП-000439",
+      "date": "2026-02-08",
+      "storeRef": "store-02",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "no_cost-line-0001522",
+          "productRef": "nomen-05",
+          "quantity": 164.2,
+          "amount": 19704.0
+        },
+        {
+          "ref": "no_cost-line-0001523",
+          "productRef": "nomen-03",
+          "quantity": 509.0,
+          "amount": 17815.0
+        },
+        {
+          "ref": "no_cost-line-0001524",
+          "productRef": "nomen-07",
+          "quantity": 63.65,
+          "amount": 16549.0
+        },
+        {
+          "ref": "no_cost-line-0001525",
+          "productRef": "nomen-06",
+          "quantity": 59.0,
+          "amount": 8850.0
+        }
+      ]
+    },
+    {
+      "ref": "no_cost-doc-000448",
+      "number": "ОРП-000448",
+      "date": "2026-02-09",
+      "storeRef": "store-02",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "no_cost-line-0001554",
+          "productRef": "nomen-03",
+          "quantity": 578.0,
+          "amount": 20230.0
+        },
+        {
+          "ref": "no_cost-line-0001555",
+          "productRef": "nomen-09",
+          "quantity": 122.0,
+          "amount": 15250.0
+        }
+      ]
+    },
+    {
+      "ref": "no_cost-doc-000173",
+      "number": "ОРП-000173",
+      "date": "2026-02-10",
+      "storeRef": "store-01",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "no_cost-line-0000585",
+          "productRef": "nomen-09",
+          "quantity": 76.0,
+          "amount": 9500.0
+        },
+        {
+          "ref": "no_cost-line-0000586",
+          "productRef": "nomen-01",
+          "quantity": 100.0,
+          "amount": 8900.0
+        },
+        {
+          "ref": "no_cost-line-0000587",
+          "productRef": "nomen-06",
+          "quantity": 107.0,
+          "amount": 16050.0
+        },
+        {
+          "ref": "no_cost-line-0000588",
+          "productRef": "nomen-10",
+          "quantity": 72.0,
+          "amount": 8280.0
+        },
+        {
+          "ref": "no_cost-line-0000589",
+          "productRef": "nomen-01",
+          "quantity": 80.0,
+          "amount": 7120.0
+        }
+      ]
+    },
+    {
+      "ref": "no_cost-doc-000174",
+      "number": "ОРП-000174",
+      "date": "2026-02-10",
+      "storeRef": "store-01",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "no_cost-line-0000590",
+          "productRef": "nomen-02",
+          "quantity": 234.0,
+          "amount": 10530.0
+        },
+        {
+          "ref": "no_cost-line-0000591",
+          "productRef": "nomen-08",
+          "quantity": 140.0,
+          "amount": 10920.0
+        },
+        {
+          "ref": "no_cost-line-0000592",
+          "productRef": "nomen-07",
+          "quantity": 62.7,
+          "amount": 16302.0
+        },
+        {
+          "ref": "no_cost-line-0000593",
+          "productRef": "nomen-04",
+          "quantity": 58.0,
+          "amount": 12180.0
+        }
+      ]
+    },
+    {
+      "ref": "no_cost-doc-000444",
+      "number": "ОРП-000444",
+      "date": "2026-02-10",
+      "storeRef": "store-02",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "no_cost-line-0001539",
+          "productRef": "nomen-01",
+          "quantity": 58.0,
+          "amount": 5162.0
+        },
+        {
+          "ref": "no_cost-line-0001540",
+          "productRef": "nomen-02",
+          "quantity": 141.0,
+          "amount": 6345.0
+        },
+        {
+          "ref": "no_cost-line-0001541",
+          "productRef": "nomen-10",
+          "quantity": 74.0,
+          "amount": 8510.0
+        },
+        {
+          "ref": "no_cost-line-0001542",
+          "productRef": "nomen-06",
+          "quantity": 46.0,
+          "amount": 6900.0
+        },
+        {
+          "ref": "no_cost-line-0001543",
+          "productRef": "nomen-02",
+          "quantity": 188.0,
+          "amount": 8460.0
+        }
+      ]
+    },
+    {
+      "ref": "no_cost-doc-000450",
+      "number": "ОРП-000450",
+      "date": "2026-02-10",
+      "storeRef": "store-02",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "no_cost-line-0001560",
+          "productRef": "nomen-03",
+          "quantity": 209.0,
+          "amount": 7315.0
+        },
+        {
+          "ref": "no_cost-line-0001561",
+          "productRef": "nomen-05",
+          "quantity": 46.4,
+          "amount": 5568.0
+        },
+        {
+          "ref": "no_cost-line-0001562",
+          "productRef": "nomen-10",
+          "quantity": 73.0,
+          "amount": 8395.0
+        },
+        {
+          "ref": "no_cost-line-0001563",
+          "productRef": "nomen-10",
+          "quantity": 71.0,
+          "amount": 8165.0
+        },
+        {
+          "ref": "no_cost-line-0001564",
+          "productRef": "nomen-08",
+          "quantity": 77.0,
+          "amount": 6006.0
+        }
+      ]
+    },
+    {
+      "ref": "no_cost-doc-000168",
+      "number": "ОРП-000168",
+      "date": "2026-02-11",
+      "storeRef": "store-01",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "no_cost-line-0000567",
+          "productRef": "nomen-02",
+          "quantity": 207.0,
+          "amount": 9315.0
+        },
+        {
+          "ref": "no_cost-line-0000568",
+          "productRef": "nomen-08",
+          "quantity": 122.0,
+          "amount": 9516.0
+        },
+        {
+          "ref": "no_cost-line-0000569",
+          "productRef": "nomen-02",
+          "quantity": 205.0,
+          "amount": 9225.0
+        },
+        {
+          "ref": "no_cost-line-0000570",
+          "productRef": "nomen-06",
+          "quantity": 71.0,
+          "amount": 10650.0
+        },
+        {
+          "ref": "no_cost-line-0000571",
+          "productRef": "nomen-02",
+          "quantity": 249.0,
+          "amount": 11205.0
+        }
+      ]
+    },
+    {
+      "ref": "no_cost-doc-000170",
+      "number": "ОРП-000170",
+      "date": "2026-02-11",
+      "storeRef": "store-01",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "no_cost-line-0000577",
+          "productRef": "nomen-03",
+          "quantity": 928.0,
+          "amount": 32480.0
+        },
+        {
+          "ref": "no_cost-line-0000578",
+          "productRef": "nomen-01",
+          "quantity": 197.0,
+          "amount": 17533.0
+        }
+      ]
+    },
+    {
+      "ref": "no_cost-doc-000175",
+      "number": "ОРП-000175",
+      "date": "2026-02-11",
+      "storeRef": "store-01",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "no_cost-line-0000594",
+          "productRef": "nomen-07",
+          "quantity": 90.3,
+          "amount": 23478.0
+        },
+        {
+          "ref": "no_cost-line-0000595",
+          "productRef": "nomen-02",
+          "quantity": 303.0,
+          "amount": 13635.0
+        },
+        {
+          "ref": "no_cost-line-0000596",
+          "productRef": "nomen-10",
+          "quantity": 112.0,
+          "amount": 12880.0
+        }
+      ]
+    },
+    {
+      "ref": "no_cost-doc-000443",
+      "number": "ОРП-000443",
+      "date": "2026-02-11",
+      "storeRef": "store-02",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "no_cost-line-0001536",
+          "productRef": "nomen-03",
+          "quantity": 491.0,
+          "amount": 17185.0
+        },
+        {
+          "ref": "no_cost-line-0001537",
+          "productRef": "nomen-01",
+          "quantity": 108.0,
+          "amount": 9612.0
+        },
+        {
+          "ref": "no_cost-line-0001538",
+          "productRef": "nomen-08",
+          "quantity": 111.0,
+          "amount": 8658.0
+        }
+      ]
+    },
+    {
+      "ref": "no_cost-doc-000169",
+      "number": "ОРП-000169",
+      "date": "2026-02-12",
+      "storeRef": "store-01",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "no_cost-line-0000572",
+          "productRef": "nomen-10",
+          "quantity": 62.0,
+          "amount": 7130.0
+        },
+        {
+          "ref": "no_cost-line-0000573",
+          "productRef": "nomen-09",
+          "quantity": 99.0,
+          "amount": 12375.0
+        },
+        {
+          "ref": "no_cost-line-0000574",
+          "productRef": "nomen-09",
+          "quantity": 104.0,
+          "amount": 13000.0
+        },
+        {
+          "ref": "no_cost-line-0000575",
+          "productRef": "nomen-05",
+          "quantity": 58.75,
+          "amount": 7050.0
+        },
+        {
+          "ref": "no_cost-line-0000576",
+          "productRef": "nomen-05",
+          "quantity": 86.95,
+          "amount": 10434.0
+        }
+      ]
+    },
+    {
+      "ref": "no_cost-doc-000172",
+      "number": "ОРП-000172",
+      "date": "2026-02-12",
+      "storeRef": "store-01",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "no_cost-line-0000583",
+          "productRef": "nomen-04",
+          "quantity": 140.0,
+          "amount": 29400.0
+        },
+        {
+          "ref": "no_cost-line-0000584",
+          "productRef": "nomen-05",
+          "quantity": 170.9,
+          "amount": 20508.0
+        }
+      ]
+    },
+    {
+      "ref": "no_cost-doc-000445",
+      "number": "ОРП-000445",
+      "date": "2026-02-12",
+      "storeRef": "store-02",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "no_cost-line-0001544",
+          "productRef": "nomen-08",
+          "quantity": 135.0,
+          "amount": 10530.0
+        },
+        {
+          "ref": "no_cost-line-0001545",
+          "productRef": "nomen-02",
+          "quantity": 263.0,
+          "amount": 11835.0
+        },
+        {
+          "ref": "no_cost-line-0001546",
+          "productRef": "nomen-01",
+          "quantity": 147.0,
+          "amount": 13083.0
+        }
+      ]
+    },
+    {
+      "ref": "no_cost-doc-000176",
+      "number": "ОРП-000176",
+      "date": "2026-02-13",
+      "storeRef": "store-01",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "no_cost-line-0000597",
+          "productRef": "nomen-08",
+          "quantity": 210.0,
+          "amount": 16380.0
+        },
+        {
+          "ref": "no_cost-line-0000598",
+          "productRef": "nomen-10",
+          "quantity": 73.0,
+          "amount": 8395.0
+        },
+        {
+          "ref": "no_cost-line-0000599",
+          "productRef": "nomen-02",
+          "quantity": 314.0,
+          "amount": 14130.0
+        },
+        {
+          "ref": "no_cost-line-0000600",
+          "productRef": "nomen-09",
+          "quantity": 89.0,
+          "amount": 11125.0
+        }
+      ]
+    },
+    {
+      "ref": "no_cost-doc-000446",
+      "number": "ОРП-000446",
+      "date": "2026-02-13",
+      "storeRef": "store-02",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "no_cost-line-0001547",
+          "productRef": "nomen-09",
+          "quantity": 185.0,
+          "amount": 23125.0
+        },
+        {
+          "ref": "no_cost-line-0001548",
+          "productRef": "nomen-04",
+          "quantity": 59.0,
+          "amount": 12390.0
+        }
+      ]
+    },
+    {
+      "ref": "no_cost-doc-000447",
+      "number": "ОРП-000447",
+      "date": "2026-02-13",
+      "storeRef": "store-02",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "no_cost-line-0001549",
+          "productRef": "nomen-09",
+          "quantity": 53.0,
+          "amount": 6625.0
+        },
+        {
+          "ref": "no_cost-line-0001550",
+          "productRef": "nomen-03",
+          "quantity": 242.0,
+          "amount": 8470.0
+        },
+        {
+          "ref": "no_cost-line-0001551",
+          "productRef": "nomen-07",
+          "quantity": 30.05,
+          "amount": 7813.0
+        },
+        {
+          "ref": "no_cost-line-0001552",
+          "productRef": "nomen-01",
+          "quantity": 63.0,
+          "amount": 5607.0
+        },
+        {
+          "ref": "no_cost-line-0001553",
+          "productRef": "nomen-05",
+          "quantity": 57.8,
+          "amount": 6936.0
+        }
+      ]
+    },
+    {
+      "ref": "no_cost-doc-000451",
+      "number": "ОРП-000451",
+      "date": "2026-02-13",
+      "storeRef": "store-02",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "no_cost-line-0001565",
+          "productRef": "nomen-02",
+          "quantity": 325.0,
+          "amount": 14625.0
+        },
+        {
+          "ref": "no_cost-line-0001566",
+          "productRef": "nomen-10",
+          "quantity": 91.0,
+          "amount": 10465.0
+        },
+        {
+          "ref": "no_cost-line-0001567",
+          "productRef": "nomen-05",
+          "quantity": 86.05,
+          "amount": 10326.0
+        }
+      ]
+    },
+    {
+      "ref": "no_cost-doc-000171",
+      "number": "ОРП-000171",
+      "date": "2026-02-14",
+      "storeRef": "store-01",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "no_cost-line-0000579",
+          "productRef": "nomen-02",
+          "quantity": 205.0,
+          "amount": 9225.0
+        },
+        {
+          "ref": "no_cost-line-0000580",
+          "productRef": "nomen-02",
+          "quantity": 370.0,
+          "amount": 16650.0
+        },
+        {
+          "ref": "no_cost-line-0000581",
+          "productRef": "nomen-07",
+          "quantity": 42.5,
+          "amount": 11050.0
+        },
+        {
+          "ref": "no_cost-line-0000582",
+          "productRef": "nomen-09",
+          "quantity": 104.0,
+          "amount": 13000.0
+        }
+      ]
+    },
+    {
+      "ref": "no_cost-doc-000449",
+      "number": "ОРП-000449",
+      "date": "2026-02-15",
+      "storeRef": "store-02",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "no_cost-line-0001556",
+          "productRef": "nomen-02",
+          "quantity": 150.0,
+          "amount": 6750.0
+        },
+        {
+          "ref": "no_cost-line-0001557",
+          "productRef": "nomen-07",
+          "quantity": 39.3,
+          "amount": 10218.0
+        },
+        {
+          "ref": "no_cost-line-0001558",
+          "productRef": "nomen-08",
+          "quantity": 91.0,
+          "amount": 7098.0
+        },
+        {
+          "ref": "no_cost-line-0001559",
+          "productRef": "nomen-09",
+          "quantity": 91.0,
+          "amount": 11375.0
+        }
+      ]
+    },
+    {
+      "ref": "no_cost-doc-000453",
+      "number": "ОРП-000453",
+      "date": "2026-02-16",
+      "storeRef": "store-02",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "no_cost-line-0001572",
+          "productRef": "nomen-04",
+          "quantity": 123.0,
+          "amount": 25830.0
+        },
+        {
+          "ref": "no_cost-line-0001573",
+          "productRef": "nomen-03",
+          "quantity": 447.0,
+          "amount": 15645.0
+        }
+      ]
+    },
+    {
+      "ref": "no_cost-doc-000458",
+      "number": "ОРП-000458",
+      "date": "2026-02-16",
+      "storeRef": "store-02",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "no_cost-line-0001587",
+          "productRef": "nomen-05",
+          "quantity": 64.55,
+          "amount": 7746.0
+        },
+        {
+          "ref": "no_cost-line-0001588",
+          "productRef": "nomen-03",
+          "quantity": 256.0,
+          "amount": 8960.0
+        },
+        {
+          "ref": "no_cost-line-0001589",
+          "productRef": "nomen-01",
+          "quantity": 80.0,
+          "amount": 7120.0
+        },
+        {
+          "ref": "no_cost-line-0001590",
+          "productRef": "nomen-02",
+          "quantity": 183.0,
+          "amount": 8235.0
+        },
+        {
+          "ref": "no_cost-line-0001591",
+          "productRef": "nomen-05",
+          "quantity": 79.1,
+          "amount": 9492.0
+        }
+      ]
+    },
+    {
+      "ref": "no_cost-doc-000455",
+      "number": "ОРП-000455",
+      "date": "2026-02-18",
+      "storeRef": "store-02",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "no_cost-line-0001579",
+          "productRef": "nomen-03",
+          "quantity": 624.0,
+          "amount": 21840.0
+        },
+        {
+          "ref": "no_cost-line-0001580",
+          "productRef": "nomen-08",
+          "quantity": 253.0,
+          "amount": 19734.0
+        }
+      ]
+    },
+    {
+      "ref": "no_cost-doc-000456",
+      "number": "ОРП-000456",
+      "date": "2026-02-18",
+      "storeRef": "store-02",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "no_cost-line-0001581",
+          "productRef": "nomen-02",
+          "quantity": 339.0,
+          "amount": 15255.0
+        },
+        {
+          "ref": "no_cost-line-0001582",
+          "productRef": "nomen-05",
+          "quantity": 219.05,
+          "amount": 26286.0
+        }
+      ]
+    },
+    {
+      "ref": "no_cost-doc-000182",
+      "number": "ОРП-000182",
+      "date": "2026-02-19",
+      "storeRef": "store-01",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "no_cost-line-0000619",
+          "productRef": "nomen-02",
+          "quantity": 845.0,
+          "amount": 38025.0
+        },
+        {
+          "ref": "no_cost-line-0000620",
+          "productRef": "nomen-08",
+          "quantity": 523.0,
+          "amount": 40794.0
+        }
+      ]
+    },
+    {
+      "ref": "no_cost-doc-000178",
+      "number": "ОРП-000178",
+      "date": "2026-02-20",
+      "storeRef": "store-01",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "no_cost-line-0000603",
+          "productRef": "nomen-06",
+          "quantity": 140.0,
+          "amount": 21000.0
+        },
+        {
+          "ref": "no_cost-line-0000604",
+          "productRef": "nomen-07",
+          "quantity": 63.05,
+          "amount": 16393.0
+        },
+        {
+          "ref": "no_cost-line-0000605",
+          "productRef": "nomen-02",
+          "quantity": 276.0,
+          "amount": 12420.0
+        },
+        {
+          "ref": "no_cost-line-0000606",
+          "productRef": "nomen-10",
+          "quantity": 140.0,
+          "amount": 16100.0
+        },
+        {
+          "ref": "no_cost-line-0000607",
+          "productRef": "nomen-07",
+          "quantity": 49.85,
+          "amount": 12961.0
+        }
+      ]
+    },
+    {
+      "ref": "no_cost-doc-000179",
+      "number": "ОРП-000179",
+      "date": "2026-02-20",
+      "storeRef": "store-01",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "no_cost-line-0000608",
+          "productRef": "nomen-02",
+          "quantity": 465.0,
+          "amount": 20925.0
+        },
+        {
+          "ref": "no_cost-line-0000609",
+          "productRef": "nomen-06",
+          "quantity": 233.0,
+          "amount": 34950.0
+        },
+        {
+          "ref": "no_cost-line-0000610",
+          "productRef": "nomen-05",
+          "quantity": 191.15,
+          "amount": 22938.0
+        }
+      ]
+    },
+    {
+      "ref": "no_cost-doc-000177",
+      "number": "ОРП-000177",
+      "date": "2026-02-21",
+      "storeRef": "store-01",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "no_cost-line-0000601",
+          "productRef": "nomen-01",
+          "quantity": 467.0,
+          "amount": 41563.0
+        },
+        {
+          "ref": "no_cost-line-0000602",
+          "productRef": "nomen-07",
+          "quantity": 143.45,
+          "amount": 37297.0
+        }
+      ]
+    },
+    {
+      "ref": "no_cost-doc-000180",
+      "number": "ОРП-000180",
+      "date": "2026-02-21",
+      "storeRef": "store-01",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "no_cost-line-0000611",
+          "productRef": "nomen-05",
+          "quantity": 142.55,
+          "amount": 17106.0
+        },
+        {
+          "ref": "no_cost-line-0000612",
+          "productRef": "nomen-03",
+          "quantity": 921.0,
+          "amount": 32235.0
+        },
+        {
+          "ref": "no_cost-line-0000613",
+          "productRef": "nomen-08",
+          "quantity": 378.0,
+          "amount": 29484.0
+        }
+      ]
+    },
+    {
+      "ref": "no_cost-doc-000181",
+      "number": "ОРП-000181",
+      "date": "2026-02-21",
+      "storeRef": "store-01",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "no_cost-line-0000614",
+          "productRef": "nomen-05",
+          "quantity": 148.7,
+          "amount": 17844.0
+        },
+        {
+          "ref": "no_cost-line-0000615",
+          "productRef": "nomen-08",
+          "quantity": 217.0,
+          "amount": 16926.0
+        },
+        {
+          "ref": "no_cost-line-0000616",
+          "productRef": "nomen-03",
+          "quantity": 393.0,
+          "amount": 13755.0
+        },
+        {
+          "ref": "no_cost-line-0000617",
+          "productRef": "nomen-02",
+          "quantity": 340.0,
+          "amount": 15300.0
+        },
+        {
+          "ref": "no_cost-line-0000618",
+          "productRef": "nomen-07",
+          "quantity": 57.8,
+          "amount": 15028.0
+        }
+      ]
+    },
+    {
+      "ref": "no_cost-doc-000452",
+      "number": "ОРП-000452",
+      "date": "2026-02-22",
+      "storeRef": "store-02",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "no_cost-line-0001568",
+          "productRef": "nomen-01",
+          "quantity": 106.0,
+          "amount": 9434.0
+        },
+        {
+          "ref": "no_cost-line-0001569",
+          "productRef": "nomen-10",
+          "quantity": 111.0,
+          "amount": 12765.0
+        },
+        {
+          "ref": "no_cost-line-0001570",
+          "productRef": "nomen-10",
+          "quantity": 104.0,
+          "amount": 11960.0
+        },
+        {
+          "ref": "no_cost-line-0001571",
+          "productRef": "nomen-03",
+          "quantity": 211.0,
+          "amount": 7385.0
+        }
+      ]
+    },
+    {
+      "ref": "no_cost-doc-000454",
+      "number": "ОРП-000454",
+      "date": "2026-02-22",
+      "storeRef": "store-02",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "no_cost-line-0001574",
+          "productRef": "nomen-06",
+          "quantity": 78.0,
+          "amount": 11700.0
+        },
+        {
+          "ref": "no_cost-line-0001575",
+          "productRef": "nomen-03",
+          "quantity": 202.0,
+          "amount": 7070.0
+        },
+        {
+          "ref": "no_cost-line-0001576",
+          "productRef": "nomen-05",
+          "quantity": 63.25,
+          "amount": 7590.0
+        },
+        {
+          "ref": "no_cost-line-0001577",
+          "productRef": "nomen-05",
+          "quantity": 73.2,
+          "amount": 8784.0
+        },
+        {
+          "ref": "no_cost-line-0001578",
+          "productRef": "nomen-09",
+          "quantity": 51.0,
+          "amount": 6375.0
+        }
+      ]
+    },
+    {
+      "ref": "no_cost-doc-000457",
+      "number": "ОРП-000457",
+      "date": "2026-02-22",
+      "storeRef": "store-02",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "no_cost-line-0001583",
+          "productRef": "nomen-01",
+          "quantity": 99.0,
+          "amount": 8811.0
+        },
+        {
+          "ref": "no_cost-line-0001584",
+          "productRef": "nomen-03",
+          "quantity": 360.0,
+          "amount": 12600.0
+        },
+        {
+          "ref": "no_cost-line-0001585",
+          "productRef": "nomen-07",
+          "quantity": 34.1,
+          "amount": 8866.0
+        },
+        {
+          "ref": "no_cost-line-0001586",
+          "productRef": "nomen-03",
+          "quantity": 321.0,
+          "amount": 11235.0
+        }
+      ]
+    },
+    {
+      "ref": "no_cost-doc-000459",
+      "number": "ОРП-000459",
+      "date": "2026-02-22",
+      "storeRef": "store-02",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "no_cost-line-0001592",
+          "productRef": "nomen-10",
+          "quantity": 93.0,
+          "amount": 10695.0
+        },
+        {
+          "ref": "no_cost-line-0001593",
+          "productRef": "nomen-09",
+          "quantity": 72.0,
+          "amount": 9000.0
+        },
+        {
+          "ref": "no_cost-line-0001594",
+          "productRef": "nomen-05",
+          "quantity": 110.5,
+          "amount": 13260.0
+        },
+        {
+          "ref": "no_cost-line-0001595",
+          "productRef": "nomen-02",
+          "quantity": 191.0,
+          "amount": 8595.0
+        }
+      ]
+    },
+    {
+      "ref": "no_cost-doc-000189",
+      "number": "ОРП-000189",
+      "date": "2026-02-23",
+      "storeRef": "store-01",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "no_cost-line-0000642",
+          "productRef": "nomen-02",
+          "quantity": 744.0,
+          "amount": 33480.0
+        },
+        {
+          "ref": "no_cost-line-0000643",
+          "productRef": "nomen-02",
+          "quantity": 579.0,
+          "amount": 26055.0
+        }
+      ]
+    },
+    {
+      "ref": "no_cost-doc-000464",
+      "number": "ОРП-000464",
+      "date": "2026-02-23",
+      "storeRef": "store-02",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "no_cost-line-0001611",
+          "productRef": "nomen-03",
+          "quantity": 421.0,
+          "amount": 14735.0
+        },
+        {
+          "ref": "no_cost-line-0001612",
+          "productRef": "nomen-01",
+          "quantity": 179.0,
+          "amount": 15931.0
+        },
+        {
+          "ref": "no_cost-line-0001613",
+          "productRef": "nomen-05",
+          "quantity": 105.65,
+          "amount": 12678.0
+        },
+        {
+          "ref": "no_cost-line-0001614",
+          "productRef": "nomen-01",
+          "quantity": 113.0,
+          "amount": 10057.0
+        }
+      ]
+    },
+    {
+      "ref": "no_cost-doc-000185",
+      "number": "ОРП-000185",
+      "date": "2026-02-24",
+      "storeRef": "store-01",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "no_cost-line-0000629",
+          "productRef": "nomen-01",
+          "quantity": 334.0,
+          "amount": 29726.0
+        },
+        {
+          "ref": "no_cost-line-0000630",
+          "productRef": "nomen-01",
+          "quantity": 335.0,
+          "amount": 29815.0
+        }
+      ]
+    },
+    {
+      "ref": "no_cost-doc-000462",
+      "number": "ОРП-000462",
+      "date": "2026-02-24",
+      "storeRef": "store-02",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "no_cost-line-0001602",
+          "productRef": "nomen-07",
+          "quantity": 31.05,
+          "amount": 8073.0
+        },
+        {
+          "ref": "no_cost-line-0001603",
+          "productRef": "nomen-06",
+          "quantity": 72.0,
+          "amount": 10800.0
+        },
+        {
+          "ref": "no_cost-line-0001604",
+          "productRef": "nomen-05",
+          "quantity": 99.3,
+          "amount": 11916.0
+        },
+        {
+          "ref": "no_cost-line-0001605",
+          "productRef": "nomen-03",
+          "quantity": 324.0,
+          "amount": 11340.0
+        },
+        {
+          "ref": "no_cost-line-0001606",
+          "productRef": "nomen-05",
+          "quantity": 94.7,
+          "amount": 11364.0
+        }
+      ]
+    },
+    {
+      "ref": "no_cost-doc-000463",
+      "number": "ОРП-000463",
+      "date": "2026-02-24",
+      "storeRef": "store-02",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "no_cost-line-0001607",
+          "productRef": "nomen-10",
+          "quantity": 98.0,
+          "amount": 11270.0
+        },
+        {
+          "ref": "no_cost-line-0001608",
+          "productRef": "nomen-09",
+          "quantity": 104.0,
+          "amount": 13000.0
+        },
+        {
+          "ref": "no_cost-line-0001609",
+          "productRef": "nomen-07",
+          "quantity": 59.95,
+          "amount": 15587.0
+        },
+        {
+          "ref": "no_cost-line-0001610",
+          "productRef": "nomen-10",
+          "quantity": 118.0,
+          "amount": 13570.0
+        }
+      ]
+    },
+    {
+      "ref": "no_cost-doc-000184",
+      "number": "ОРП-000184",
+      "date": "2026-02-25",
+      "storeRef": "store-01",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "no_cost-line-0000625",
+          "productRef": "nomen-01",
+          "quantity": 184.0,
+          "amount": 16376.0
+        },
+        {
+          "ref": "no_cost-line-0000626",
+          "productRef": "nomen-09",
+          "quantity": 148.0,
+          "amount": 18500.0
+        },
+        {
+          "ref": "no_cost-line-0000627",
+          "productRef": "nomen-08",
+          "quantity": 187.0,
+          "amount": 14586.0
+        },
+        {
+          "ref": "no_cost-line-0000628",
+          "productRef": "nomen-08",
+          "quantity": 130.0,
+          "amount": 10140.0
+        }
+      ]
+    },
+    {
+      "ref": "no_cost-doc-000460",
+      "number": "ОРП-000460",
+      "date": "2026-02-25",
+      "storeRef": "store-02",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "no_cost-line-0001596",
+          "productRef": "nomen-07",
+          "quantity": 62.35,
+          "amount": 16211.0
+        },
+        {
+          "ref": "no_cost-line-0001597",
+          "productRef": "nomen-07",
+          "quantity": 53.3,
+          "amount": 13858.0
+        },
+        {
+          "ref": "no_cost-line-0001598",
+          "productRef": "nomen-04",
+          "quantity": 60.0,
+          "amount": 12600.0
+        },
+        {
+          "ref": "no_cost-line-0001599",
+          "productRef": "nomen-01",
+          "quantity": 122.0,
+          "amount": 10858.0
+        }
+      ]
+    },
+    {
+      "ref": "no_cost-doc-000186",
+      "number": "ОРП-000186",
+      "date": "2026-02-26",
+      "storeRef": "store-01",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "no_cost-line-0000631",
+          "productRef": "nomen-01",
+          "quantity": 237.0,
+          "amount": 21093.0
+        },
+        {
+          "ref": "no_cost-line-0000632",
+          "productRef": "nomen-05",
+          "quantity": 96.4,
+          "amount": 11568.0
+        },
+        {
+          "ref": "no_cost-line-0000633",
+          "productRef": "nomen-02",
+          "quantity": 256.0,
+          "amount": 11520.0
+        },
+        {
+          "ref": "no_cost-line-0000634",
+          "productRef": "nomen-10",
+          "quantity": 134.0,
+          "amount": 15410.0
+        }
+      ]
+    },
+    {
+      "ref": "no_cost-doc-000461",
+      "number": "ОРП-000461",
+      "date": "2026-02-27",
+      "storeRef": "store-02",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "no_cost-line-0001600",
+          "productRef": "nomen-03",
+          "quantity": 990.0,
+          "amount": 34650.0
+        },
+        {
+          "ref": "no_cost-line-0001601",
+          "productRef": "nomen-02",
+          "quantity": 418.0,
+          "amount": 18810.0
+        }
+      ]
+    },
+    {
+      "ref": "no_cost-doc-000465",
+      "number": "ОРП-000465",
+      "date": "2026-02-27",
+      "storeRef": "store-02",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "no_cost-line-0001615",
+          "productRef": "nomen-01",
+          "quantity": 118.0,
+          "amount": 10502.0
+        },
+        {
+          "ref": "no_cost-line-0001616",
+          "productRef": "nomen-05",
+          "quantity": 84.25,
+          "amount": 10110.0
+        },
+        {
+          "ref": "no_cost-line-0001617",
+          "productRef": "nomen-03",
+          "quantity": 207.0,
+          "amount": 7245.0
+        },
+        {
+          "ref": "no_cost-line-0001618",
+          "productRef": "nomen-10",
+          "quantity": 111.0,
+          "amount": 12765.0
+        },
+        {
+          "ref": "no_cost-line-0001619",
+          "productRef": "nomen-05",
+          "quantity": 107.05,
+          "amount": 12846.0
+        }
+      ]
+    },
+    {
+      "ref": "no_cost-doc-000188",
+      "number": "ОРП-000188",
+      "date": "2026-02-28",
+      "storeRef": "store-01",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "no_cost-line-0000638",
+          "productRef": "nomen-02",
+          "quantity": 408.0,
+          "amount": 18360.0
+        },
+        {
+          "ref": "no_cost-line-0000639",
+          "productRef": "nomen-07",
+          "quantity": 49.7,
+          "amount": 12922.0
+        },
+        {
+          "ref": "no_cost-line-0000640",
+          "productRef": "nomen-03",
+          "quantity": 340.0,
+          "amount": 11900.0
+        },
+        {
+          "ref": "no_cost-line-0000641",
+          "productRef": "nomen-10",
+          "quantity": 142.0,
+          "amount": 16330.0
+        }
+      ]
+    }
+  ]
+}

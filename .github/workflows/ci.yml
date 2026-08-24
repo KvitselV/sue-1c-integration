@@ -1,0 +1,64 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements-dev.txt
+      - run: pip install -e . --no-deps
+      - run: ruff check .
+      - run: ruff format --check .
+      - run: mypy
+      - run: pytest
+      - run: alembic upgrade head
+        env:
+          SUE_DATABASE_URL: sqlite:///ci-migrations.db
+      - run: alembic check
+        env:
+          SUE_DATABASE_URL: sqlite:///ci-migrations.db
+
+  postgres:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_DB: sue
+          POSTGRES_USER: sue
+          POSTGRES_PASSWORD: sue
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U sue -d sue"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    env:
+      SUE_TEST_PG_URL: postgresql+psycopg2://sue:sue@localhost:5432/sue
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements-dev.txt
+      - run: pip install -e . --no-deps
+      - run: pytest -m pg -p no:randomly
+      - run: alembic upgrade head
+        env:
+          SUE_DATABASE_URL: ${{ env.SUE_TEST_PG_URL }}
+
+  image:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -t sue:ci .

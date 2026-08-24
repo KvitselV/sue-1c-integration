@@ -1,0 +1,4214 @@
+{
+  "meta": {
+    "contractVersion": "2.0",
+    "exchangeId": "EX-ACCOUNTING-004",
+    "sourceSystem": "1C:Retail",
+    "configuration": "1С:Розница 3.0 (контракт файлового обмена)",
+    "exportedAt": "2026-05-26T10:00:00Z",
+    "currency": "RUB",
+    "periodFrom": "2025-03-01",
+    "periodTo": "2025-03-31",
+    "comment": "Синтетические данные, структурно совместимые с контрактом обмена 1С:Розница. Не являются выгрузкой реальной информационной базы. Пакет 4 из 18, сценарий «accounting»."
+  },
+  "stores": [
+    {
+      "ref": "store-01",
+      "code": "TT-01",
+      "name": "ТТ Центральная",
+      "city": "Казань",
+      "format": "супермаркет",
+      "isActive": true
+    },
+    {
+      "ref": "store-02",
+      "code": "TT-02",
+      "name": "ТТ Заречная",
+      "city": "Казань",
+      "format": "у дома",
+      "isActive": true
+    },
+    {
+      "ref": "store-03",
+      "code": "TT-03",
+      "name": "ТТ Южная",
+      "city": "Набережные Челны",
+      "format": "у дома",
+      "isActive": true
+    },
+    {
+      "ref": "store-04",
+      "code": "TT-04",
+      "name": "ТТ Новая",
+      "city": "Альметьевск",
+      "format": "у дома",
+      "isActive": true
+    },
+    {
+      "ref": "store-05",
+      "code": "TT-05",
+      "name": "ТТ Северная",
+      "city": "Казань",
+      "format": "супермаркет",
+      "isActive": true
+    },
+    {
+      "ref": "store-06",
+      "code": "TT-06",
+      "name": "ТТ Привокзальная",
+      "city": "Казань",
+      "format": "киоск",
+      "isActive": true
+    }
+  ],
+  "products": [
+    {
+      "ref": "nomen-01",
+      "sku": "MLK-1L",
+      "name": "Молоко 3,2% 1 л",
+      "category": "Молочная продукция",
+      "unit": "шт"
+    },
+    {
+      "ref": "nomen-02",
+      "sku": "BRD-500",
+      "name": "Хлеб белый 500 г",
+      "category": "Хлеб",
+      "unit": "шт"
+    },
+    {
+      "ref": "nomen-03",
+      "sku": "WTR-05",
+      "name": "Вода питьевая 0,5 л",
+      "category": "Напитки",
+      "unit": "шт"
+    },
+    {
+      "ref": "nomen-04",
+      "sku": "CHS-200",
+      "name": "Сыр полутвёрдый 200 г",
+      "category": "Молочная продукция",
+      "unit": "шт"
+    },
+    {
+      "ref": "nomen-05",
+      "sku": "APL-1KG",
+      "name": "Яблоки, кг",
+      "category": "Овощи и фрукты",
+      "unit": "кг"
+    },
+    {
+      "ref": "nomen-06",
+      "sku": "TEA-25",
+      "name": "Чай чёрный 25 пак.",
+      "category": "Бакалея",
+      "unit": "шт"
+    },
+    {
+      "ref": "nomen-07",
+      "sku": "CHK-1KG",
+      "name": "Курица охлаждённая, кг",
+      "category": "Мясо и птица",
+      "unit": "кг"
+    },
+    {
+      "ref": "nomen-08",
+      "sku": "PST-450",
+      "name": "Макароны 450 г",
+      "category": "Бакалея",
+      "unit": "шт"
+    },
+    {
+      "ref": "nomen-09",
+      "sku": "JUC-1L",
+      "name": "Сок яблочный 1 л",
+      "category": "Напитки",
+      "unit": "шт"
+    },
+    {
+      "ref": "nomen-10",
+      "sku": "EGG-10",
+      "name": "Яйцо куриное С1, 10 шт",
+      "category": "Яйцо",
+      "unit": "уп"
+    }
+  ],
+  "saleDocuments": [
+    {
+      "ref": "accounting-doc-000614",
+      "number": "ОРП-000614",
+      "date": "2025-03-01",
+      "storeRef": "store-02",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0002155",
+          "productRef": "nomen-06",
+          "quantity": 78.0,
+          "amount": 11700.0,
+          "costAmount": 5847.96
+        },
+        {
+          "ref": "accounting-line-0002156",
+          "productRef": "nomen-08",
+          "quantity": 200.0,
+          "amount": 15600.0
+        },
+        {
+          "ref": "accounting-line-0002157",
+          "productRef": "nomen-03",
+          "quantity": 482.0,
+          "amount": 16870.0,
+          "costAmount": 6618.4
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-000621",
+      "number": "ОРП-000621",
+      "date": "2025-03-01",
+      "storeRef": "store-02",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0002178",
+          "productRef": "nomen-04",
+          "quantity": 81.0,
+          "amount": 17010.0
+        },
+        {
+          "ref": "accounting-line-0002179",
+          "productRef": "nomen-04",
+          "quantity": 129.0,
+          "amount": 27090.0,
+          "costAmount": 17997.29
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-001610",
+      "number": "ОРП-001610",
+      "date": "2025-03-01",
+      "storeRef": "store-05",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0005649",
+          "productRef": "nomen-01",
+          "quantity": 135.0,
+          "amount": 12015.0,
+          "costAmount": 8751.07
+        },
+        {
+          "ref": "accounting-line-0005650",
+          "productRef": "nomen-10",
+          "quantity": 100.0,
+          "amount": 11500.0,
+          "costAmount": 7599.96
+        },
+        {
+          "ref": "accounting-line-0005651",
+          "productRef": "nomen-05",
+          "quantity": 141.8,
+          "amount": 17016.0,
+          "costAmount": 9999.34
+        },
+        {
+          "ref": "accounting-line-0005652",
+          "productRef": "nomen-06",
+          "quantity": 68.0,
+          "amount": 10200.0,
+          "costAmount": 5085.42
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-000080",
+      "number": "ОРП-000080",
+      "date": "2025-03-02",
+      "storeRef": "store-01",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0000285",
+          "productRef": "nomen-03",
+          "quantity": 564.0,
+          "amount": 19740.0,
+          "costAmount": 8116.9
+        },
+        {
+          "ref": "accounting-line-0000286",
+          "productRef": "nomen-10",
+          "quantity": 146.0,
+          "amount": 16790.0
+        },
+        {
+          "ref": "accounting-line-0000287",
+          "productRef": "nomen-10",
+          "quantity": 160.0,
+          "amount": 18400.0
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-000618",
+      "number": "ОРП-000618",
+      "date": "2025-03-02",
+      "storeRef": "store-02",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0002170",
+          "productRef": "nomen-03",
+          "quantity": 436.0,
+          "amount": 14344.4,
+          "discountAmount": 915.6,
+          "costAmount": 6099.11
+        },
+        {
+          "ref": "accounting-line-0002171",
+          "productRef": "nomen-02",
+          "quantity": 350.0,
+          "amount": 14805.0,
+          "discountAmount": 945.0,
+          "costAmount": 8490.63
+        },
+        {
+          "ref": "accounting-line-0002172",
+          "productRef": "nomen-09",
+          "quantity": 105.0,
+          "amount": 12337.5,
+          "discountAmount": 787.5
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-001074",
+      "number": "ОРП-001074",
+      "date": "2025-03-02",
+      "storeRef": "store-03",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0003766",
+          "productRef": "nomen-10",
+          "quantity": 117.0,
+          "amount": 11974.95,
+          "discountAmount": 1480.05,
+          "costAmount": 8658.99
+        },
+        {
+          "ref": "accounting-line-0003767",
+          "productRef": "nomen-02",
+          "quantity": 287.0,
+          "amount": 11494.35,
+          "discountAmount": 1420.65,
+          "costAmount": 7121.17
+        },
+        {
+          "ref": "accounting-line-0003768",
+          "productRef": "nomen-03",
+          "quantity": 394.0,
+          "amount": 12273.1,
+          "discountAmount": 1516.9,
+          "costAmount": 5643.43
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-001613",
+      "number": "ОРП-001613",
+      "date": "2025-03-02",
+      "storeRef": "store-05",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0005657",
+          "productRef": "nomen-03",
+          "quantity": 649.0,
+          "amount": 22715.0
+        },
+        {
+          "ref": "accounting-line-0005658",
+          "productRef": "nomen-03",
+          "quantity": 802.0,
+          "amount": 28070.0
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-001079",
+      "number": "ОРП-001079",
+      "date": "2025-03-03",
+      "storeRef": "store-03",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0003784",
+          "productRef": "nomen-07",
+          "quantity": 76.25,
+          "amount": 19825.0,
+          "costAmount": 14983.78
+        },
+        {
+          "ref": "accounting-line-0003785",
+          "productRef": "nomen-03",
+          "quantity": 790.0,
+          "amount": 27650.0,
+          "costAmount": 11045.66
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-000624",
+      "number": "ОРП-000624",
+      "date": "2025-03-04",
+      "storeRef": "store-02",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0002190",
+          "productRef": "nomen-09",
+          "quantity": 184.0,
+          "amount": 23000.0,
+          "costAmount": 10401.58
+        },
+        {
+          "ref": "accounting-line-0002191",
+          "productRef": "nomen-07",
+          "quantity": 86.2,
+          "amount": 22412.0
+        },
+        {
+          "ref": "accounting-line-0002192",
+          "productRef": "nomen-04",
+          "quantity": 102.0,
+          "amount": 21420.0
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-001078",
+      "number": "ОРП-001078",
+      "date": "2025-03-04",
+      "storeRef": "store-03",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0003781",
+          "productRef": "nomen-06",
+          "quantity": 74.0,
+          "amount": 9990.0,
+          "discountAmount": 1110.0,
+          "costAmount": 5675.81
+        },
+        {
+          "ref": "accounting-line-0003782",
+          "productRef": "nomen-02",
+          "quantity": 322.0,
+          "amount": 13041.0,
+          "discountAmount": 1449.0,
+          "costAmount": 7835.35
+        },
+        {
+          "ref": "accounting-line-0003783",
+          "productRef": "nomen-01",
+          "quantity": 246.0,
+          "amount": 19704.6,
+          "discountAmount": 2189.4,
+          "costAmount": 15733.84
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-001081",
+      "number": "ОРП-001081",
+      "date": "2025-03-04",
+      "storeRef": "store-03",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0003790",
+          "productRef": "nomen-01",
+          "quantity": 117.0,
+          "amount": 9371.7,
+          "discountAmount": 1041.3,
+          "costAmount": 7295.88
+        },
+        {
+          "ref": "accounting-line-0003791",
+          "productRef": "nomen-10",
+          "quantity": 50.0,
+          "amount": 5175.0,
+          "discountAmount": 575.0,
+          "costAmount": 3781.19
+        },
+        {
+          "ref": "accounting-line-0003792",
+          "productRef": "nomen-05",
+          "quantity": 83.6,
+          "amount": 9028.8,
+          "discountAmount": 1003.2
+        },
+        {
+          "ref": "accounting-line-0003793",
+          "productRef": "nomen-08",
+          "quantity": 150.0,
+          "amount": 10530.0,
+          "discountAmount": 1170.0,
+          "costAmount": 6204.95
+        },
+        {
+          "ref": "accounting-line-0003794",
+          "productRef": "nomen-10",
+          "quantity": 84.0,
+          "amount": 8694.0,
+          "discountAmount": 966.0,
+          "costAmount": 6393.37
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-000090",
+      "number": "ОРП-000090",
+      "date": "2025-03-05",
+      "storeRef": "store-01",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0000322",
+          "productRef": "nomen-05",
+          "quantity": 366.9,
+          "amount": 44028.0,
+          "costAmount": 25804.11
+        },
+        {
+          "ref": "accounting-line-0000323",
+          "productRef": "nomen-05",
+          "quantity": 447.3,
+          "amount": 53676.0,
+          "costAmount": 32203.75
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-000622",
+      "number": "ОРП-000622",
+      "date": "2025-03-05",
+      "storeRef": "store-02",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0002180",
+          "productRef": "nomen-06",
+          "quantity": 104.0,
+          "amount": 14352.0,
+          "discountAmount": 1248.0
+        },
+        {
+          "ref": "accounting-line-0002181",
+          "productRef": "nomen-05",
+          "quantity": 92.2,
+          "amount": 10178.88,
+          "discountAmount": 885.12,
+          "costAmount": 6788.79
+        },
+        {
+          "ref": "accounting-line-0002182",
+          "productRef": "nomen-08",
+          "quantity": 202.0,
+          "amount": 14495.52,
+          "discountAmount": 1260.48,
+          "costAmount": 8259.24
+        },
+        {
+          "ref": "accounting-line-0002183",
+          "productRef": "nomen-07",
+          "quantity": 55.5,
+          "amount": 13275.6,
+          "discountAmount": 1154.4,
+          "costAmount": 10445.55
+        },
+        {
+          "ref": "accounting-line-0002184",
+          "productRef": "nomen-03",
+          "quantity": 285.0,
+          "amount": 9177.0,
+          "discountAmount": 798.0,
+          "costAmount": 4096.09
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-000091",
+      "number": "ОРП-000091",
+      "date": "2025-03-06",
+      "storeRef": "store-01",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0000324",
+          "productRef": "nomen-02",
+          "quantity": 883.0,
+          "amount": 39735.0,
+          "costAmount": 22400.36
+        },
+        {
+          "ref": "accounting-line-0000325",
+          "productRef": "nomen-02",
+          "quantity": 1289.0,
+          "amount": 58005.0,
+          "costAmount": 31180.42
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-001616",
+      "number": "ОРП-001616",
+      "date": "2025-03-06",
+      "storeRef": "store-05",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0005667",
+          "productRef": "nomen-10",
+          "quantity": 341.0,
+          "amount": 39215.0,
+          "costAmount": 25115.38
+        },
+        {
+          "ref": "accounting-line-0005668",
+          "productRef": "nomen-08",
+          "quantity": 371.0,
+          "amount": 28938.0,
+          "costAmount": 14834.41
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-001621",
+      "number": "ОРП-001621",
+      "date": "2025-03-06",
+      "storeRef": "store-05",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0005683",
+          "productRef": "nomen-02",
+          "quantity": 946.0,
+          "amount": 42570.0,
+          "costAmount": 23526.76
+        },
+        {
+          "ref": "accounting-line-0005684",
+          "productRef": "nomen-09",
+          "quantity": 205.0,
+          "amount": 25625.0
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-000088",
+      "number": "ОРП-000088",
+      "date": "2025-03-07",
+      "storeRef": "store-01",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0000315",
+          "productRef": "nomen-01",
+          "quantity": 481.0,
+          "amount": 42809.0,
+          "costAmount": 31173.42
+        },
+        {
+          "ref": "accounting-line-0000316",
+          "productRef": "nomen-07",
+          "quantity": 211.0,
+          "amount": 54860.0,
+          "costAmount": 39481.68
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-001080",
+      "number": "ОРП-001080",
+      "date": "2025-03-07",
+      "storeRef": "store-03",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0003786",
+          "productRef": "nomen-02",
+          "quantity": 199.0,
+          "amount": 8955.0,
+          "costAmount": 4941.84
+        },
+        {
+          "ref": "accounting-line-0003787",
+          "productRef": "nomen-08",
+          "quantity": 99.0,
+          "amount": 7722.0,
+          "costAmount": 4012.46
+        },
+        {
+          "ref": "accounting-line-0003788",
+          "productRef": "nomen-02",
+          "quantity": 342.0,
+          "amount": 15390.0,
+          "costAmount": 8320.66
+        },
+        {
+          "ref": "accounting-line-0003789",
+          "productRef": "nomen-06",
+          "quantity": 103.0,
+          "amount": 15450.0,
+          "costAmount": 7933.93
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-001084",
+      "number": "ВЗВ-001084",
+      "date": "2025-03-07",
+      "storeRef": "store-03",
+      "documentType": "return",
+      "lines": [
+        {
+          "ref": "accounting-line-0003800",
+          "productRef": "nomen-08",
+          "quantity": 36.0,
+          "amount": 2808.0,
+          "costAmount": 1441.04
+        },
+        {
+          "ref": "accounting-line-0003801",
+          "productRef": "nomen-05",
+          "quantity": 18.6,
+          "amount": 2232.0,
+          "costAmount": 1339.77
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-001618",
+      "number": "ОРП-001618",
+      "date": "2025-03-07",
+      "storeRef": "store-05",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0005671",
+          "productRef": "nomen-03",
+          "quantity": 349.0,
+          "amount": 11237.8,
+          "discountAmount": 977.2,
+          "costAmount": 4990.91
+        },
+        {
+          "ref": "accounting-line-0005672",
+          "productRef": "nomen-05",
+          "quantity": 86.9,
+          "amount": 9593.76,
+          "discountAmount": 834.24
+        },
+        {
+          "ref": "accounting-line-0005673",
+          "productRef": "nomen-08",
+          "quantity": 136.0,
+          "amount": 9759.36,
+          "discountAmount": 848.64,
+          "costAmount": 5453.95
+        },
+        {
+          "ref": "accounting-line-0005674",
+          "productRef": "nomen-02",
+          "quantity": 421.0,
+          "amount": 17429.4,
+          "discountAmount": 1515.6
+        },
+        {
+          "ref": "accounting-line-0005675",
+          "productRef": "nomen-10",
+          "quantity": 139.0,
+          "amount": 14706.2,
+          "discountAmount": 1278.8,
+          "costAmount": 10287.99
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-000623",
+      "number": "ОРП-000623",
+      "date": "2025-03-08",
+      "storeRef": "store-02",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0002185",
+          "productRef": "nomen-08",
+          "quantity": 229.0,
+          "amount": 16075.8,
+          "discountAmount": 1786.2,
+          "costAmount": 9125.81
+        },
+        {
+          "ref": "accounting-line-0002186",
+          "productRef": "nomen-07",
+          "quantity": 64.8,
+          "amount": 15163.2,
+          "discountAmount": 1684.8,
+          "costAmount": 12406.3
+        },
+        {
+          "ref": "accounting-line-0002187",
+          "productRef": "nomen-02",
+          "quantity": 349.0,
+          "amount": 14134.5,
+          "discountAmount": 1570.5,
+          "costAmount": 8575.71
+        },
+        {
+          "ref": "accounting-line-0002188",
+          "productRef": "nomen-02",
+          "quantity": 175.0,
+          "amount": 7087.5,
+          "discountAmount": 787.5,
+          "costAmount": 4367.04
+        },
+        {
+          "ref": "accounting-line-0002189",
+          "productRef": "nomen-09",
+          "quantity": 69.0,
+          "amount": 7762.5,
+          "discountAmount": 862.5,
+          "costAmount": 4004.86
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-001082",
+      "number": "ОРП-001082",
+      "date": "2025-03-08",
+      "storeRef": "store-03",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0003795",
+          "productRef": "nomen-09",
+          "quantity": 200.0,
+          "amount": 25000.0
+        },
+        {
+          "ref": "accounting-line-0003796",
+          "productRef": "nomen-04",
+          "quantity": 107.0,
+          "amount": 22470.0,
+          "costAmount": 15391.72
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-001619",
+      "number": "ОРП-001619",
+      "date": "2025-03-08",
+      "storeRef": "store-05",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0005676",
+          "productRef": "nomen-04",
+          "quantity": 135.0,
+          "amount": 26082.0,
+          "discountAmount": 2268.0,
+          "costAmount": 19117.4
+        },
+        {
+          "ref": "accounting-line-0005677",
+          "productRef": "nomen-05",
+          "quantity": 332.45,
+          "amount": 36702.48,
+          "discountAmount": 3191.52,
+          "costAmount": 24288.04
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-000087",
+      "number": "ОРП-000087",
+      "date": "2025-03-09",
+      "storeRef": "store-01",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0000311",
+          "productRef": "nomen-01",
+          "quantity": 314.0,
+          "amount": 27946.0,
+          "costAmount": 20633.38
+        },
+        {
+          "ref": "accounting-line-0000312",
+          "productRef": "nomen-03",
+          "quantity": 552.0,
+          "amount": 19320.0,
+          "costAmount": 7867.64
+        },
+        {
+          "ref": "accounting-line-0000313",
+          "productRef": "nomen-10",
+          "quantity": 255.0,
+          "amount": 29325.0,
+          "costAmount": 18865.52
+        },
+        {
+          "ref": "accounting-line-0000314",
+          "productRef": "nomen-08",
+          "quantity": 271.0,
+          "amount": 21138.0,
+          "costAmount": 11204.35
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-000089",
+      "number": "ОРП-000089",
+      "date": "2025-03-09",
+      "storeRef": "store-01",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0000317",
+          "productRef": "nomen-02",
+          "quantity": 361.0,
+          "amount": 16245.0,
+          "costAmount": 9085.56
+        },
+        {
+          "ref": "accounting-line-0000318",
+          "productRef": "nomen-10",
+          "quantity": 197.0,
+          "amount": 22655.0,
+          "costAmount": 14564.05
+        },
+        {
+          "ref": "accounting-line-0000319",
+          "productRef": "nomen-10",
+          "quantity": 182.0,
+          "amount": 20930.0,
+          "costAmount": 13703.01
+        },
+        {
+          "ref": "accounting-line-0000320",
+          "productRef": "nomen-01",
+          "quantity": 279.0,
+          "amount": 24831.0,
+          "costAmount": 17950.45
+        },
+        {
+          "ref": "accounting-line-0000321",
+          "productRef": "nomen-06",
+          "quantity": 87.0,
+          "amount": 13050.0,
+          "costAmount": 6595.1
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-000625",
+      "number": "ОРП-000625",
+      "date": "2025-03-09",
+      "storeRef": "store-02",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0002193",
+          "productRef": "nomen-03",
+          "quantity": 253.0,
+          "amount": 8855.0
+        },
+        {
+          "ref": "accounting-line-0002194",
+          "productRef": "nomen-07",
+          "quantity": 57.05,
+          "amount": 14833.0,
+          "costAmount": 10918.47
+        },
+        {
+          "ref": "accounting-line-0002195",
+          "productRef": "nomen-01",
+          "quantity": 168.0,
+          "amount": 14952.0,
+          "costAmount": 10630.4
+        },
+        {
+          "ref": "accounting-line-0002196",
+          "productRef": "nomen-04",
+          "quantity": 74.0,
+          "amount": 15540.0,
+          "costAmount": 10814.35
+        },
+        {
+          "ref": "accounting-line-0002197",
+          "productRef": "nomen-03",
+          "quantity": 361.0,
+          "amount": 12635.0,
+          "costAmount": 4920.82
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-000626",
+      "number": "ОРП-000626",
+      "date": "2025-03-09",
+      "storeRef": "store-02",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0002198",
+          "productRef": "nomen-03",
+          "quantity": 350.0,
+          "amount": 12250.0,
+          "costAmount": 4884.61
+        },
+        {
+          "ref": "accounting-line-0002199",
+          "productRef": "nomen-08",
+          "quantity": 241.0,
+          "amount": 18798.0,
+          "costAmount": 9995.26
+        },
+        {
+          "ref": "accounting-line-0002200",
+          "productRef": "nomen-03",
+          "quantity": 421.0,
+          "amount": 14735.0,
+          "costAmount": 5992.86
+        },
+        {
+          "ref": "accounting-line-0002201",
+          "productRef": "nomen-02",
+          "quantity": 469.0,
+          "amount": 21105.0,
+          "costAmount": 11933.87
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-001083",
+      "number": "ОРП-001083",
+      "date": "2025-03-09",
+      "storeRef": "store-03",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0003797",
+          "productRef": "nomen-10",
+          "quantity": 126.0,
+          "amount": 14490.0,
+          "costAmount": 9665.33
+        },
+        {
+          "ref": "accounting-line-0003798",
+          "productRef": "nomen-01",
+          "quantity": 162.0,
+          "amount": 14418.0,
+          "costAmount": 10280.98
+        },
+        {
+          "ref": "accounting-line-0003799",
+          "productRef": "nomen-03",
+          "quantity": 534.0,
+          "amount": 18690.0
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-001617",
+      "number": "ОРП-001617",
+      "date": "2025-03-09",
+      "storeRef": "store-05",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0005669",
+          "productRef": "nomen-09",
+          "quantity": 290.0,
+          "amount": 36250.0,
+          "costAmount": 17022.17
+        },
+        {
+          "ref": "accounting-line-0005670",
+          "productRef": "nomen-08",
+          "quantity": 409.0,
+          "amount": 31902.0,
+          "costAmount": 16746.08
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-001620",
+      "number": "ОРП-001620",
+      "date": "2025-03-09",
+      "storeRef": "store-05",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0005678",
+          "productRef": "nomen-04",
+          "quantity": 42.0,
+          "amount": 7497.0,
+          "discountAmount": 1323.0,
+          "costAmount": 5988.17
+        },
+        {
+          "ref": "accounting-line-0005679",
+          "productRef": "nomen-02",
+          "quantity": 218.0,
+          "amount": 8338.5,
+          "discountAmount": 1471.5
+        },
+        {
+          "ref": "accounting-line-0005680",
+          "productRef": "nomen-08",
+          "quantity": 229.0,
+          "amount": 15182.7,
+          "discountAmount": 2679.3,
+          "costAmount": 9192.45
+        },
+        {
+          "ref": "accounting-line-0005681",
+          "productRef": "nomen-04",
+          "quantity": 60.0,
+          "amount": 10710.0,
+          "discountAmount": 1890.0
+        },
+        {
+          "ref": "accounting-line-0005682",
+          "productRef": "nomen-02",
+          "quantity": 423.0,
+          "amount": 16179.75,
+          "discountAmount": 2855.25,
+          "costAmount": 10651.77
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-000092",
+      "number": "ОРП-000092",
+      "date": "2025-03-10",
+      "storeRef": "store-01",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0000326",
+          "productRef": "nomen-07",
+          "quantity": 49.5,
+          "amount": 12870.0,
+          "costAmount": 9444.65
+        },
+        {
+          "ref": "accounting-line-0000327",
+          "productRef": "nomen-07",
+          "quantity": 42.75,
+          "amount": 11115.0,
+          "costAmount": 8464.52
+        },
+        {
+          "ref": "accounting-line-0000328",
+          "productRef": "nomen-05",
+          "quantity": 149.05,
+          "amount": 17886.0,
+          "costAmount": 10562.09
+        },
+        {
+          "ref": "accounting-line-0000329",
+          "productRef": "nomen-02",
+          "quantity": 395.0,
+          "amount": 17775.0,
+          "costAmount": 9694.66
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-000630",
+      "number": "ОРП-000630",
+      "date": "2025-03-10",
+      "storeRef": "store-02",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0002210",
+          "productRef": "nomen-01",
+          "quantity": 133.0,
+          "amount": 10416.56,
+          "discountAmount": 1420.44,
+          "costAmount": 8647.15
+        },
+        {
+          "ref": "accounting-line-0002211",
+          "productRef": "nomen-08",
+          "quantity": 130.0,
+          "amount": 8923.2,
+          "discountAmount": 1216.8,
+          "costAmount": 5259.8
+        },
+        {
+          "ref": "accounting-line-0002212",
+          "productRef": "nomen-05",
+          "quantity": 116.85,
+          "amount": 12339.36,
+          "discountAmount": 1682.64,
+          "costAmount": 8650.08
+        },
+        {
+          "ref": "accounting-line-0002213",
+          "productRef": "nomen-10",
+          "quantity": 124.0,
+          "amount": 12548.8,
+          "discountAmount": 1711.2,
+          "costAmount": 9341.91
+        },
+        {
+          "ref": "accounting-line-0002214",
+          "productRef": "nomen-01",
+          "quantity": 153.0,
+          "amount": 11982.96,
+          "discountAmount": 1634.04,
+          "costAmount": 9640.85
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-001624",
+      "number": "ОРП-001624",
+      "date": "2025-03-10",
+      "storeRef": "store-05",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0005691",
+          "productRef": "nomen-01",
+          "quantity": 158.0,
+          "amount": 14062.0,
+          "costAmount": 10316.79
+        },
+        {
+          "ref": "accounting-line-0005692",
+          "productRef": "nomen-02",
+          "quantity": 271.0,
+          "amount": 12195.0,
+          "costAmount": 6710.78
+        },
+        {
+          "ref": "accounting-line-0005693",
+          "productRef": "nomen-02",
+          "quantity": 339.0,
+          "amount": 15255.0,
+          "costAmount": 8373.79
+        },
+        {
+          "ref": "accounting-line-0005694",
+          "productRef": "nomen-05",
+          "quantity": 147.65,
+          "amount": 17718.0
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-000098",
+      "number": "ОРП-000098",
+      "date": "2025-03-11",
+      "storeRef": "store-01",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0000348",
+          "productRef": "nomen-09",
+          "quantity": 119.0,
+          "amount": 13982.5,
+          "discountAmount": 892.5,
+          "costAmount": 6998.13
+        },
+        {
+          "ref": "accounting-line-0000349",
+          "productRef": "nomen-03",
+          "quantity": 371.0,
+          "amount": 12205.9,
+          "discountAmount": 779.1,
+          "costAmount": 5066.24
+        },
+        {
+          "ref": "accounting-line-0000350",
+          "productRef": "nomen-10",
+          "quantity": 72.0,
+          "amount": 7783.2,
+          "discountAmount": 496.8,
+          "costAmount": 5450.78
+        },
+        {
+          "ref": "accounting-line-0000351",
+          "productRef": "nomen-10",
+          "quantity": 70.0,
+          "amount": 7567.0,
+          "discountAmount": 483.0,
+          "costAmount": 5339.57
+        },
+        {
+          "ref": "accounting-line-0000352",
+          "productRef": "nomen-08",
+          "quantity": 198.0,
+          "amount": 14517.36,
+          "discountAmount": 926.64,
+          "costAmount": 7925.53
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-001085",
+      "number": "ОРП-001085",
+      "date": "2025-03-11",
+      "storeRef": "store-03",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0003802",
+          "productRef": "nomen-05",
+          "quantity": 88.5,
+          "amount": 10620.0,
+          "costAmount": 6444.01
+        },
+        {
+          "ref": "accounting-line-0003803",
+          "productRef": "nomen-10",
+          "quantity": 46.0,
+          "amount": 5290.0,
+          "costAmount": 3579.01
+        },
+        {
+          "ref": "accounting-line-0003804",
+          "productRef": "nomen-08",
+          "quantity": 95.0,
+          "amount": 7410.0,
+          "costAmount": 3892.41
+        },
+        {
+          "ref": "accounting-line-0003805",
+          "productRef": "nomen-01",
+          "quantity": 87.0,
+          "amount": 7743.0
+        },
+        {
+          "ref": "accounting-line-0003806",
+          "productRef": "nomen-01",
+          "quantity": 68.0,
+          "amount": 6052.0
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-001090",
+      "number": "ОРП-001090",
+      "date": "2025-03-11",
+      "storeRef": "store-03",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0003824",
+          "productRef": "nomen-01",
+          "quantity": 153.0,
+          "amount": 13617.0,
+          "costAmount": 9727.11
+        },
+        {
+          "ref": "accounting-line-0003825",
+          "productRef": "nomen-01",
+          "quantity": 105.0,
+          "amount": 9345.0,
+          "costAmount": 6590.2
+        },
+        {
+          "ref": "accounting-line-0003826",
+          "productRef": "nomen-03",
+          "quantity": 407.0,
+          "amount": 14245.0,
+          "costAmount": 5567.07
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-001625",
+      "number": "ОРП-001625",
+      "date": "2025-03-11",
+      "storeRef": "store-05",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0005695",
+          "productRef": "nomen-01",
+          "quantity": 343.0,
+          "amount": 30527.0,
+          "costAmount": 21414.77
+        },
+        {
+          "ref": "accounting-line-0005696",
+          "productRef": "nomen-01",
+          "quantity": 323.0,
+          "amount": 28747.0,
+          "costAmount": 21263.83
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-000095",
+      "number": "ОРП-000095",
+      "date": "2025-03-12",
+      "storeRef": "store-01",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0000336",
+          "productRef": "nomen-03",
+          "quantity": 683.0,
+          "amount": 23905.0,
+          "costAmount": 9346.95
+        },
+        {
+          "ref": "accounting-line-0000337",
+          "productRef": "nomen-10",
+          "quantity": 130.0,
+          "amount": 14950.0,
+          "costAmount": 9886.82
+        },
+        {
+          "ref": "accounting-line-0000338",
+          "productRef": "nomen-10",
+          "quantity": 180.0,
+          "amount": 20700.0,
+          "costAmount": 13390.37
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-001088",
+      "number": "ОРП-001088",
+      "date": "2025-03-12",
+      "storeRef": "store-03",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0003816",
+          "productRef": "nomen-09",
+          "quantity": 61.0,
+          "amount": 7625.0,
+          "costAmount": 3481.02
+        },
+        {
+          "ref": "accounting-line-0003817",
+          "productRef": "nomen-09",
+          "quantity": 76.0,
+          "amount": 9500.0,
+          "costAmount": 4439.73
+        },
+        {
+          "ref": "accounting-line-0003818",
+          "productRef": "nomen-02",
+          "quantity": 96.0,
+          "amount": 4320.0,
+          "costAmount": 2314.89
+        },
+        {
+          "ref": "accounting-line-0003819",
+          "productRef": "nomen-09",
+          "quantity": 55.0,
+          "amount": 6875.0,
+          "costAmount": 3127.06
+        },
+        {
+          "ref": "accounting-line-0003820",
+          "productRef": "nomen-04",
+          "quantity": 42.0,
+          "amount": 8820.0,
+          "costAmount": 5978.96
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-001089",
+      "number": "ОРП-001089",
+      "date": "2025-03-12",
+      "storeRef": "store-03",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0003821",
+          "productRef": "nomen-03",
+          "quantity": 439.0,
+          "amount": 15365.0,
+          "costAmount": 6029.84
+        },
+        {
+          "ref": "accounting-line-0003822",
+          "productRef": "nomen-06",
+          "quantity": 81.0,
+          "amount": 12150.0
+        },
+        {
+          "ref": "accounting-line-0003823",
+          "productRef": "nomen-02",
+          "quantity": 214.0,
+          "amount": 9630.0,
+          "costAmount": 5390.18
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-001091",
+      "number": "ОРП-001091",
+      "date": "2025-03-12",
+      "storeRef": "store-03",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0003827",
+          "productRef": "nomen-02",
+          "quantity": 161.0,
+          "amount": 7245.0,
+          "costAmount": 4062.85
+        },
+        {
+          "ref": "accounting-line-0003828",
+          "productRef": "nomen-02",
+          "quantity": 165.0,
+          "amount": 7425.0,
+          "costAmount": 4123.95
+        },
+        {
+          "ref": "accounting-line-0003829",
+          "productRef": "nomen-03",
+          "quantity": 218.0,
+          "amount": 7630.0
+        },
+        {
+          "ref": "accounting-line-0003830",
+          "productRef": "nomen-08",
+          "quantity": 118.0,
+          "amount": 9204.0,
+          "costAmount": 4750.75
+        },
+        {
+          "ref": "accounting-line-0003831",
+          "productRef": "nomen-07",
+          "quantity": 21.8,
+          "amount": 5668.0,
+          "costAmount": 4133.72
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-001627",
+      "number": "ОРП-001627",
+      "date": "2025-03-12",
+      "storeRef": "store-05",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0005701",
+          "productRef": "nomen-03",
+          "quantity": 350.0,
+          "amount": 12250.0,
+          "costAmount": 4959.19
+        },
+        {
+          "ref": "accounting-line-0005702",
+          "productRef": "nomen-05",
+          "quantity": 146.4,
+          "amount": 17568.0,
+          "costAmount": 10819.16
+        },
+        {
+          "ref": "accounting-line-0005703",
+          "productRef": "nomen-04",
+          "quantity": 62.0,
+          "amount": 13020.0,
+          "costAmount": 9111.58
+        },
+        {
+          "ref": "accounting-line-0005704",
+          "productRef": "nomen-02",
+          "quantity": 363.0,
+          "amount": 16335.0,
+          "costAmount": 9081.12
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-000097",
+      "number": "ОРП-000097",
+      "date": "2025-03-13",
+      "storeRef": "store-01",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0000343",
+          "productRef": "nomen-02",
+          "quantity": 200.0,
+          "amount": 7830.0,
+          "discountAmount": 1170.0
+        },
+        {
+          "ref": "accounting-line-0000344",
+          "productRef": "nomen-01",
+          "quantity": 144.0,
+          "amount": 11149.92,
+          "discountAmount": 1666.08
+        },
+        {
+          "ref": "accounting-line-0000345",
+          "productRef": "nomen-01",
+          "quantity": 113.0,
+          "amount": 8749.59,
+          "discountAmount": 1307.41,
+          "costAmount": 7184.79
+        },
+        {
+          "ref": "accounting-line-0000346",
+          "productRef": "nomen-04",
+          "quantity": 66.0,
+          "amount": 12058.2,
+          "discountAmount": 1801.8,
+          "costAmount": 9322.51
+        },
+        {
+          "ref": "accounting-line-0000347",
+          "productRef": "nomen-04",
+          "quantity": 67.0,
+          "amount": 12240.9,
+          "discountAmount": 1829.1,
+          "costAmount": 9434.12
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-000631",
+      "number": "ОРП-000631",
+      "date": "2025-03-13",
+      "storeRef": "store-02",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0002215",
+          "productRef": "nomen-02",
+          "quantity": 285.0,
+          "amount": 12825.0,
+          "costAmount": 6852.67
+        },
+        {
+          "ref": "accounting-line-0002216",
+          "productRef": "nomen-07",
+          "quantity": 56.8,
+          "amount": 14768.0,
+          "costAmount": 10893.62
+        },
+        {
+          "ref": "accounting-line-0002217",
+          "productRef": "nomen-05",
+          "quantity": 109.45,
+          "amount": 13134.0,
+          "costAmount": 7695.5
+        },
+        {
+          "ref": "accounting-line-0002218",
+          "productRef": "nomen-03",
+          "quantity": 363.0,
+          "amount": 12705.0,
+          "costAmount": 4973.38
+        },
+        {
+          "ref": "accounting-line-0002219",
+          "productRef": "nomen-10",
+          "quantity": 91.0,
+          "amount": 10465.0,
+          "costAmount": 6734.35
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-001086",
+      "number": "ОРП-001086",
+      "date": "2025-03-13",
+      "storeRef": "store-03",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0003807",
+          "productRef": "nomen-02",
+          "quantity": 112.0,
+          "amount": 5040.0,
+          "costAmount": 2836.16
+        },
+        {
+          "ref": "accounting-line-0003808",
+          "productRef": "nomen-01",
+          "quantity": 114.0,
+          "amount": 10146.0,
+          "costAmount": 7302.49
+        },
+        {
+          "ref": "accounting-line-0003809",
+          "productRef": "nomen-06",
+          "quantity": 54.0,
+          "amount": 8100.0,
+          "costAmount": 3963.03
+        },
+        {
+          "ref": "accounting-line-0003810",
+          "productRef": "nomen-02",
+          "quantity": 189.0,
+          "amount": 8505.0,
+          "costAmount": 4646.26
+        },
+        {
+          "ref": "accounting-line-0003811",
+          "productRef": "nomen-02",
+          "quantity": 121.0,
+          "amount": 5445.0,
+          "costAmount": 2944.49
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-001087",
+      "number": "ОРП-001087",
+      "date": "2025-03-13",
+      "storeRef": "store-03",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0003812",
+          "productRef": "nomen-02",
+          "quantity": 228.0,
+          "amount": 9747.0,
+          "discountAmount": 513.0
+        },
+        {
+          "ref": "accounting-line-0003813",
+          "productRef": "nomen-01",
+          "quantity": 81.0,
+          "amount": 6848.55,
+          "discountAmount": 360.45
+        },
+        {
+          "ref": "accounting-line-0003814",
+          "productRef": "nomen-02",
+          "quantity": 259.0,
+          "amount": 11072.25,
+          "discountAmount": 582.75,
+          "costAmount": 6218.52
+        },
+        {
+          "ref": "accounting-line-0003815",
+          "productRef": "nomen-07",
+          "quantity": 31.1,
+          "amount": 7681.7,
+          "discountAmount": 404.3,
+          "costAmount": 5874.32
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-001623",
+      "number": "ОРП-001623",
+      "date": "2025-03-13",
+      "storeRef": "store-05",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0005689",
+          "productRef": "nomen-01",
+          "quantity": 328.0,
+          "amount": 25688.96,
+          "discountAmount": 3503.04,
+          "costAmount": 21379.93
+        },
+        {
+          "ref": "accounting-line-0005690",
+          "productRef": "nomen-10",
+          "quantity": 262.0,
+          "amount": 26514.4,
+          "discountAmount": 3615.6,
+          "costAmount": 19558.71
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-000093",
+      "number": "ОРП-000093",
+      "date": "2025-03-14",
+      "storeRef": "store-01",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0000330",
+          "productRef": "nomen-06",
+          "quantity": 155.0,
+          "amount": 23250.0,
+          "costAmount": 11850.53
+        },
+        {
+          "ref": "accounting-line-0000331",
+          "productRef": "nomen-01",
+          "quantity": 219.0,
+          "amount": 19491.0,
+          "costAmount": 14431.27
+        },
+        {
+          "ref": "accounting-line-0000332",
+          "productRef": "nomen-03",
+          "quantity": 484.0,
+          "amount": 16940.0,
+          "costAmount": 6755.66
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-000096",
+      "number": "ОРП-000096",
+      "date": "2025-03-14",
+      "storeRef": "store-01",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0000339",
+          "productRef": "nomen-09",
+          "quantity": 77.0,
+          "amount": 8470.0,
+          "discountAmount": 1155.0,
+          "costAmount": 4405.34
+        },
+        {
+          "ref": "accounting-line-0000340",
+          "productRef": "nomen-05",
+          "quantity": 140.75,
+          "amount": 14863.2,
+          "discountAmount": 2026.8,
+          "costAmount": 10132.81
+        },
+        {
+          "ref": "accounting-line-0000341",
+          "productRef": "nomen-09",
+          "quantity": 129.0,
+          "amount": 14190.0,
+          "discountAmount": 1935.0,
+          "costAmount": 7323.89
+        },
+        {
+          "ref": "accounting-line-0000342",
+          "productRef": "nomen-01",
+          "quantity": 191.0,
+          "amount": 14959.12,
+          "discountAmount": 2039.88
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-000099",
+      "number": "ОРП-000099",
+      "date": "2025-03-14",
+      "storeRef": "store-01",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0000353",
+          "productRef": "nomen-02",
+          "quantity": 286.0,
+          "amount": 12870.0,
+          "costAmount": 6988.72
+        },
+        {
+          "ref": "accounting-line-0000354",
+          "productRef": "nomen-01",
+          "quantity": 149.0,
+          "amount": 13261.0,
+          "costAmount": 9519.48
+        },
+        {
+          "ref": "accounting-line-0000355",
+          "productRef": "nomen-01",
+          "quantity": 103.0,
+          "amount": 9167.0,
+          "costAmount": 6729.07
+        },
+        {
+          "ref": "accounting-line-0000356",
+          "productRef": "nomen-01",
+          "quantity": 104.0,
+          "amount": 9256.0,
+          "costAmount": 6708.72
+        },
+        {
+          "ref": "accounting-line-0000357",
+          "productRef": "nomen-02",
+          "quantity": 336.0,
+          "amount": 15120.0,
+          "costAmount": 8114.76
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-001092",
+      "number": "ОРП-001092",
+      "date": "2025-03-14",
+      "storeRef": "store-03",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0003832",
+          "productRef": "nomen-01",
+          "quantity": 137.0,
+          "amount": 10729.84,
+          "discountAmount": 1463.16
+        },
+        {
+          "ref": "accounting-line-0003833",
+          "productRef": "nomen-02",
+          "quantity": 142.0,
+          "amount": 5623.2,
+          "discountAmount": 766.8,
+          "costAmount": 3442.18
+        },
+        {
+          "ref": "accounting-line-0003834",
+          "productRef": "nomen-01",
+          "quantity": 93.0,
+          "amount": 7283.76,
+          "discountAmount": 993.24
+        },
+        {
+          "ref": "accounting-line-0003835",
+          "productRef": "nomen-07",
+          "quantity": 39.85,
+          "amount": 9117.68,
+          "discountAmount": 1243.32,
+          "costAmount": 7828.38
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-001622",
+      "number": "ОРП-001622",
+      "date": "2025-03-14",
+      "storeRef": "store-05",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0005685",
+          "productRef": "nomen-01",
+          "quantity": 124.0,
+          "amount": 10263.48,
+          "discountAmount": 772.52
+        },
+        {
+          "ref": "accounting-line-0005686",
+          "productRef": "nomen-08",
+          "quantity": 213.0,
+          "amount": 15451.02,
+          "discountAmount": 1162.98,
+          "costAmount": 8867.51
+        },
+        {
+          "ref": "accounting-line-0005687",
+          "productRef": "nomen-03",
+          "quantity": 408.0,
+          "amount": 13280.4,
+          "discountAmount": 999.6,
+          "costAmount": 5731.37
+        },
+        {
+          "ref": "accounting-line-0005688",
+          "productRef": "nomen-02",
+          "quantity": 383.0,
+          "amount": 16028.55,
+          "discountAmount": 1206.45,
+          "costAmount": 9721.23
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-000094",
+      "number": "ОРП-000094",
+      "date": "2025-03-15",
+      "storeRef": "store-01",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0000333",
+          "productRef": "nomen-09",
+          "quantity": 116.0,
+          "amount": 14500.0
+        },
+        {
+          "ref": "accounting-line-0000334",
+          "productRef": "nomen-08",
+          "quantity": 343.0,
+          "amount": 26754.0,
+          "costAmount": 13598.36
+        },
+        {
+          "ref": "accounting-line-0000335",
+          "productRef": "nomen-06",
+          "quantity": 123.0,
+          "amount": 18450.0,
+          "costAmount": 9039.39
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-000628",
+      "number": "ОРП-000628",
+      "date": "2025-03-15",
+      "storeRef": "store-02",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0002206",
+          "productRef": "nomen-08",
+          "quantity": 367.0,
+          "amount": 27194.7,
+          "discountAmount": 1431.3,
+          "costAmount": 14691.79
+        },
+        {
+          "ref": "accounting-line-0002207",
+          "productRef": "nomen-05",
+          "quantity": 293.8,
+          "amount": 33493.2,
+          "discountAmount": 1762.8,
+          "costAmount": 21320.57
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-000629",
+      "number": "ОРП-000629",
+      "date": "2025-03-15",
+      "storeRef": "store-02",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0002208",
+          "productRef": "nomen-08",
+          "quantity": 347.0,
+          "amount": 24900.72,
+          "discountAmount": 2165.28
+        },
+        {
+          "ref": "accounting-line-0002209",
+          "productRef": "nomen-03",
+          "quantity": 1053.0,
+          "amount": 33906.6,
+          "discountAmount": 2948.4
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-000627",
+      "number": "ОРП-000627",
+      "date": "2025-03-16",
+      "storeRef": "store-02",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0002202",
+          "productRef": "nomen-10",
+          "quantity": 166.0,
+          "amount": 19090.0,
+          "costAmount": 12871.34
+        },
+        {
+          "ref": "accounting-line-0002203",
+          "productRef": "nomen-08",
+          "quantity": 215.0,
+          "amount": 16770.0,
+          "costAmount": 8878.04
+        },
+        {
+          "ref": "accounting-line-0002204",
+          "productRef": "nomen-05",
+          "quantity": 119.2,
+          "amount": 14304.0
+        },
+        {
+          "ref": "accounting-line-0002205",
+          "productRef": "nomen-07",
+          "quantity": 52.6,
+          "amount": 13676.0,
+          "costAmount": 9947.56
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-001093",
+      "number": "ВЗВ-001093",
+      "date": "2025-03-16",
+      "storeRef": "store-03",
+      "documentType": "return",
+      "lines": [
+        {
+          "ref": "accounting-line-0003836",
+          "productRef": "nomen-03",
+          "quantity": 203.0,
+          "amount": 7105.0,
+          "costAmount": 2848.54
+        },
+        {
+          "ref": "accounting-line-0003837",
+          "productRef": "nomen-02",
+          "quantity": 182.0,
+          "amount": 8190.0
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-001626",
+      "number": "ОРП-001626",
+      "date": "2025-03-16",
+      "storeRef": "store-05",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0005697",
+          "productRef": "nomen-05",
+          "quantity": 129.5,
+          "amount": 13986.0,
+          "discountAmount": 1554.0,
+          "costAmount": 9437.84
+        },
+        {
+          "ref": "accounting-line-0005698",
+          "productRef": "nomen-08",
+          "quantity": 142.0,
+          "amount": 9968.4,
+          "discountAmount": 1107.6,
+          "costAmount": 5604.73
+        },
+        {
+          "ref": "accounting-line-0005699",
+          "productRef": "nomen-08",
+          "quantity": 281.0,
+          "amount": 19726.2,
+          "discountAmount": 2191.8,
+          "costAmount": 11476.75
+        },
+        {
+          "ref": "accounting-line-0005700",
+          "productRef": "nomen-10",
+          "quantity": 93.0,
+          "amount": 9625.5,
+          "discountAmount": 1069.5,
+          "costAmount": 6886.25
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-000105",
+      "number": "ОРП-000105",
+      "date": "2025-03-17",
+      "storeRef": "store-01",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0000377",
+          "productRef": "nomen-10",
+          "quantity": 73.0,
+          "amount": 8395.0,
+          "costAmount": 5445.62
+        },
+        {
+          "ref": "accounting-line-0000378",
+          "productRef": "nomen-03",
+          "quantity": 520.0,
+          "amount": 18200.0
+        },
+        {
+          "ref": "accounting-line-0000379",
+          "productRef": "nomen-03",
+          "quantity": 253.0,
+          "amount": 8855.0,
+          "costAmount": 3555.18
+        },
+        {
+          "ref": "accounting-line-0000380",
+          "productRef": "nomen-08",
+          "quantity": 229.0,
+          "amount": 17862.0,
+          "costAmount": 9070.46
+        },
+        {
+          "ref": "accounting-line-0000381",
+          "productRef": "nomen-02",
+          "quantity": 333.0,
+          "amount": 14985.0,
+          "costAmount": 8112.82
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-000106",
+      "number": "ОРП-000106",
+      "date": "2025-03-17",
+      "storeRef": "store-01",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0000382",
+          "productRef": "nomen-06",
+          "quantity": 174.0,
+          "amount": 26100.0,
+          "costAmount": 13089.43
+        },
+        {
+          "ref": "accounting-line-0000383",
+          "productRef": "nomen-01",
+          "quantity": 170.0,
+          "amount": 15130.0
+        },
+        {
+          "ref": "accounting-line-0000384",
+          "productRef": "nomen-03",
+          "quantity": 773.0,
+          "amount": 27055.0,
+          "costAmount": 11104.48
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-000635",
+      "number": "ОРП-000635",
+      "date": "2025-03-17",
+      "storeRef": "store-02",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0002229",
+          "productRef": "nomen-07",
+          "quantity": 43.55,
+          "amount": 11323.0,
+          "costAmount": 8531.26
+        },
+        {
+          "ref": "accounting-line-0002230",
+          "productRef": "nomen-09",
+          "quantity": 73.0,
+          "amount": 9125.0
+        },
+        {
+          "ref": "accounting-line-0002231",
+          "productRef": "nomen-02",
+          "quantity": 141.0,
+          "amount": 6345.0,
+          "costAmount": 3511.63
+        },
+        {
+          "ref": "accounting-line-0002232",
+          "productRef": "nomen-03",
+          "quantity": 205.0,
+          "amount": 7175.0,
+          "costAmount": 2820.17
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-001098",
+      "number": "ОРП-001098",
+      "date": "2025-03-17",
+      "storeRef": "store-03",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0003851",
+          "productRef": "nomen-01",
+          "quantity": 175.0,
+          "amount": 15575.0,
+          "costAmount": 10990.68
+        },
+        {
+          "ref": "accounting-line-0003852",
+          "productRef": "nomen-05",
+          "quantity": 93.8,
+          "amount": 11256.0,
+          "costAmount": 6553.17
+        },
+        {
+          "ref": "accounting-line-0003853",
+          "productRef": "nomen-01",
+          "quantity": 83.0,
+          "amount": 7387.0
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-001100",
+      "number": "ОРП-001100",
+      "date": "2025-03-17",
+      "storeRef": "store-03",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0003859",
+          "productRef": "nomen-02",
+          "quantity": 167.0,
+          "amount": 7515.0,
+          "costAmount": 4205.07
+        },
+        {
+          "ref": "accounting-line-0003860",
+          "productRef": "nomen-04",
+          "quantity": 39.0,
+          "amount": 8190.0
+        },
+        {
+          "ref": "accounting-line-0003861",
+          "productRef": "nomen-04",
+          "quantity": 21.0,
+          "amount": 4410.0,
+          "costAmount": 2995.86
+        },
+        {
+          "ref": "accounting-line-0003862",
+          "productRef": "nomen-02",
+          "quantity": 170.0,
+          "amount": 7650.0
+        },
+        {
+          "ref": "accounting-line-0003863",
+          "productRef": "nomen-02",
+          "quantity": 142.0,
+          "amount": 6390.0,
+          "costAmount": 3479.96
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-001101",
+      "number": "ОРП-001101",
+      "date": "2025-03-17",
+      "storeRef": "store-03",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0003864",
+          "productRef": "nomen-02",
+          "quantity": 101.0,
+          "amount": 4545.0,
+          "costAmount": 2458.6
+        },
+        {
+          "ref": "accounting-line-0003865",
+          "productRef": "nomen-04",
+          "quantity": 43.0,
+          "amount": 9030.0,
+          "costAmount": 5992.72
+        },
+        {
+          "ref": "accounting-line-0003866",
+          "productRef": "nomen-02",
+          "quantity": 111.0,
+          "amount": 4995.0,
+          "costAmount": 2748.59
+        },
+        {
+          "ref": "accounting-line-0003867",
+          "productRef": "nomen-05",
+          "quantity": 62.35,
+          "amount": 7482.0
+        },
+        {
+          "ref": "accounting-line-0003868",
+          "productRef": "nomen-10",
+          "quantity": 71.0,
+          "amount": 8165.0,
+          "costAmount": 5287.64
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-000632",
+      "number": "ОРП-000632",
+      "date": "2025-03-18",
+      "storeRef": "store-02",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0002220",
+          "productRef": "nomen-05",
+          "quantity": 50.8,
+          "amount": 5547.36,
+          "discountAmount": 548.64,
+          "costAmount": 3739.11
+        },
+        {
+          "ref": "accounting-line-0002221",
+          "productRef": "nomen-09",
+          "quantity": 63.0,
+          "amount": 7166.25,
+          "discountAmount": 708.75,
+          "costAmount": 3559.3
+        },
+        {
+          "ref": "accounting-line-0002222",
+          "productRef": "nomen-08",
+          "quantity": 107.0,
+          "amount": 7594.86,
+          "discountAmount": 751.14,
+          "costAmount": 4336.98
+        },
+        {
+          "ref": "accounting-line-0002223",
+          "productRef": "nomen-01",
+          "quantity": 46.0,
+          "amount": 3725.54,
+          "discountAmount": 368.46,
+          "costAmount": 3028.94
+        },
+        {
+          "ref": "accounting-line-0002224",
+          "productRef": "nomen-04",
+          "quantity": 36.0,
+          "amount": 6879.6,
+          "discountAmount": 680.4,
+          "costAmount": 5128.89
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-000638",
+      "number": "ОРП-000638",
+      "date": "2025-03-18",
+      "storeRef": "store-02",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0002238",
+          "productRef": "nomen-05",
+          "quantity": 61.7,
+          "amount": 7404.0,
+          "costAmount": 4379.21
+        },
+        {
+          "ref": "accounting-line-0002239",
+          "productRef": "nomen-03",
+          "quantity": 231.0,
+          "amount": 8085.0,
+          "costAmount": 3291.61
+        },
+        {
+          "ref": "accounting-line-0002240",
+          "productRef": "nomen-06",
+          "quantity": 32.0,
+          "amount": 4800.0,
+          "costAmount": 2438.31
+        },
+        {
+          "ref": "accounting-line-0002241",
+          "productRef": "nomen-03",
+          "quantity": 148.0,
+          "amount": 5180.0,
+          "costAmount": 2105.81
+        },
+        {
+          "ref": "accounting-line-0002242",
+          "productRef": "nomen-02",
+          "quantity": 189.0,
+          "amount": 8505.0,
+          "costAmount": 4615.23
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-000101",
+      "number": "ОРП-000101",
+      "date": "2025-03-19",
+      "storeRef": "store-01",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0000363",
+          "productRef": "nomen-10",
+          "quantity": 304.0,
+          "amount": 34960.0,
+          "costAmount": 22418.28
+        },
+        {
+          "ref": "accounting-line-0000364",
+          "productRef": "nomen-05",
+          "quantity": 277.95,
+          "amount": 33354.0,
+          "costAmount": 20573.23
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-000103",
+      "number": "ОРП-000103",
+      "date": "2025-03-19",
+      "storeRef": "store-01",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0000368",
+          "productRef": "nomen-07",
+          "quantity": 74.8,
+          "amount": 19448.0,
+          "costAmount": 14413.52
+        },
+        {
+          "ref": "accounting-line-0000369",
+          "productRef": "nomen-03",
+          "quantity": 304.0,
+          "amount": 10640.0,
+          "costAmount": 4172.54
+        },
+        {
+          "ref": "accounting-line-0000370",
+          "productRef": "nomen-08",
+          "quantity": 149.0,
+          "amount": 11622.0
+        },
+        {
+          "ref": "accounting-line-0000371",
+          "productRef": "nomen-10",
+          "quantity": 109.0,
+          "amount": 12535.0,
+          "costAmount": 8200.77
+        },
+        {
+          "ref": "accounting-line-0000372",
+          "productRef": "nomen-09",
+          "quantity": 113.0,
+          "amount": 14125.0,
+          "costAmount": 6583.63
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-000636",
+      "number": "ОРП-000636",
+      "date": "2025-03-19",
+      "storeRef": "store-02",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0002233",
+          "productRef": "nomen-02",
+          "quantity": 250.0,
+          "amount": 11250.0
+        },
+        {
+          "ref": "accounting-line-0002234",
+          "productRef": "nomen-07",
+          "quantity": 37.65,
+          "amount": 9789.0,
+          "costAmount": 7331.42
+        },
+        {
+          "ref": "accounting-line-0002235",
+          "productRef": "nomen-04",
+          "quantity": 61.0,
+          "amount": 12810.0,
+          "costAmount": 8498.53
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-001094",
+      "number": "ОРП-001094",
+      "date": "2025-03-19",
+      "storeRef": "store-03",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0003838",
+          "productRef": "nomen-08",
+          "quantity": 198.0,
+          "amount": 15444.0,
+          "costAmount": 7938.99
+        },
+        {
+          "ref": "accounting-line-0003839",
+          "productRef": "nomen-01",
+          "quantity": 211.0,
+          "amount": 18779.0,
+          "costAmount": 13223.61
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-001630",
+      "number": "ОРП-001630",
+      "date": "2025-03-19",
+      "storeRef": "store-05",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0005713",
+          "productRef": "nomen-02",
+          "quantity": 565.0,
+          "amount": 25425.0
+        },
+        {
+          "ref": "accounting-line-0005714",
+          "productRef": "nomen-02",
+          "quantity": 622.0,
+          "amount": 27990.0,
+          "costAmount": 15270.07
+        },
+        {
+          "ref": "accounting-line-0005715",
+          "productRef": "nomen-01",
+          "quantity": 215.0,
+          "amount": 19135.0,
+          "costAmount": 13447.6
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-000633",
+      "number": "ОРП-000633",
+      "date": "2025-03-20",
+      "storeRef": "store-02",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0002225",
+          "productRef": "nomen-10",
+          "quantity": 143.0,
+          "amount": 16445.0,
+          "costAmount": 10866.68
+        },
+        {
+          "ref": "accounting-line-0002226",
+          "productRef": "nomen-03",
+          "quantity": 498.0,
+          "amount": 17430.0,
+          "costAmount": 6845.4
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-000637",
+      "number": "ОРП-000637",
+      "date": "2025-03-20",
+      "storeRef": "store-02",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0002236",
+          "productRef": "nomen-06",
+          "quantity": 84.0,
+          "amount": 12600.0
+        },
+        {
+          "ref": "accounting-line-0002237",
+          "productRef": "nomen-05",
+          "quantity": 177.75,
+          "amount": 21330.0,
+          "costAmount": 12424.91
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-001632",
+      "number": "ОРП-001632",
+      "date": "2025-03-20",
+      "storeRef": "store-05",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0005719",
+          "productRef": "nomen-01",
+          "quantity": 160.0,
+          "amount": 12673.6,
+          "discountAmount": 1566.4,
+          "costAmount": 10373.13
+        },
+        {
+          "ref": "accounting-line-0005720",
+          "productRef": "nomen-10",
+          "quantity": 160.0,
+          "amount": 16376.0,
+          "discountAmount": 2024.0
+        },
+        {
+          "ref": "accounting-line-0005721",
+          "productRef": "nomen-07",
+          "quantity": 43.6,
+          "amount": 10089.04,
+          "discountAmount": 1246.96,
+          "costAmount": 8633.03
+        },
+        {
+          "ref": "accounting-line-0005722",
+          "productRef": "nomen-06",
+          "quantity": 113.0,
+          "amount": 15085.5,
+          "discountAmount": 1864.5,
+          "costAmount": 8600.78
+        },
+        {
+          "ref": "accounting-line-0005723",
+          "productRef": "nomen-03",
+          "quantity": 330.0,
+          "amount": 10279.5,
+          "discountAmount": 1270.5
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-001096",
+      "number": "ОРП-001096",
+      "date": "2025-03-21",
+      "storeRef": "store-03",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0003842",
+          "productRef": "nomen-06",
+          "quantity": 40.0,
+          "amount": 6000.0,
+          "costAmount": 3038.67
+        },
+        {
+          "ref": "accounting-line-0003843",
+          "productRef": "nomen-02",
+          "quantity": 184.0,
+          "amount": 8280.0,
+          "costAmount": 4456.95
+        },
+        {
+          "ref": "accounting-line-0003844",
+          "productRef": "nomen-09",
+          "quantity": 49.0,
+          "amount": 6125.0,
+          "costAmount": 2763.91
+        },
+        {
+          "ref": "accounting-line-0003845",
+          "productRef": "nomen-08",
+          "quantity": 94.0,
+          "amount": 7332.0,
+          "costAmount": 3712.89
+        },
+        {
+          "ref": "accounting-line-0003846",
+          "productRef": "nomen-08",
+          "quantity": 83.0,
+          "amount": 6474.0,
+          "costAmount": 3389.05
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-001097",
+      "number": "ОРП-001097",
+      "date": "2025-03-21",
+      "storeRef": "store-03",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0003847",
+          "productRef": "nomen-07",
+          "quantity": 37.4,
+          "amount": 8265.4,
+          "discountAmount": 1458.6,
+          "costAmount": 7336.24
+        },
+        {
+          "ref": "accounting-line-0003848",
+          "productRef": "nomen-10",
+          "quantity": 85.0,
+          "amount": 8308.75,
+          "discountAmount": 1466.25,
+          "costAmount": 6493.85
+        },
+        {
+          "ref": "accounting-line-0003849",
+          "productRef": "nomen-10",
+          "quantity": 44.0,
+          "amount": 4301.0,
+          "discountAmount": 759.0
+        },
+        {
+          "ref": "accounting-line-0003850",
+          "productRef": "nomen-05",
+          "quantity": 81.05,
+          "amount": 8267.1,
+          "discountAmount": 1458.9,
+          "costAmount": 5902.36
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-000104",
+      "number": "ОРП-000104",
+      "date": "2025-03-22",
+      "storeRef": "store-01",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0000373",
+          "productRef": "nomen-06",
+          "quantity": 93.0,
+          "amount": 13950.0,
+          "costAmount": 7060.79
+        },
+        {
+          "ref": "accounting-line-0000374",
+          "productRef": "nomen-02",
+          "quantity": 547.0,
+          "amount": 24615.0,
+          "costAmount": 13415.43
+        },
+        {
+          "ref": "accounting-line-0000375",
+          "productRef": "nomen-02",
+          "quantity": 332.0,
+          "amount": 14940.0
+        },
+        {
+          "ref": "accounting-line-0000376",
+          "productRef": "nomen-05",
+          "quantity": 123.65,
+          "amount": 14838.0,
+          "costAmount": 8781.79
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-001099",
+      "number": "ОРП-001099",
+      "date": "2025-03-22",
+      "storeRef": "store-03",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0003854",
+          "productRef": "nomen-02",
+          "quantity": 122.0,
+          "amount": 5050.8,
+          "discountAmount": 439.2,
+          "costAmount": 3053.76
+        },
+        {
+          "ref": "accounting-line-0003855",
+          "productRef": "nomen-01",
+          "quantity": 99.0,
+          "amount": 8106.12,
+          "discountAmount": 704.88
+        },
+        {
+          "ref": "accounting-line-0003856",
+          "productRef": "nomen-03",
+          "quantity": 254.0,
+          "amount": 8178.8,
+          "discountAmount": 711.2
+        },
+        {
+          "ref": "accounting-line-0003857",
+          "productRef": "nomen-01",
+          "quantity": 79.0,
+          "amount": 6468.52,
+          "discountAmount": 562.48,
+          "costAmount": 5110.91
+        },
+        {
+          "ref": "accounting-line-0003858",
+          "productRef": "nomen-08",
+          "quantity": 52.0,
+          "amount": 3731.52,
+          "discountAmount": 324.48,
+          "costAmount": 2123.23
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-000100",
+      "number": "ОРП-000100",
+      "date": "2025-03-23",
+      "storeRef": "store-01",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0000358",
+          "productRef": "nomen-05",
+          "quantity": 109.6,
+          "amount": 11705.28,
+          "discountAmount": 1446.72,
+          "costAmount": 8123.49
+        },
+        {
+          "ref": "accounting-line-0000359",
+          "productRef": "nomen-01",
+          "quantity": 166.0,
+          "amount": 13148.86,
+          "discountAmount": 1625.14,
+          "costAmount": 10509.14
+        },
+        {
+          "ref": "accounting-line-0000360",
+          "productRef": "nomen-01",
+          "quantity": 155.0,
+          "amount": 12277.55,
+          "discountAmount": 1517.45,
+          "costAmount": 10128.04
+        },
+        {
+          "ref": "accounting-line-0000361",
+          "productRef": "nomen-03",
+          "quantity": 336.0,
+          "amount": 10466.4,
+          "discountAmount": 1293.6,
+          "costAmount": 4762.91
+        },
+        {
+          "ref": "accounting-line-0000362",
+          "productRef": "nomen-04",
+          "quantity": 71.0,
+          "amount": 13269.9,
+          "discountAmount": 1640.1,
+          "costAmount": 10330.88
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-000102",
+      "number": "ОРП-000102",
+      "date": "2025-03-23",
+      "storeRef": "store-01",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0000365",
+          "productRef": "nomen-07",
+          "quantity": 83.5,
+          "amount": 21710.0,
+          "costAmount": 16239.61
+        },
+        {
+          "ref": "accounting-line-0000366",
+          "productRef": "nomen-05",
+          "quantity": 179.7,
+          "amount": 21564.0,
+          "costAmount": 13286.34
+        },
+        {
+          "ref": "accounting-line-0000367",
+          "productRef": "nomen-02",
+          "quantity": 557.0,
+          "amount": 25065.0,
+          "costAmount": 13387.84
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-000634",
+      "number": "ОРП-000634",
+      "date": "2025-03-23",
+      "storeRef": "store-02",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0002227",
+          "productRef": "nomen-09",
+          "quantity": 141.0,
+          "amount": 17625.0,
+          "costAmount": 8289.54
+        },
+        {
+          "ref": "accounting-line-0002228",
+          "productRef": "nomen-04",
+          "quantity": 78.0,
+          "amount": 16380.0,
+          "costAmount": 10810.44
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-000639",
+      "number": "ОРП-000639",
+      "date": "2025-03-23",
+      "storeRef": "store-02",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0002243",
+          "productRef": "nomen-02",
+          "quantity": 203.0,
+          "amount": 9135.0
+        },
+        {
+          "ref": "accounting-line-0002244",
+          "productRef": "nomen-01",
+          "quantity": 67.0,
+          "amount": 5963.0,
+          "costAmount": 4372.5
+        },
+        {
+          "ref": "accounting-line-0002245",
+          "productRef": "nomen-02",
+          "quantity": 182.0,
+          "amount": 8190.0,
+          "costAmount": 4496.85
+        },
+        {
+          "ref": "accounting-line-0002246",
+          "productRef": "nomen-02",
+          "quantity": 112.0,
+          "amount": 5040.0,
+          "costAmount": 2815.24
+        },
+        {
+          "ref": "accounting-line-0002247",
+          "productRef": "nomen-10",
+          "quantity": 48.0,
+          "amount": 5520.0,
+          "costAmount": 3619.86
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-000640",
+      "number": "ОРП-000640",
+      "date": "2025-03-23",
+      "storeRef": "store-02",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0002248",
+          "productRef": "nomen-03",
+          "quantity": 180.0,
+          "amount": 6300.0,
+          "costAmount": 2511.18
+        },
+        {
+          "ref": "accounting-line-0002249",
+          "productRef": "nomen-09",
+          "quantity": 48.0,
+          "amount": 6000.0,
+          "costAmount": 2718.69
+        },
+        {
+          "ref": "accounting-line-0002250",
+          "productRef": "nomen-03",
+          "quantity": 258.0,
+          "amount": 9030.0,
+          "costAmount": 3698.64
+        },
+        {
+          "ref": "accounting-line-0002251",
+          "productRef": "nomen-01",
+          "quantity": 75.0,
+          "amount": 6675.0,
+          "costAmount": 4713.15
+        },
+        {
+          "ref": "accounting-line-0002252",
+          "productRef": "nomen-06",
+          "quantity": 39.0,
+          "amount": 5850.0
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-001095",
+      "number": "ОРП-001095",
+      "date": "2025-03-23",
+      "storeRef": "store-03",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0003840",
+          "productRef": "nomen-08",
+          "quantity": 220.0,
+          "amount": 17160.0,
+          "costAmount": 8997.23
+        },
+        {
+          "ref": "accounting-line-0003841",
+          "productRef": "nomen-02",
+          "quantity": 379.0,
+          "amount": 17055.0,
+          "costAmount": 9567.05
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-001628",
+      "number": "ОРП-001628",
+      "date": "2025-03-23",
+      "storeRef": "store-05",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0005705",
+          "productRef": "nomen-03",
+          "quantity": 656.0,
+          "amount": 20434.4,
+          "discountAmount": 2525.6,
+          "costAmount": 9265.33
+        },
+        {
+          "ref": "accounting-line-0005706",
+          "productRef": "nomen-03",
+          "quantity": 655.0,
+          "amount": 20403.25,
+          "discountAmount": 2521.75,
+          "costAmount": 8951.99
+        },
+        {
+          "ref": "accounting-line-0005707",
+          "productRef": "nomen-03",
+          "quantity": 762.0,
+          "amount": 23736.3,
+          "discountAmount": 2933.7,
+          "costAmount": 10963.42
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-001629",
+      "number": "ОРП-001629",
+      "date": "2025-03-23",
+      "storeRef": "store-05",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0005708",
+          "productRef": "nomen-07",
+          "quantity": 58.65,
+          "amount": 15249.0,
+          "costAmount": 11168.87
+        },
+        {
+          "ref": "accounting-line-0005709",
+          "productRef": "nomen-02",
+          "quantity": 313.0,
+          "amount": 14085.0,
+          "costAmount": 7902.74
+        },
+        {
+          "ref": "accounting-line-0005710",
+          "productRef": "nomen-05",
+          "quantity": 118.95,
+          "amount": 14274.0,
+          "costAmount": 8553.69
+        },
+        {
+          "ref": "accounting-line-0005711",
+          "productRef": "nomen-07",
+          "quantity": 55.3,
+          "amount": 14378.0
+        },
+        {
+          "ref": "accounting-line-0005712",
+          "productRef": "nomen-02",
+          "quantity": 324.0,
+          "amount": 14580.0,
+          "costAmount": 8097.8
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-001631",
+      "number": "ОРП-001631",
+      "date": "2025-03-23",
+      "storeRef": "store-05",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0005716",
+          "productRef": "nomen-01",
+          "quantity": 234.0,
+          "amount": 19159.92,
+          "discountAmount": 1666.08,
+          "costAmount": 14714.0
+        },
+        {
+          "ref": "accounting-line-0005717",
+          "productRef": "nomen-07",
+          "quantity": 84.1,
+          "amount": 20116.72,
+          "discountAmount": 1749.28
+        },
+        {
+          "ref": "accounting-line-0005718",
+          "productRef": "nomen-03",
+          "quantity": 853.0,
+          "amount": 27466.6,
+          "discountAmount": 2388.4,
+          "costAmount": 11865.44
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-000110",
+      "number": "ОРП-000110",
+      "date": "2025-03-24",
+      "storeRef": "store-01",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0000395",
+          "productRef": "nomen-10",
+          "quantity": 127.0,
+          "amount": 13728.7,
+          "discountAmount": 876.3,
+          "costAmount": 9558.07
+        },
+        {
+          "ref": "accounting-line-0000396",
+          "productRef": "nomen-01",
+          "quantity": 175.0,
+          "amount": 14640.5,
+          "discountAmount": 934.5,
+          "costAmount": 11326.89
+        },
+        {
+          "ref": "accounting-line-0000397",
+          "productRef": "nomen-03",
+          "quantity": 549.0,
+          "amount": 18062.1,
+          "discountAmount": 1152.9,
+          "costAmount": 7529.08
+        },
+        {
+          "ref": "accounting-line-0000398",
+          "productRef": "nomen-04",
+          "quantity": 91.0,
+          "amount": 17963.4,
+          "discountAmount": 1146.6,
+          "costAmount": 13324.69
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-000114",
+      "number": "ВЗВ-000114",
+      "date": "2025-03-24",
+      "storeRef": "store-01",
+      "documentType": "return",
+      "lines": [
+        {
+          "ref": "accounting-line-0000411",
+          "productRef": "nomen-03",
+          "quantity": 199.0,
+          "amount": 6965.0
+        },
+        {
+          "ref": "accounting-line-0000412",
+          "productRef": "nomen-08",
+          "quantity": 75.0,
+          "amount": 5850.0
+        },
+        {
+          "ref": "accounting-line-0000413",
+          "productRef": "nomen-08",
+          "quantity": 112.0,
+          "amount": 8736.0,
+          "costAmount": 4592.53
+        },
+        {
+          "ref": "accounting-line-0000414",
+          "productRef": "nomen-10",
+          "quantity": 49.0,
+          "amount": 5635.0,
+          "costAmount": 3727.87
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-000643",
+      "number": "ОРП-000643",
+      "date": "2025-03-24",
+      "storeRef": "store-02",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0002260",
+          "productRef": "nomen-07",
+          "quantity": 42.95,
+          "amount": 10608.65,
+          "discountAmount": 558.35,
+          "costAmount": 8367.99
+        },
+        {
+          "ref": "accounting-line-0002261",
+          "productRef": "nomen-02",
+          "quantity": 472.0,
+          "amount": 20178.0,
+          "discountAmount": 1062.0,
+          "costAmount": 11932.85
+        },
+        {
+          "ref": "accounting-line-0002262",
+          "productRef": "nomen-09",
+          "quantity": 93.0,
+          "amount": 11043.75,
+          "discountAmount": 581.25,
+          "costAmount": 5460.62
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-000645",
+      "number": "ОРП-000645",
+      "date": "2025-03-24",
+      "storeRef": "store-02",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0002265",
+          "productRef": "nomen-03",
+          "quantity": 226.0,
+          "amount": 7910.0,
+          "costAmount": 3146.77
+        },
+        {
+          "ref": "accounting-line-0002266",
+          "productRef": "nomen-07",
+          "quantity": 34.5,
+          "amount": 8970.0,
+          "costAmount": 6774.06
+        },
+        {
+          "ref": "accounting-line-0002267",
+          "productRef": "nomen-01",
+          "quantity": 92.0,
+          "amount": 8188.0
+        },
+        {
+          "ref": "accounting-line-0002268",
+          "productRef": "nomen-02",
+          "quantity": 156.0,
+          "amount": 7020.0,
+          "costAmount": 3875.03
+        },
+        {
+          "ref": "accounting-line-0002269",
+          "productRef": "nomen-08",
+          "quantity": 154.0,
+          "amount": 12012.0,
+          "costAmount": 6233.59
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-001104",
+      "number": "ОРП-001104",
+      "date": "2025-03-24",
+      "storeRef": "store-03",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0003873",
+          "productRef": "nomen-03",
+          "quantity": 551.0,
+          "amount": 19285.0,
+          "costAmount": 7803.23
+        },
+        {
+          "ref": "accounting-line-0003874",
+          "productRef": "nomen-05",
+          "quantity": 155.15,
+          "amount": 18618.0,
+          "costAmount": 11169.11
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-000108",
+      "number": "ОРП-000108",
+      "date": "2025-03-25",
+      "storeRef": "store-01",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0000387",
+          "productRef": "nomen-10",
+          "quantity": 231.0,
+          "amount": 26565.0
+        },
+        {
+          "ref": "accounting-line-0000388",
+          "productRef": "nomen-01",
+          "quantity": 181.0,
+          "amount": 16109.0,
+          "costAmount": 11276.6
+        },
+        {
+          "ref": "accounting-line-0000389",
+          "productRef": "nomen-09",
+          "quantity": 207.0,
+          "amount": 25875.0,
+          "costAmount": 11975.9
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-000641",
+      "number": "ОРП-000641",
+      "date": "2025-03-25",
+      "storeRef": "store-02",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0002253",
+          "productRef": "nomen-03",
+          "quantity": 296.0,
+          "amount": 10360.0,
+          "costAmount": 4096.86
+        },
+        {
+          "ref": "accounting-line-0002254",
+          "productRef": "nomen-02",
+          "quantity": 361.0,
+          "amount": 16245.0,
+          "costAmount": 8864.45
+        },
+        {
+          "ref": "accounting-line-0002255",
+          "productRef": "nomen-08",
+          "quantity": 223.0,
+          "amount": 17394.0,
+          "costAmount": 9273.66
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-001103",
+      "number": "ОРП-001103",
+      "date": "2025-03-25",
+      "storeRef": "store-03",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0003871",
+          "productRef": "nomen-09",
+          "quantity": 166.0,
+          "amount": 17845.0,
+          "discountAmount": 2905.0,
+          "costAmount": 9606.11
+        },
+        {
+          "ref": "accounting-line-0003872",
+          "productRef": "nomen-08",
+          "quantity": 220.0,
+          "amount": 14757.6,
+          "discountAmount": 2402.4
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-001107",
+      "number": "ОРП-001107",
+      "date": "2025-03-25",
+      "storeRef": "store-03",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0003881",
+          "productRef": "nomen-03",
+          "quantity": 229.0,
+          "amount": 8015.0,
+          "costAmount": 3205.62
+        },
+        {
+          "ref": "accounting-line-0003882",
+          "productRef": "nomen-10",
+          "quantity": 47.0,
+          "amount": 5405.0,
+          "costAmount": 3607.02
+        },
+        {
+          "ref": "accounting-line-0003883",
+          "productRef": "nomen-02",
+          "quantity": 117.0,
+          "amount": 5265.0
+        },
+        {
+          "ref": "accounting-line-0003884",
+          "productRef": "nomen-08",
+          "quantity": 138.0,
+          "amount": 10764.0,
+          "costAmount": 5521.99
+        },
+        {
+          "ref": "accounting-line-0003885",
+          "productRef": "nomen-05",
+          "quantity": 70.5,
+          "amount": 8460.0
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-001108",
+      "number": "ОРП-001108",
+      "date": "2025-03-25",
+      "storeRef": "store-03",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0003886",
+          "productRef": "nomen-01",
+          "quantity": 137.0,
+          "amount": 12193.0
+        },
+        {
+          "ref": "accounting-line-0003887",
+          "productRef": "nomen-04",
+          "quantity": 37.0,
+          "amount": 7770.0,
+          "costAmount": 5245.82
+        },
+        {
+          "ref": "accounting-line-0003888",
+          "productRef": "nomen-02",
+          "quantity": 184.0,
+          "amount": 8280.0,
+          "costAmount": 4563.21
+        },
+        {
+          "ref": "accounting-line-0003889",
+          "productRef": "nomen-04",
+          "quantity": 46.0,
+          "amount": 9660.0,
+          "costAmount": 6496.3
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-001637",
+      "number": "ОРП-001637",
+      "date": "2025-03-25",
+      "storeRef": "store-05",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0005740",
+          "productRef": "nomen-07",
+          "quantity": 124.05,
+          "amount": 32253.0,
+          "costAmount": 24047.19
+        },
+        {
+          "ref": "accounting-line-0005741",
+          "productRef": "nomen-04",
+          "quantity": 195.0,
+          "amount": 40950.0,
+          "costAmount": 27702.03
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-000107",
+      "number": "ОРП-000107",
+      "date": "2025-03-26",
+      "storeRef": "store-01",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0000385",
+          "productRef": "nomen-10",
+          "quantity": 302.0,
+          "amount": 34730.0,
+          "costAmount": 23522.35
+        },
+        {
+          "ref": "accounting-line-0000386",
+          "productRef": "nomen-01",
+          "quantity": 379.0,
+          "amount": 33731.0
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-000109",
+      "number": "ОРП-000109",
+      "date": "2025-03-26",
+      "storeRef": "store-01",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0000390",
+          "productRef": "nomen-10",
+          "quantity": 104.0,
+          "amount": 11960.0,
+          "costAmount": 7796.52
+        },
+        {
+          "ref": "accounting-line-0000391",
+          "productRef": "nomen-01",
+          "quantity": 184.0,
+          "amount": 16376.0,
+          "costAmount": 11573.65
+        },
+        {
+          "ref": "accounting-line-0000392",
+          "productRef": "nomen-05",
+          "quantity": 128.9,
+          "amount": 15468.0,
+          "costAmount": 9358.05
+        },
+        {
+          "ref": "accounting-line-0000393",
+          "productRef": "nomen-02",
+          "quantity": 361.0,
+          "amount": 16245.0,
+          "costAmount": 8895.99
+        },
+        {
+          "ref": "accounting-line-0000394",
+          "productRef": "nomen-08",
+          "quantity": 108.0,
+          "amount": 8424.0,
+          "costAmount": 4354.42
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-000648",
+      "number": "ОРП-000648",
+      "date": "2025-03-26",
+      "storeRef": "store-02",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0002278",
+          "productRef": "nomen-01",
+          "quantity": 121.0,
+          "amount": 10769.0
+        },
+        {
+          "ref": "accounting-line-0002279",
+          "productRef": "nomen-03",
+          "quantity": 382.0,
+          "amount": 13370.0,
+          "costAmount": 5237.52
+        },
+        {
+          "ref": "accounting-line-0002280",
+          "productRef": "nomen-03",
+          "quantity": 347.0,
+          "amount": 12145.0,
+          "costAmount": 5001.92
+        },
+        {
+          "ref": "accounting-line-0002281",
+          "productRef": "nomen-08",
+          "quantity": 100.0,
+          "amount": 7800.0,
+          "costAmount": 4091.53
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-001102",
+      "number": "ОРП-001102",
+      "date": "2025-03-26",
+      "storeRef": "store-03",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0003869",
+          "productRef": "nomen-03",
+          "quantity": 645.0,
+          "amount": 22575.0,
+          "costAmount": 9168.44
+        },
+        {
+          "ref": "accounting-line-0003870",
+          "productRef": "nomen-10",
+          "quantity": 133.0,
+          "amount": 15295.0,
+          "costAmount": 10291.86
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-001106",
+      "number": "ОРП-001106",
+      "date": "2025-03-26",
+      "storeRef": "store-03",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0003878",
+          "productRef": "nomen-03",
+          "quantity": 314.0,
+          "amount": 10990.0,
+          "costAmount": 4497.97
+        },
+        {
+          "ref": "accounting-line-0003879",
+          "productRef": "nomen-02",
+          "quantity": 286.0,
+          "amount": 12870.0,
+          "costAmount": 7124.3
+        },
+        {
+          "ref": "accounting-line-0003880",
+          "productRef": "nomen-02",
+          "quantity": 312.0,
+          "amount": 14040.0,
+          "costAmount": 7781.03
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-001633",
+      "number": "ОРП-001633",
+      "date": "2025-03-26",
+      "storeRef": "store-05",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0005724",
+          "productRef": "nomen-10",
+          "quantity": 93.0,
+          "amount": 9197.7,
+          "discountAmount": 1497.3,
+          "costAmount": 7205.28
+        },
+        {
+          "ref": "accounting-line-0005725",
+          "productRef": "nomen-01",
+          "quantity": 211.0,
+          "amount": 16149.94,
+          "discountAmount": 2629.06,
+          "costAmount": 13571.05
+        },
+        {
+          "ref": "accounting-line-0005726",
+          "productRef": "nomen-07",
+          "quantity": 38.25,
+          "amount": 8552.7,
+          "discountAmount": 1392.3,
+          "costAmount": 7565.92
+        },
+        {
+          "ref": "accounting-line-0005727",
+          "productRef": "nomen-08",
+          "quantity": 248.0,
+          "amount": 16635.84,
+          "discountAmount": 2708.16,
+          "costAmount": 10135.41
+        },
+        {
+          "ref": "accounting-line-0005728",
+          "productRef": "nomen-08",
+          "quantity": 186.0,
+          "amount": 12476.88,
+          "discountAmount": 2031.12,
+          "costAmount": 7746.75
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-000113",
+      "number": "ОРП-000113",
+      "date": "2025-03-27",
+      "storeRef": "store-01",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0000406",
+          "productRef": "nomen-01",
+          "quantity": 148.0,
+          "amount": 12249.96,
+          "discountAmount": 922.04,
+          "costAmount": 9663.91
+        },
+        {
+          "ref": "accounting-line-0000407",
+          "productRef": "nomen-05",
+          "quantity": 73.7,
+          "amount": 8224.92,
+          "discountAmount": 619.08,
+          "costAmount": 5331.33
+        },
+        {
+          "ref": "accounting-line-0000408",
+          "productRef": "nomen-08",
+          "quantity": 170.0,
+          "amount": 12331.8,
+          "discountAmount": 928.2,
+          "costAmount": 6830.88
+        },
+        {
+          "ref": "accounting-line-0000409",
+          "productRef": "nomen-04",
+          "quantity": 81.0,
+          "amount": 15819.3,
+          "discountAmount": 1190.7,
+          "costAmount": 11909.73
+        },
+        {
+          "ref": "accounting-line-0000410",
+          "productRef": "nomen-05",
+          "quantity": 134.4,
+          "amount": 14999.04,
+          "discountAmount": 1128.96
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-000112",
+      "number": "ОРП-000112",
+      "date": "2025-03-28",
+      "storeRef": "store-01",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0000401",
+          "productRef": "nomen-08",
+          "quantity": 180.0,
+          "amount": 14040.0
+        },
+        {
+          "ref": "accounting-line-0000402",
+          "productRef": "nomen-08",
+          "quantity": 206.0,
+          "amount": 16068.0,
+          "costAmount": 8520.18
+        },
+        {
+          "ref": "accounting-line-0000403",
+          "productRef": "nomen-09",
+          "quantity": 107.0,
+          "amount": 13375.0
+        },
+        {
+          "ref": "accounting-line-0000404",
+          "productRef": "nomen-08",
+          "quantity": 171.0,
+          "amount": 13338.0,
+          "costAmount": 6951.02
+        },
+        {
+          "ref": "accounting-line-0000405",
+          "productRef": "nomen-07",
+          "quantity": 44.75,
+          "amount": 11635.0,
+          "costAmount": 8793.03
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-000642",
+      "number": "ОРП-000642",
+      "date": "2025-03-28",
+      "storeRef": "store-02",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0002256",
+          "productRef": "nomen-06",
+          "quantity": 76.0,
+          "amount": 11400.0,
+          "costAmount": 5690.02
+        },
+        {
+          "ref": "accounting-line-0002257",
+          "productRef": "nomen-03",
+          "quantity": 258.0,
+          "amount": 9030.0,
+          "costAmount": 3602.14
+        },
+        {
+          "ref": "accounting-line-0002258",
+          "productRef": "nomen-10",
+          "quantity": 129.0,
+          "amount": 14835.0,
+          "costAmount": 9937.93
+        },
+        {
+          "ref": "accounting-line-0002259",
+          "productRef": "nomen-07",
+          "quantity": 33.6,
+          "amount": 8736.0,
+          "costAmount": 6482.32
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-001636",
+      "number": "ОРП-001636",
+      "date": "2025-03-28",
+      "storeRef": "store-05",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0005737",
+          "productRef": "nomen-01",
+          "quantity": 332.0,
+          "amount": 29548.0,
+          "costAmount": 20716.91
+        },
+        {
+          "ref": "accounting-line-0005738",
+          "productRef": "nomen-02",
+          "quantity": 510.0,
+          "amount": 22950.0,
+          "costAmount": 12982.05
+        },
+        {
+          "ref": "accounting-line-0005739",
+          "productRef": "nomen-01",
+          "quantity": 233.0,
+          "amount": 20737.0,
+          "costAmount": 14508.75
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-000111",
+      "number": "ОРП-000111",
+      "date": "2025-03-29",
+      "storeRef": "store-01",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0000399",
+          "productRef": "nomen-06",
+          "quantity": 244.0,
+          "amount": 36600.0
+        },
+        {
+          "ref": "accounting-line-0000400",
+          "productRef": "nomen-10",
+          "quantity": 277.0,
+          "amount": 31855.0,
+          "costAmount": 20967.51
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-000644",
+      "number": "ОРП-000644",
+      "date": "2025-03-29",
+      "storeRef": "store-02",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0002263",
+          "productRef": "nomen-03",
+          "quantity": 630.0,
+          "amount": 22050.0,
+          "costAmount": 9077.33
+        },
+        {
+          "ref": "accounting-line-0002264",
+          "productRef": "nomen-07",
+          "quantity": 84.65,
+          "amount": 22009.0,
+          "costAmount": 16155.97
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-000647",
+      "number": "ОРП-000647",
+      "date": "2025-03-29",
+      "storeRef": "store-02",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0002275",
+          "productRef": "nomen-03",
+          "quantity": 369.0,
+          "amount": 12915.0
+        },
+        {
+          "ref": "accounting-line-0002276",
+          "productRef": "nomen-03",
+          "quantity": 472.0,
+          "amount": 16520.0,
+          "costAmount": 6488.75
+        },
+        {
+          "ref": "accounting-line-0002277",
+          "productRef": "nomen-02",
+          "quantity": 325.0,
+          "amount": 14625.0
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-001105",
+      "number": "ОРП-001105",
+      "date": "2025-03-29",
+      "storeRef": "store-03",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0003875",
+          "productRef": "nomen-07",
+          "quantity": 52.45,
+          "amount": 13637.0,
+          "costAmount": 10002.92
+        },
+        {
+          "ref": "accounting-line-0003876",
+          "productRef": "nomen-03",
+          "quantity": 318.0,
+          "amount": 11130.0
+        },
+        {
+          "ref": "accounting-line-0003877",
+          "productRef": "nomen-07",
+          "quantity": 50.5,
+          "amount": 13130.0,
+          "costAmount": 9686.01
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-000646",
+      "number": "ОРП-000646",
+      "date": "2025-03-30",
+      "storeRef": "store-02",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0002270",
+          "productRef": "nomen-01",
+          "quantity": 131.0,
+          "amount": 11659.0,
+          "costAmount": 8584.46
+        },
+        {
+          "ref": "accounting-line-0002271",
+          "productRef": "nomen-10",
+          "quantity": 57.0,
+          "amount": 6555.0
+        },
+        {
+          "ref": "accounting-line-0002272",
+          "productRef": "nomen-02",
+          "quantity": 173.0,
+          "amount": 7785.0,
+          "costAmount": 4328.22
+        },
+        {
+          "ref": "accounting-line-0002273",
+          "productRef": "nomen-01",
+          "quantity": 72.0,
+          "amount": 6408.0
+        },
+        {
+          "ref": "accounting-line-0002274",
+          "productRef": "nomen-03",
+          "quantity": 335.0,
+          "amount": 11725.0
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-001109",
+      "number": "ОРП-001109",
+      "date": "2025-03-30",
+      "storeRef": "store-03",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0003890",
+          "productRef": "nomen-09",
+          "quantity": 53.0,
+          "amount": 6625.0,
+          "costAmount": 2967.27
+        },
+        {
+          "ref": "accounting-line-0003891",
+          "productRef": "nomen-03",
+          "quantity": 185.0,
+          "amount": 6475.0
+        },
+        {
+          "ref": "accounting-line-0003892",
+          "productRef": "nomen-02",
+          "quantity": 196.0,
+          "amount": 8820.0,
+          "costAmount": 4861.08
+        },
+        {
+          "ref": "accounting-line-0003893",
+          "productRef": "nomen-09",
+          "quantity": 67.0,
+          "amount": 8375.0,
+          "costAmount": 3857.14
+        },
+        {
+          "ref": "accounting-line-0003894",
+          "productRef": "nomen-10",
+          "quantity": 66.0,
+          "amount": 7590.0,
+          "costAmount": 4859.28
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-001634",
+      "number": "ОРП-001634",
+      "date": "2025-03-30",
+      "storeRef": "store-05",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0005729",
+          "productRef": "nomen-07",
+          "quantity": 103.25,
+          "amount": 25502.75,
+          "discountAmount": 1342.25,
+          "costAmount": 20080.32
+        },
+        {
+          "ref": "accounting-line-0005730",
+          "productRef": "nomen-02",
+          "quantity": 474.0,
+          "amount": 20263.5,
+          "discountAmount": 1066.5
+        },
+        {
+          "ref": "accounting-line-0005731",
+          "productRef": "nomen-09",
+          "quantity": 201.0,
+          "amount": 23868.75,
+          "discountAmount": 1256.25
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-001635",
+      "number": "ОРП-001635",
+      "date": "2025-03-30",
+      "storeRef": "store-05",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0005732",
+          "productRef": "nomen-04",
+          "quantity": 57.0,
+          "amount": 11970.0,
+          "costAmount": 8202.18
+        },
+        {
+          "ref": "accounting-line-0005733",
+          "productRef": "nomen-02",
+          "quantity": 229.0,
+          "amount": 10305.0,
+          "costAmount": 5804.13
+        },
+        {
+          "ref": "accounting-line-0005734",
+          "productRef": "nomen-10",
+          "quantity": 146.0,
+          "amount": 16790.0,
+          "costAmount": 10959.73
+        },
+        {
+          "ref": "accounting-line-0005735",
+          "productRef": "nomen-01",
+          "quantity": 224.0,
+          "amount": 19936.0,
+          "costAmount": 14445.13
+        },
+        {
+          "ref": "accounting-line-0005736",
+          "productRef": "nomen-02",
+          "quantity": 318.0,
+          "amount": 14310.0,
+          "costAmount": 7668.3
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-001111",
+      "number": "ОРП-001111",
+      "date": "2025-03-31",
+      "storeRef": "store-03",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0003898",
+          "productRef": "nomen-07",
+          "quantity": 76.9,
+          "amount": 18594.42,
+          "discountAmount": 1399.58
+        },
+        {
+          "ref": "accounting-line-0003899",
+          "productRef": "nomen-08",
+          "quantity": 213.0,
+          "amount": 15451.02,
+          "discountAmount": 1162.98,
+          "costAmount": 8531.87
+        },
+        {
+          "ref": "accounting-line-0003900",
+          "productRef": "nomen-03",
+          "quantity": 492.0,
+          "amount": 16014.6,
+          "discountAmount": 1205.4,
+          "costAmount": 6998.45
+        },
+        {
+          "ref": "accounting-line-0003901",
+          "productRef": "nomen-05",
+          "quantity": 78.95,
+          "amount": 8810.82,
+          "discountAmount": 663.18,
+          "costAmount": 5663.35
+        }
+      ]
+    },
+    {
+      "ref": "accounting-doc-001113",
+      "number": "ОРП-001113",
+      "date": "2025-03-31",
+      "storeRef": "store-03",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "accounting-line-0003906",
+          "productRef": "nomen-02",
+          "quantity": 217.0,
+          "amount": 8983.8,
+          "discountAmount": 781.2,
+          "costAmount": 5509.03
+        },
+        {
+          "ref": "accounting-line-0003907",
+          "productRef": "nomen-10",
+          "quantity": 132.0,
+          "amount": 13965.6,
+          "discountAmount": 1214.4
+        },
+        {
+          "ref": "accounting-line-0003908",
+          "productRef": "nomen-01",
+          "quantity": 196.0,
+          "amount": 16048.48,
+          "discountAmount": 1395.52,
+          "costAmount": 12409.63
+        },
+        {
+          "ref": "accounting-line-0003909",
+          "productRef": "nomen-05",
+          "quantity": 174.8,
+          "amount": 19297.92,
+          "discountAmount": 1678.08,
+          "costAmount": 12315.08
+        }
+      ]
+    }
+  ]
+}

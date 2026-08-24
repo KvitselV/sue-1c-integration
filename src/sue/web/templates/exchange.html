@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ title }} · СУЭ</title>
+  <link rel="icon" href="/static/favicon.png" />
+  <link rel="stylesheet" href="/static/styles.css?v={{ app_version }}" />
+</head>
+<body class="xls-page">
+  <div class="xls">
+    <header class="xls-bar">
+      <p class="xls-file">
+        <span class="xls-mark">X</span>
+        {{ (meta.exchangeId or exchange_id or "пакет") ~ ".xlsx" }}
+      </p>
+      <form class="xls-tools" method="get" action="/ui/exchange">
+        <label>
+          Сценарий
+          <select name="scenario" onchange="this.form.exchange_id.disabled=true; this.form.submit()">
+            {% for item in scenarios %}
+            <option value="{{ item.id }}"{% if item.id == scenario %} selected{% endif %}>{{ item.label }}</option>
+            {% endfor %}
+          </select>
+        </label>
+        <label>
+          Лист-пакет
+          <select name="exchange_id">
+            {% for item in batches %}
+            <option value="{{ item.exchange_id }}"{% if item.exchange_id == exchange_id %} selected{% endif %}>
+              {{ item.exchange_id }}
+            </option>
+            {% endfor %}
+          </select>
+        </label>
+        <button type="submit">Открыть</button>
+      </form>
+    </header>
+
+    {% if error %}
+    <p class="xls-empty">{{ error }}</p>
+    {% else %}
+    <div class="xls-book">
+      <section class="xls-sheet is-on" data-sheet="stores">
+        <table>
+          <thead>
+            <tr>
+              <th class="xls-corner"></th>
+              <th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th>
+            </tr>
+            <tr class="xls-head">
+              <th>1</th>
+              <th>Код</th><th>Название</th><th>Город</th><th>Формат</th><th>Активна</th><th>Ссылка</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for row in stores %}
+            <tr>
+              <th>{{ loop.index + 1 }}</th>
+              <td>{{ row.code }}</td>
+              <td>{{ row.name }}</td>
+              <td>{{ row.city }}</td>
+              <td>{{ row.format }}</td>
+              <td>{{ row.active }}</td>
+              <td>{{ row.ref }}</td>
+            </tr>
+            {% else %}
+            <tr><th>2</th><td colspan="6">Нет строк</td></tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </section>
+
+      <section class="xls-sheet" data-sheet="products">
+        <table>
+          <thead>
+            <tr>
+              <th class="xls-corner"></th>
+              <th>A</th><th>B</th><th>C</th><th>D</th><th>E</th>
+            </tr>
+            <tr class="xls-head">
+              <th>1</th>
+              <th>Артикул</th><th>Название</th><th>Категория</th><th>Ед.</th><th>Ссылка</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for row in products %}
+            <tr>
+              <th>{{ loop.index + 1 }}</th>
+              <td>{{ row.sku }}</td>
+              <td>{{ row.name }}</td>
+              <td>{{ row.category }}</td>
+              <td>{{ row.unit }}</td>
+              <td>{{ row.ref }}</td>
+            </tr>
+            {% else %}
+            <tr><th>2</th><td colspan="5">Нет строк</td></tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </section>
+
+      <section class="xls-sheet" data-sheet="documents">
+        <table>
+          <thead>
+            <tr>
+              <th class="xls-corner"></th>
+              <th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th>
+            </tr>
+            <tr class="xls-head">
+              <th>1</th>
+              <th>Дата</th><th>Тип</th><th>Номер</th><th>ТТ</th><th>Строк</th><th>Сумма</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for row in documents %}
+            <tr>
+              <th>{{ loop.index + 1 }}</th>
+              <td>{{ row.date }}</td>
+              <td>{{ row.doc_type }}</td>
+              <td>{{ row.number }}</td>
+              <td>{{ row.store }}</td>
+              <td class="num">{{ row.lines }}</td>
+              <td class="num">{{ row.amount | money_exact }}</td>
+            </tr>
+            {% else %}
+            <tr><th>2</th><td colspan="6">Нет строк</td></tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </section>
+
+      <section class="xls-sheet" data-sheet="lines">
+        <table>
+          <thead>
+            <tr>
+              <th class="xls-corner"></th>
+              <th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th>
+            </tr>
+            <tr class="xls-head">
+              <th>1</th>
+              <th>Документ</th><th>Артикул</th><th>Номенклатура</th><th>Кол-во</th><th>Сумма</th><th>Скидка</th><th>Себест.</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for row in lines %}
+            <tr>
+              <th>{{ loop.index + 1 }}</th>
+              <td>{{ row.doc_number }}</td>
+              <td>{{ row.sku }}</td>
+              <td>{{ row.name }}</td>
+              <td class="num">{{ row.quantity if row.quantity is not none else "" }}</td>
+              <td class="num">{{ row.amount | money_exact }}</td>
+              <td class="num">{{ row.discount | money_exact }}</td>
+              <td class="num">{{ row.cost | money_exact }}</td>
+            </tr>
+            {% else %}
+            <tr><th>2</th><td colspan="7">Нет строк</td></tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </section>
+    </div>
+
+    <nav class="xls-tabs" aria-label="Листы книги">
+      <button type="button" class="xls-tab is-on" data-sheet="stores">Точки</button>
+      <button type="button" class="xls-tab" data-sheet="products">Номенклатура</button>
+      <button type="button" class="xls-tab" data-sheet="documents">Документы</button>
+      <button type="button" class="xls-tab" data-sheet="lines">Строки</button>
+      <p class="xls-status">
+        {% if lines_shown < lines_total %}строк {{ lines_shown }} из {{ lines_total }}{% else %}строк {{ lines_total }}{% endif %}
+        · не живая база 1С · СУЭ
+      </p>
+    </nav>
+    {% endif %}
+  </div>
+  <script>
+  document.querySelectorAll(".xls-tab").forEach((tab) => {
+    tab.addEventListener("click", () => {
+      document.querySelectorAll(".xls-tab, .xls-sheet").forEach((el) => el.classList.remove("is-on"));
+      tab.classList.add("is-on");
+      const sheet = document.querySelector(`.xls-sheet[data-sheet="${tab.dataset.sheet}"]`);
+      if (sheet) sheet.classList.add("is-on");
+    });
+  });
+  </script>
+</body>
+</html>

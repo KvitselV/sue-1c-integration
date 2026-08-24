@@ -1,0 +1,26 @@
+<form class="filter" method="get" action="{{ action }}">
+  <label>
+    <span>Период с</span>
+    <input class="sue-date" type="date" name="date_from" value="{{ period.date_from or '' }}" />
+  </label>
+  <label>
+    <span>по</span>
+    <input class="sue-date" type="date" name="date_to" value="{{ period.date_to or '' }}" />
+  </label>
+  <button class="btn" type="submit">
+    <svg class="icon"><use href="#i-check"></use></svg> Применить
+  </button>
+  {% if period.date_from or period.date_to %}
+  <a class="btn ghost" href="{{ action }}">Сбросить</a>
+  {% endif %}
+  {% if csv_action %}
+  <a class="btn ghost" href="{{ csv_action }}{% if period.date_from %}?date_from={{ period.date_from }}{% endif %}{% if period.date_to %}{{ '&' if period.date_from else '?' }}date_to={{ period.date_to }}{% endif %}">
+    <svg class="icon"><use href="#i-db"></use></svg> CSV
+  </a>
+  {% endif %}
+  {% if pdf_action %}
+  <a class="btn ghost" href="{{ pdf_action }}{% if period.date_from %}?date_from={{ period.date_from }}{% endif %}{% if period.date_to %}{{ '&' if period.date_from else '?' }}date_to={{ period.date_to }}{% endif %}">
+    <svg class="icon"><use href="#i-pdf"></use></svg> PDF
+  </a>
+  {% endif %}
+</form>

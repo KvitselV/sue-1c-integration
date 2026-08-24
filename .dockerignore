@@ -1,0 +1,22 @@
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.git/
+.gitignore
+.github/
+htmlcov/
+.coverage
+coverage.xml
+
+# локальные данные и секреты
+.env
+data/*.db
+data/*.sqlite
+data/fixtures/large/
+
+# материалы работы не нужны в образе приложения
+thesis/

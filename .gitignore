@@ -1,0 +1,27 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.env
+data/sue.db
+data/*.db
+data/*.db-*
+data/reports/
+data/fixtures/large/
+*.egg-info/
+dist/
+build/
+htmlcov/
+.coverage
+coverage.xml
+.DS_Store
+
+# Материалы, не относящиеся к исходному коду приложения
+thesis/
+AGENT*.md
+CLAUDE.md
+SCOPE.md
+MESSAGE_TO_SUPERVISOR.md
+PRODUCTION_READINESS_PLAN.md

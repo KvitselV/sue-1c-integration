@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+{% from "_macros.html" import hint, term %}
+{% block content %}
+<div class="eyebrow">
+  <svg class="icon"><use href="#i-chart"></use></svg>
+  Анализ эффективности
+</div>
+<h1>Рентабельность торговых точек</h1>
+<p class="lead">
+  {{ term("Выручка", "Реализация за вычетом возвратов. Источник — учёт.") }}
+  и {{ term("маржа", "Валовая — после себестоимости. Операционная — после модельных накладных.") }}.
+  Накладные — {{ term("модель", "Аллокация доли выручки. Это не учётная проводка.") }}.
+</p>
+
+{% with action = "/ui/profitability", csv_action = "/api/profitability.csv" %}
+  {% include "_period_filter.html" %}
+{% endwith %}
+
+<p class="tiny">
+  <a href="/api/mart/kpi">Витрина</a> ·
+  <a href="/api/mart/kpi.csv">CSV</a> ·
+  <a href="/ui/compare">Сравнение периодов</a>
+</p>
+
+<section class="stats">
+  <div class="stat">
+    <div class="stat-top"><span class="stat-label">Точек</span>
+      <span class="icon-bubble green"><svg class="icon"><use href="#i-store"></use></svg></span></div>
+    <div class="stat-value">{{ kpis.stores }}</div>
+  </div>
+  <div class="stat">
+    <div class="stat-top"><span class="stat-label">Выручка</span>
+      <span class="icon-bubble blue"><svg class="icon"><use href="#i-chart"></use></svg></span></div>
+    <div class="stat-value">{{ kpis.revenue | money }}</div>
+  </div>
+  <div class="stat">
+    <div class="stat-top"><span class="stat-label">{{ term("Ср. вал. %", "Средняя валовая рентабельность точек.") }}</span>
+      <span class="icon-bubble gray"><svg class="icon"><use href="#i-mix"></use></svg></span></div>
+    <div class="stat-value">{{ kpis.avg_gross_margin | pct }}%</div>
+  </div>
+  <div class="stat">
+    <div class="stat-top"><span class="stat-label">{{ term("Ср. опер. %", "После модельных накладных. Оценка — по управленческим порогам.") }}</span>
+      <span class="icon-bubble amber"><svg class="icon"><use href="#i-trend"></use></svg></span></div>
+    <div class="stat-value">{{ kpis.avg_op_margin | pct }}%</div>
+  </div>
+</section>
+
+<section class="grid-2">
+  <div class="panel">
+    <h2><svg class="icon"><use href="#i-chart"></use></svg> Выручка по ТТ</h2>
+    {% if rows %}
+    <div class="chart-box"><canvas id="pRevenue"></canvas></div>
+    {% else %}
+    <p class="muted">Нет данных за выбранный период.</p>
+    {% endif %}
+  </div>
+  <div class="panel">
+    <h2><svg class="icon"><use href="#i-trend"></use></svg> Маржа {{ hint("Валовая и операционная рентабельность по точкам, %.") }}</h2>
+    {% if rows %}
+    <div class="chart-box"><canvas id="pMargins"></canvas></div>
+    {% else %}
+    <p class="muted">Нет данных за выбранный период.</p>
+    {% endif %}
+  </div>
+</section>
+
+<section class="panel" style="margin-top:1rem">
+  <h2><svg class="icon"><use href="#i-store"></use></svg> Показатели {{ hint("Числа в таблице. Происхождение колонки — в подсказке заголовка.") }}</h2>
+  <div class="table-wrap">
+    <table class="wide">
+      <thead>
+        <tr>
+          <th>ТТ</th>
+          <th class="num">{{ term("Выручка", "Реализация минус возвраты. Учёт.") }}</th>
+          <th class="num">{{ term("Возвр.", "Сумма возвратов. Учёт.") }}</th>
+          <th class="num">{{ term("Себест.", "Учётная, если есть в пакете; иначе модель по категории.") }}</th>
+          <th class="num">{{ term("Вал. %", "Валовая рентабельность. Расчёт.") }}</th>
+          <th class="num">{{ term("Накл.", "Доля выручки по модельной ставке.") }}</th>
+          <th class="num">{{ term("Опер. %", "После накладных. Расчёт. Оценка — модель.") }}</th>
+          <th>{{ term("Оценка", "Сравнение операционной рентабельности с управленческими порогами.") }}</th>
+          <th>{{ term("С/с", "Доля учётной себестоимости. Остальное — модель.") }}</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in rows %}
+        <tr>
+          <td class="store-cell">
+            <strong>{{ row.store_code }}</strong>
+            <span class="muted" title="{{ row.store_name }} · {{ row.city or '—' }}">{{ row.store_name }}</span>
+          </td>
+          <td class="num">{{ row.revenue.value | money }}</td>
+          <td class="num">{{ row.returns.value | money }}</td>
+          <td class="num">{{ row.cost.value | money }}</td>
+          <td class="num">{{ row.gross_margin_pct.value | pct }}%</td>
+          <td class="num">{{ row.overhead.value | money }}</td>
+          <td class="num">{{ row.operating_margin_pct.value | pct }}%</td>
+          <td>
+            {% set status = row.operating_margin_pct.value | margin_status %}
+            <span class="badge {{ status }}">{{ status | ru_margin_status }}</span>
+          </td>
+          <td title="учёт {{ row.cost_accounting_share_pct | pct(0) }}% / модель {{ row.cost_modeled_share_pct | pct(0) }}% · {{ row.lines_without_cost }} из {{ row.lines }} строк без себестоимости">
+            <div class="progress"><span style="width: {{ row.cost_accounting_share_pct|round }}%"></span></div>
+          </td>
+          <td class="num">
+            <a class="btn ghost tiny" href="/ui/profitability/{{ row.store_id }}">карточка</a>
+          </td>
+        </tr>
+        {% else %}
+        <tr><td colspan="10">Нет данных за выбранный период. Выполните загрузку данных.</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<script id="profit-charts" type="application/json">{{ charts | tojson }}</script>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const charts = SUE.parseJsonScript("profit-charts");
+  if (!charts || !charts.revenue_by_store.labels.length) return;
+  const c = SUE.colors;
+  SUE.makeBar(document.getElementById("pRevenue"), charts.revenue_by_store.labels, [{
+    label: "Выручка, ₽", data: charts.revenue_by_store.values,
+    backgroundColor: c.softGreen, borderColor: c.green, borderWidth: 1.5, borderRadius: 8,
+  }]);
+  SUE.makeBar(document.getElementById("pMargins"), charts.margins_by_store.labels, [
+    { label: "Валовая, %", data: charts.margins_by_store.gross, backgroundColor: c.softBlue, borderColor: c.blue, borderWidth: 1.5, borderRadius: 8 },
+    { label: "Операционная, %", data: charts.margins_by_store.operating, backgroundColor: c.softAmber, borderColor: c.amber, borderWidth: 1.5, borderRadius: 8 },
+  ], { percent: true });
+});
+</script>
+{% endblock %}

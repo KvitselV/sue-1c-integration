@@ -1,0 +1,13 @@
+# Переопределения для контура, близкого к промышленному.
+# Использование: docker compose -f docker-compose.yml -f docker-compose.prod.yml up --build -d
+# Ключ задайте в .env (SUE_API_KEY). Пустой ключ при SUE_PROTECT_READ=true не стартует.
+
+services:
+  api:
+    environment:
+      SUE_APP_ENV: production
+      SUE_LOG_JSON: "true"
+      SUE_ALLOW_LOCAL_PATH_IMPORT: "false"
+      SUE_PROTECT_READ: "false"
+      SUE_API_KEY: ${SUE_API_KEY:-}
+      SUE_ENABLE_EMULATOR: "false"

@@ -1,0 +1,1130 @@
+{
+  "meta": {
+    "contractVersion": "2.0",
+    "exchangeId": "EX-RETURNS_HEAVY-006",
+    "sourceSystem": "1C:Retail",
+    "configuration": "1С:Розница 3.0 (контракт файлового обмена)",
+    "exportedAt": "2026-05-26T10:00:00Z",
+    "currency": "RUB",
+    "periodFrom": "2025-11-04",
+    "periodTo": "2025-11-30",
+    "comment": "Синтетические данные, структурно совместимые с контрактом обмена 1С:Розница. Не являются выгрузкой реальной информационной базы. Пакет 6 из 12, сценарий «returns_heavy»."
+  },
+  "stores": [
+    {
+      "ref": "store-03",
+      "code": "TT-03",
+      "name": "ТТ Южная",
+      "city": "Набережные Челны",
+      "format": "у дома",
+      "isActive": true
+    }
+  ],
+  "products": [
+    {
+      "ref": "nomen-01",
+      "sku": "MLK-1L",
+      "name": "Молоко 3,2% 1 л",
+      "category": "Молочная продукция",
+      "unit": "шт"
+    },
+    {
+      "ref": "nomen-02",
+      "sku": "BRD-500",
+      "name": "Хлеб белый 500 г",
+      "category": "Хлеб",
+      "unit": "шт"
+    },
+    {
+      "ref": "nomen-03",
+      "sku": "WTR-05",
+      "name": "Вода питьевая 0,5 л",
+      "category": "Напитки",
+      "unit": "шт"
+    },
+    {
+      "ref": "nomen-04",
+      "sku": "CHS-200",
+      "name": "Сыр полутвёрдый 200 г",
+      "category": "Молочная продукция",
+      "unit": "шт"
+    },
+    {
+      "ref": "nomen-05",
+      "sku": "APL-1KG",
+      "name": "Яблоки, кг",
+      "category": "Овощи и фрукты",
+      "unit": "кг"
+    },
+    {
+      "ref": "nomen-06",
+      "sku": "TEA-25",
+      "name": "Чай чёрный 25 пак.",
+      "category": "Бакалея",
+      "unit": "шт"
+    },
+    {
+      "ref": "nomen-07",
+      "sku": "CHK-1KG",
+      "name": "Курица охлаждённая, кг",
+      "category": "Мясо и птица",
+      "unit": "кг"
+    },
+    {
+      "ref": "nomen-08",
+      "sku": "PST-450",
+      "name": "Макароны 450 г",
+      "category": "Бакалея",
+      "unit": "шт"
+    },
+    {
+      "ref": "nomen-09",
+      "sku": "JUC-1L",
+      "name": "Сок яблочный 1 л",
+      "category": "Напитки",
+      "unit": "шт"
+    },
+    {
+      "ref": "nomen-10",
+      "sku": "EGG-10",
+      "name": "Яйцо куриное С1, 10 шт",
+      "category": "Яйцо",
+      "unit": "уп"
+    }
+  ],
+  "saleDocuments": [
+    {
+      "ref": "returns_heavy-doc-000161",
+      "number": "ОРП-000161",
+      "date": "2025-11-04",
+      "storeRef": "store-03",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "returns_heavy-line-0000574",
+          "productRef": "nomen-08",
+          "quantity": 159.0,
+          "amount": 10913.76,
+          "discountAmount": 1488.24
+        },
+        {
+          "ref": "returns_heavy-line-0000575",
+          "productRef": "nomen-02",
+          "quantity": 220.0,
+          "amount": 8712.0,
+          "discountAmount": 1188.0,
+          "costAmount": 5345.35
+        },
+        {
+          "ref": "returns_heavy-line-0000576",
+          "productRef": "nomen-05",
+          "quantity": 129.25,
+          "amount": 13648.8,
+          "discountAmount": 1861.2,
+          "costAmount": 9502.1
+        },
+        {
+          "ref": "returns_heavy-line-0000577",
+          "productRef": "nomen-04",
+          "quantity": 44.0,
+          "amount": 8131.2,
+          "discountAmount": 1108.8,
+          "costAmount": 6280.03
+        },
+        {
+          "ref": "returns_heavy-line-0000578",
+          "productRef": "nomen-10",
+          "quantity": 80.0,
+          "amount": 8096.0,
+          "discountAmount": 1104.0,
+          "costAmount": 6253.49
+        }
+      ]
+    },
+    {
+      "ref": "returns_heavy-doc-000162",
+      "number": "ОРП-000162",
+      "date": "2025-11-04",
+      "storeRef": "store-03",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "returns_heavy-line-0000579",
+          "productRef": "nomen-01",
+          "quantity": 105.0,
+          "amount": 9345.0,
+          "costAmount": 6616.44
+        },
+        {
+          "ref": "returns_heavy-line-0000580",
+          "productRef": "nomen-03",
+          "quantity": 282.0,
+          "amount": 9870.0,
+          "costAmount": 4045.56
+        },
+        {
+          "ref": "returns_heavy-line-0000581",
+          "productRef": "nomen-05",
+          "quantity": 142.55,
+          "amount": 17106.0,
+          "costAmount": 10408.21
+        },
+        {
+          "ref": "returns_heavy-line-0000582",
+          "productRef": "nomen-02",
+          "quantity": 256.0,
+          "amount": 11520.0,
+          "costAmount": 6155.43
+        },
+        {
+          "ref": "returns_heavy-line-0000583",
+          "productRef": "nomen-10",
+          "quantity": 72.0,
+          "amount": 8280.0,
+          "costAmount": 5379.49
+        }
+      ]
+    },
+    {
+      "ref": "returns_heavy-doc-000163",
+      "number": "ОРП-000163",
+      "date": "2025-11-05",
+      "storeRef": "store-03",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "returns_heavy-line-0000584",
+          "productRef": "nomen-03",
+          "quantity": 219.0,
+          "amount": 7665.0,
+          "costAmount": 3007.22
+        },
+        {
+          "ref": "returns_heavy-line-0000585",
+          "productRef": "nomen-09",
+          "quantity": 77.0,
+          "amount": 9625.0,
+          "costAmount": 4475.47
+        },
+        {
+          "ref": "returns_heavy-line-0000586",
+          "productRef": "nomen-03",
+          "quantity": 356.0,
+          "amount": 12460.0,
+          "costAmount": 5123.36
+        },
+        {
+          "ref": "returns_heavy-line-0000587",
+          "productRef": "nomen-08",
+          "quantity": 150.0,
+          "amount": 11700.0,
+          "costAmount": 6224.35
+        },
+        {
+          "ref": "returns_heavy-line-0000588",
+          "productRef": "nomen-06",
+          "quantity": 98.0,
+          "amount": 14700.0,
+          "costAmount": 7490.49
+        }
+      ]
+    },
+    {
+      "ref": "returns_heavy-doc-000164",
+      "number": "ОРП-000164",
+      "date": "2025-11-05",
+      "storeRef": "store-03",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "returns_heavy-line-0000589",
+          "productRef": "nomen-09",
+          "quantity": 97.0,
+          "amount": 12125.0,
+          "costAmount": 5680.21
+        },
+        {
+          "ref": "returns_heavy-line-0000590",
+          "productRef": "nomen-08",
+          "quantity": 171.0,
+          "amount": 13338.0,
+          "costAmount": 6986.03
+        },
+        {
+          "ref": "returns_heavy-line-0000591",
+          "productRef": "nomen-02",
+          "quantity": 320.0,
+          "amount": 14400.0,
+          "costAmount": 7791.86
+        },
+        {
+          "ref": "returns_heavy-line-0000592",
+          "productRef": "nomen-07",
+          "quantity": 62.45,
+          "amount": 16237.0
+        }
+      ]
+    },
+    {
+      "ref": "returns_heavy-doc-000165",
+      "number": "ОРП-000165",
+      "date": "2025-11-09",
+      "storeRef": "store-03",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "returns_heavy-line-0000593",
+          "productRef": "nomen-10",
+          "quantity": 161.0,
+          "amount": 18515.0,
+          "costAmount": 12223.84
+        },
+        {
+          "ref": "returns_heavy-line-0000594",
+          "productRef": "nomen-09",
+          "quantity": 301.0,
+          "amount": 37625.0,
+          "costAmount": 17313.09
+        }
+      ]
+    },
+    {
+      "ref": "returns_heavy-doc-000166",
+      "number": "ОРП-000166",
+      "date": "2025-11-10",
+      "storeRef": "store-03",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "returns_heavy-line-0000595",
+          "productRef": "nomen-08",
+          "quantity": 116.0,
+          "amount": 9048.0,
+          "costAmount": 4569.76
+        },
+        {
+          "ref": "returns_heavy-line-0000596",
+          "productRef": "nomen-04",
+          "quantity": 28.0,
+          "amount": 5880.0,
+          "costAmount": 3976.32
+        },
+        {
+          "ref": "returns_heavy-line-0000597",
+          "productRef": "nomen-09",
+          "quantity": 82.0,
+          "amount": 10250.0
+        },
+        {
+          "ref": "returns_heavy-line-0000598",
+          "productRef": "nomen-06",
+          "quantity": 57.0,
+          "amount": 8550.0,
+          "costAmount": 4379.23
+        },
+        {
+          "ref": "returns_heavy-line-0000599",
+          "productRef": "nomen-01",
+          "quantity": 76.0,
+          "amount": 6764.0,
+          "costAmount": 4743.42
+        }
+      ]
+    },
+    {
+      "ref": "returns_heavy-doc-000167",
+      "number": "ОРП-000167",
+      "date": "2025-11-10",
+      "storeRef": "store-03",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "returns_heavy-line-0000600",
+          "productRef": "nomen-10",
+          "quantity": 107.0,
+          "amount": 10951.45,
+          "discountAmount": 1353.55,
+          "costAmount": 7916.16
+        },
+        {
+          "ref": "returns_heavy-line-0000601",
+          "productRef": "nomen-09",
+          "quantity": 130.0,
+          "amount": 14462.5,
+          "discountAmount": 1787.5,
+          "costAmount": 7414.39
+        },
+        {
+          "ref": "returns_heavy-line-0000602",
+          "productRef": "nomen-03",
+          "quantity": 341.0,
+          "amount": 10622.15,
+          "discountAmount": 1312.85,
+          "costAmount": 4655.27
+        }
+      ]
+    },
+    {
+      "ref": "returns_heavy-doc-000169",
+      "number": "ОРП-000169",
+      "date": "2025-11-10",
+      "storeRef": "store-03",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "returns_heavy-line-0000608",
+          "productRef": "nomen-03",
+          "quantity": 375.0,
+          "amount": 13125.0,
+          "costAmount": 5326.44
+        },
+        {
+          "ref": "returns_heavy-line-0000609",
+          "productRef": "nomen-05",
+          "quantity": 101.75,
+          "amount": 12210.0,
+          "costAmount": 7380.89
+        },
+        {
+          "ref": "returns_heavy-line-0000610",
+          "productRef": "nomen-03",
+          "quantity": 231.0,
+          "amount": 8085.0,
+          "costAmount": 3310.81
+        },
+        {
+          "ref": "returns_heavy-line-0000611",
+          "productRef": "nomen-06",
+          "quantity": 48.0,
+          "amount": 7200.0
+        }
+      ]
+    },
+    {
+      "ref": "returns_heavy-doc-000170",
+      "number": "ОРП-000170",
+      "date": "2025-11-10",
+      "storeRef": "store-03",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "returns_heavy-line-0000612",
+          "productRef": "nomen-06",
+          "quantity": 59.0,
+          "amount": 8850.0,
+          "costAmount": 4314.41
+        },
+        {
+          "ref": "returns_heavy-line-0000613",
+          "productRef": "nomen-05",
+          "quantity": 87.95,
+          "amount": 10554.0,
+          "costAmount": 6186.95
+        },
+        {
+          "ref": "returns_heavy-line-0000614",
+          "productRef": "nomen-04",
+          "quantity": 58.0,
+          "amount": 12180.0,
+          "costAmount": 8172.52
+        },
+        {
+          "ref": "returns_heavy-line-0000615",
+          "productRef": "nomen-02",
+          "quantity": 199.0,
+          "amount": 8955.0,
+          "costAmount": 5047.84
+        }
+      ]
+    },
+    {
+      "ref": "returns_heavy-doc-000168",
+      "number": "ОРП-000168",
+      "date": "2025-11-15",
+      "storeRef": "store-03",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "returns_heavy-line-0000603",
+          "productRef": "nomen-07",
+          "quantity": 32.95,
+          "amount": 7881.64,
+          "discountAmount": 685.36,
+          "costAmount": 6520.74
+        },
+        {
+          "ref": "returns_heavy-line-0000604",
+          "productRef": "nomen-08",
+          "quantity": 115.0,
+          "amount": 8252.4,
+          "discountAmount": 717.6,
+          "costAmount": 4598.38
+        },
+        {
+          "ref": "returns_heavy-line-0000605",
+          "productRef": "nomen-09",
+          "quantity": 46.0,
+          "amount": 5290.0,
+          "discountAmount": 460.0,
+          "costAmount": 2670.93
+        },
+        {
+          "ref": "returns_heavy-line-0000606",
+          "productRef": "nomen-05",
+          "quantity": 74.85,
+          "amount": 8263.44,
+          "discountAmount": 718.56
+        },
+        {
+          "ref": "returns_heavy-line-0000607",
+          "productRef": "nomen-01",
+          "quantity": 93.0,
+          "amount": 7614.84,
+          "discountAmount": 662.16
+        }
+      ]
+    },
+    {
+      "ref": "returns_heavy-doc-000173",
+      "number": "ВЗВ-000173",
+      "date": "2025-11-15",
+      "storeRef": "store-03",
+      "documentType": "return",
+      "lines": [
+        {
+          "ref": "returns_heavy-line-0000624",
+          "productRef": "nomen-03",
+          "quantity": 73.0,
+          "amount": 2555.0,
+          "costAmount": 1004.61
+        },
+        {
+          "ref": "returns_heavy-line-0000625",
+          "productRef": "nomen-05",
+          "quantity": 18.2,
+          "amount": 2184.0
+        },
+        {
+          "ref": "returns_heavy-line-0000626",
+          "productRef": "nomen-05",
+          "quantity": 21.6,
+          "amount": 2592.0,
+          "costAmount": 1527.31
+        },
+        {
+          "ref": "returns_heavy-line-0000627",
+          "productRef": "nomen-07",
+          "quantity": 8.95,
+          "amount": 2327.0,
+          "costAmount": 1716.98
+        }
+      ]
+    },
+    {
+      "ref": "returns_heavy-doc-000171",
+      "number": "ОРП-000171",
+      "date": "2025-11-16",
+      "storeRef": "store-03",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "returns_heavy-line-0000616",
+          "productRef": "nomen-03",
+          "quantity": 318.0,
+          "amount": 9460.5,
+          "discountAmount": 1669.5,
+          "costAmount": 4372.3
+        },
+        {
+          "ref": "returns_heavy-line-0000617",
+          "productRef": "nomen-07",
+          "quantity": 48.25,
+          "amount": 10663.25,
+          "discountAmount": 1881.75,
+          "costAmount": 9021.7
+        },
+        {
+          "ref": "returns_heavy-line-0000618",
+          "productRef": "nomen-10",
+          "quantity": 147.0,
+          "amount": 14369.25,
+          "discountAmount": 2535.75,
+          "costAmount": 11116.38
+        }
+      ]
+    },
+    {
+      "ref": "returns_heavy-doc-000172",
+      "number": "ОРП-000172",
+      "date": "2025-11-16",
+      "storeRef": "store-03",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "returns_heavy-line-0000619",
+          "productRef": "nomen-01",
+          "quantity": 74.0,
+          "amount": 6586.0,
+          "costAmount": 4834.18
+        },
+        {
+          "ref": "returns_heavy-line-0000620",
+          "productRef": "nomen-10",
+          "quantity": 58.0,
+          "amount": 6670.0,
+          "costAmount": 4384.1
+        },
+        {
+          "ref": "returns_heavy-line-0000621",
+          "productRef": "nomen-09",
+          "quantity": 54.0,
+          "amount": 6750.0,
+          "costAmount": 3142.67
+        },
+        {
+          "ref": "returns_heavy-line-0000622",
+          "productRef": "nomen-10",
+          "quantity": 101.0,
+          "amount": 11615.0,
+          "costAmount": 7853.73
+        },
+        {
+          "ref": "returns_heavy-line-0000623",
+          "productRef": "nomen-04",
+          "quantity": 43.0,
+          "amount": 9030.0,
+          "costAmount": 6292.08
+        }
+      ]
+    },
+    {
+      "ref": "returns_heavy-doc-000177",
+      "number": "ОРП-000177",
+      "date": "2025-11-18",
+      "storeRef": "store-03",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "returns_heavy-line-0000643",
+          "productRef": "nomen-03",
+          "quantity": 189.0,
+          "amount": 6615.0,
+          "costAmount": 2577.21
+        },
+        {
+          "ref": "returns_heavy-line-0000644",
+          "productRef": "nomen-01",
+          "quantity": 63.0,
+          "amount": 5607.0,
+          "costAmount": 3953.99
+        },
+        {
+          "ref": "returns_heavy-line-0000645",
+          "productRef": "nomen-02",
+          "quantity": 169.0,
+          "amount": 7605.0,
+          "costAmount": 4275.62
+        },
+        {
+          "ref": "returns_heavy-line-0000646",
+          "productRef": "nomen-03",
+          "quantity": 217.0,
+          "amount": 7595.0,
+          "costAmount": 2978.12
+        },
+        {
+          "ref": "returns_heavy-line-0000647",
+          "productRef": "nomen-04",
+          "quantity": 28.0,
+          "amount": 5880.0,
+          "costAmount": 3950.79
+        }
+      ]
+    },
+    {
+      "ref": "returns_heavy-doc-000175",
+      "number": "ОРП-000175",
+      "date": "2025-11-19",
+      "storeRef": "store-03",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "returns_heavy-line-0000633",
+          "productRef": "nomen-01",
+          "quantity": 70.0,
+          "amount": 6230.0,
+          "costAmount": 4608.37
+        },
+        {
+          "ref": "returns_heavy-line-0000634",
+          "productRef": "nomen-01",
+          "quantity": 89.0,
+          "amount": 7921.0,
+          "costAmount": 5841.39
+        },
+        {
+          "ref": "returns_heavy-line-0000635",
+          "productRef": "nomen-07",
+          "quantity": 16.25,
+          "amount": 4225.0,
+          "costAmount": 3200.52
+        },
+        {
+          "ref": "returns_heavy-line-0000636",
+          "productRef": "nomen-05",
+          "quantity": 67.6,
+          "amount": 8112.0,
+          "costAmount": 5012.4
+        },
+        {
+          "ref": "returns_heavy-line-0000637",
+          "productRef": "nomen-08",
+          "quantity": 86.0,
+          "amount": 6708.0,
+          "costAmount": 3395.82
+        }
+      ]
+    },
+    {
+      "ref": "returns_heavy-doc-000181",
+      "number": "ОРП-000181",
+      "date": "2025-11-19",
+      "storeRef": "store-03",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "returns_heavy-line-0000658",
+          "productRef": "nomen-09",
+          "quantity": 79.0,
+          "amount": 9875.0,
+          "costAmount": 4613.21
+        },
+        {
+          "ref": "returns_heavy-line-0000659",
+          "productRef": "nomen-01",
+          "quantity": 102.0,
+          "amount": 9078.0,
+          "costAmount": 6367.45
+        },
+        {
+          "ref": "returns_heavy-line-0000660",
+          "productRef": "nomen-04",
+          "quantity": 39.0,
+          "amount": 8190.0,
+          "costAmount": 5441.66
+        },
+        {
+          "ref": "returns_heavy-line-0000661",
+          "productRef": "nomen-07",
+          "quantity": 23.35,
+          "amount": 6071.0,
+          "costAmount": 4533.26
+        }
+      ]
+    },
+    {
+      "ref": "returns_heavy-doc-000182",
+      "number": "ОРП-000182",
+      "date": "2025-11-20",
+      "storeRef": "store-03",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "returns_heavy-line-0000662",
+          "productRef": "nomen-10",
+          "quantity": 180.0,
+          "amount": 20700.0,
+          "costAmount": 13481.1
+        },
+        {
+          "ref": "returns_heavy-line-0000663",
+          "productRef": "nomen-04",
+          "quantity": 60.0,
+          "amount": 12600.0,
+          "costAmount": 8352.1
+        }
+      ]
+    },
+    {
+      "ref": "returns_heavy-doc-000178",
+      "number": "ОРП-000178",
+      "date": "2025-11-22",
+      "storeRef": "store-03",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "returns_heavy-line-0000648",
+          "productRef": "nomen-04",
+          "quantity": 84.0,
+          "amount": 17640.0,
+          "costAmount": 11696.51
+        },
+        {
+          "ref": "returns_heavy-line-0000649",
+          "productRef": "nomen-07",
+          "quantity": 60.05,
+          "amount": 15613.0,
+          "costAmount": 11650.54
+        }
+      ]
+    },
+    {
+      "ref": "returns_heavy-doc-000179",
+      "number": "ОРП-000179",
+      "date": "2025-11-22",
+      "storeRef": "store-03",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "returns_heavy-line-0000650",
+          "productRef": "nomen-06",
+          "quantity": 57.0,
+          "amount": 8550.0,
+          "costAmount": 4157.73
+        },
+        {
+          "ref": "returns_heavy-line-0000651",
+          "productRef": "nomen-09",
+          "quantity": 57.0,
+          "amount": 7125.0,
+          "costAmount": 3250.83
+        },
+        {
+          "ref": "returns_heavy-line-0000652",
+          "productRef": "nomen-08",
+          "quantity": 117.0,
+          "amount": 9126.0,
+          "costAmount": 4872.16
+        },
+        {
+          "ref": "returns_heavy-line-0000653",
+          "productRef": "nomen-02",
+          "quantity": 185.0,
+          "amount": 8325.0,
+          "costAmount": 4505.79
+        }
+      ]
+    },
+    {
+      "ref": "returns_heavy-doc-000180",
+      "number": "ОРП-000180",
+      "date": "2025-11-22",
+      "storeRef": "store-03",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "returns_heavy-line-0000654",
+          "productRef": "nomen-07",
+          "quantity": 26.5,
+          "amount": 6890.0,
+          "costAmount": 5125.24
+        },
+        {
+          "ref": "returns_heavy-line-0000655",
+          "productRef": "nomen-01",
+          "quantity": 67.0,
+          "amount": 5963.0,
+          "costAmount": 4370.2
+        },
+        {
+          "ref": "returns_heavy-line-0000656",
+          "productRef": "nomen-08",
+          "quantity": 122.0,
+          "amount": 9516.0,
+          "costAmount": 4904.74
+        },
+        {
+          "ref": "returns_heavy-line-0000657",
+          "productRef": "nomen-07",
+          "quantity": 41.7,
+          "amount": 10842.0,
+          "costAmount": 8044.47
+        }
+      ]
+    },
+    {
+      "ref": "returns_heavy-doc-000174",
+      "number": "ОРП-000174",
+      "date": "2025-11-23",
+      "storeRef": "store-03",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "returns_heavy-line-0000628",
+          "productRef": "nomen-01",
+          "quantity": 60.0,
+          "amount": 4699.2,
+          "discountAmount": 640.8,
+          "costAmount": 3767.49
+        },
+        {
+          "ref": "returns_heavy-line-0000629",
+          "productRef": "nomen-07",
+          "quantity": 26.75,
+          "amount": 6120.4,
+          "discountAmount": 834.6
+        },
+        {
+          "ref": "returns_heavy-line-0000630",
+          "productRef": "nomen-02",
+          "quantity": 185.0,
+          "amount": 7326.0,
+          "discountAmount": 999.0,
+          "costAmount": 4590.14
+        },
+        {
+          "ref": "returns_heavy-line-0000631",
+          "productRef": "nomen-04",
+          "quantity": 34.0,
+          "amount": 6283.2,
+          "discountAmount": 856.8
+        },
+        {
+          "ref": "returns_heavy-line-0000632",
+          "productRef": "nomen-05",
+          "quantity": 45.8,
+          "amount": 4836.48,
+          "discountAmount": 659.52,
+          "costAmount": 3289.33
+        }
+      ]
+    },
+    {
+      "ref": "returns_heavy-doc-000176",
+      "number": "ОРП-000176",
+      "date": "2025-11-23",
+      "storeRef": "store-03",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "returns_heavy-line-0000638",
+          "productRef": "nomen-05",
+          "quantity": 74.05,
+          "amount": 8886.0
+        },
+        {
+          "ref": "returns_heavy-line-0000639",
+          "productRef": "nomen-05",
+          "quantity": 56.6,
+          "amount": 6792.0,
+          "costAmount": 4153.94
+        },
+        {
+          "ref": "returns_heavy-line-0000640",
+          "productRef": "nomen-02",
+          "quantity": 167.0,
+          "amount": 7515.0,
+          "costAmount": 4214.68
+        },
+        {
+          "ref": "returns_heavy-line-0000641",
+          "productRef": "nomen-01",
+          "quantity": 67.0,
+          "amount": 5963.0,
+          "costAmount": 4240.67
+        },
+        {
+          "ref": "returns_heavy-line-0000642",
+          "productRef": "nomen-09",
+          "quantity": 32.0,
+          "amount": 4000.0,
+          "costAmount": 1869.97
+        }
+      ]
+    },
+    {
+      "ref": "returns_heavy-doc-000187",
+      "number": "ОРП-000187",
+      "date": "2025-11-24",
+      "storeRef": "store-03",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "returns_heavy-line-0000677",
+          "productRef": "nomen-10",
+          "quantity": 172.0,
+          "amount": 19780.0,
+          "costAmount": 13167.63
+        },
+        {
+          "ref": "returns_heavy-line-0000678",
+          "productRef": "nomen-10",
+          "quantity": 82.0,
+          "amount": 9430.0,
+          "costAmount": 6335.96
+        },
+        {
+          "ref": "returns_heavy-line-0000679",
+          "productRef": "nomen-01",
+          "quantity": 209.0,
+          "amount": 18601.0,
+          "costAmount": 13454.94
+        },
+        {
+          "ref": "returns_heavy-line-0000680",
+          "productRef": "nomen-02",
+          "quantity": 204.0,
+          "amount": 9180.0,
+          "costAmount": 5181.1
+        }
+      ]
+    },
+    {
+      "ref": "returns_heavy-doc-000185",
+      "number": "ОРП-000185",
+      "date": "2025-11-25",
+      "storeRef": "store-03",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "returns_heavy-line-0000670",
+          "productRef": "nomen-06",
+          "quantity": 192.0,
+          "amount": 28800.0,
+          "costAmount": 14271.8
+        },
+        {
+          "ref": "returns_heavy-line-0000671",
+          "productRef": "nomen-06",
+          "quantity": 188.0,
+          "amount": 28200.0,
+          "costAmount": 13792.39
+        }
+      ]
+    },
+    {
+      "ref": "returns_heavy-doc-000188",
+      "number": "ВЗВ-000188",
+      "date": "2025-11-26",
+      "storeRef": "store-03",
+      "documentType": "return",
+      "lines": [
+        {
+          "ref": "returns_heavy-line-0000681",
+          "productRef": "nomen-08",
+          "quantity": 236.0,
+          "amount": 18408.0,
+          "costAmount": 9738.03
+        },
+        {
+          "ref": "returns_heavy-line-0000682",
+          "productRef": "nomen-10",
+          "quantity": 173.0,
+          "amount": 19895.0,
+          "costAmount": 12862.1
+        },
+        {
+          "ref": "returns_heavy-line-0000683",
+          "productRef": "nomen-01",
+          "quantity": 227.0,
+          "amount": 20203.0,
+          "costAmount": 14504.0
+        }
+      ]
+    },
+    {
+      "ref": "returns_heavy-doc-000186",
+      "number": "ОРП-000186",
+      "date": "2025-11-28",
+      "storeRef": "store-03",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "returns_heavy-line-0000672",
+          "productRef": "nomen-02",
+          "quantity": 271.0,
+          "amount": 12195.0
+        },
+        {
+          "ref": "returns_heavy-line-0000673",
+          "productRef": "nomen-06",
+          "quantity": 93.0,
+          "amount": 13950.0,
+          "costAmount": 6895.4
+        },
+        {
+          "ref": "returns_heavy-line-0000674",
+          "productRef": "nomen-10",
+          "quantity": 116.0,
+          "amount": 13340.0,
+          "costAmount": 8824.64
+        },
+        {
+          "ref": "returns_heavy-line-0000675",
+          "productRef": "nomen-02",
+          "quantity": 243.0,
+          "amount": 10935.0
+        },
+        {
+          "ref": "returns_heavy-line-0000676",
+          "productRef": "nomen-02",
+          "quantity": 148.0,
+          "amount": 6660.0,
+          "costAmount": 3634.49
+        }
+      ]
+    },
+    {
+      "ref": "returns_heavy-doc-000183",
+      "number": "ОРП-000183",
+      "date": "2025-11-30",
+      "storeRef": "store-03",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "returns_heavy-line-0000664",
+          "productRef": "nomen-06",
+          "quantity": 145.0,
+          "amount": 21750.0,
+          "costAmount": 10961.9
+        },
+        {
+          "ref": "returns_heavy-line-0000665",
+          "productRef": "nomen-01",
+          "quantity": 189.0,
+          "amount": 16821.0
+        },
+        {
+          "ref": "returns_heavy-line-0000666",
+          "productRef": "nomen-09",
+          "quantity": 147.0,
+          "amount": 18375.0,
+          "costAmount": 8669.78
+        }
+      ]
+    },
+    {
+      "ref": "returns_heavy-doc-000184",
+      "number": "ОРП-000184",
+      "date": "2025-11-30",
+      "storeRef": "store-03",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "returns_heavy-line-0000667",
+          "productRef": "nomen-08",
+          "quantity": 189.0,
+          "amount": 13267.8,
+          "discountAmount": 1474.2,
+          "costAmount": 7482.03
+        },
+        {
+          "ref": "returns_heavy-line-0000668",
+          "productRef": "nomen-03",
+          "quantity": 620.0,
+          "amount": 19530.0,
+          "discountAmount": 2170.0,
+          "costAmount": 8903.23
+        },
+        {
+          "ref": "returns_heavy-line-0000669",
+          "productRef": "nomen-03",
+          "quantity": 588.0,
+          "amount": 18522.0,
+          "discountAmount": 2058.0,
+          "costAmount": 8090.21
+        }
+      ]
+    }
+  ]
+}

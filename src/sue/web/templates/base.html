@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ title }} · СУЭ</title>
+  <link rel="icon" href="/static/favicon.png" />
+  <link rel="stylesheet" href="/static/styles.css?v={{ app_version }}" />
+  <script src="/static/vendor/chart.umd.min.js"></script>
+  <script src="/static/app.js?v={{ app_version }}" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">К содержанию</a>
+  {% include "icons_inline.html" %}
+  <aside class="side">
+    <a class="brand" href="/">
+      <img class="brand-logo" src="/static/sue-logo.png" alt="" />
+      <span class="brand-text">
+        <strong>СУЭ</strong>
+        <span class="tag">торговые точки</span>
+      </span>
+    </a>
+    <nav class="nav" aria-label="Разделы">
+      <div class="nav-group" aria-label="Анализ">
+        <span class="nav-caption">Анализ</span>
+        <a href="/" class="{{ 'active' if active == 'home' else '' }}"{% if active == 'home' %} aria-current="page"{% endif %}>
+          <svg class="icon"><use href="#i-home"></use></svg>
+          <span class="nav-label">Обзор</span>
+        </a>
+        <a href="/ui/profitability" class="{{ 'active' if active == 'profit' else '' }}"{% if active == 'profit' %} aria-current="page"{% endif %}>
+          <svg class="icon"><use href="#i-chart"></use></svg>
+          <span class="nav-label">Рентабельность</span>
+        </a>
+        <a href="/ui/compare" class="{{ 'active' if active == 'compare' else '' }}"{% if active == 'compare' %} aria-current="page"{% endif %}>
+          <svg class="icon"><use href="#i-mix"></use></svg>
+          <span class="nav-label">Сравнение</span>
+        </a>
+        <a href="/ui/reports" class="{{ 'active' if active == 'reports' else '' }}"{% if active == 'reports' %} aria-current="page"{% endif %}>
+          <svg class="icon"><use href="#i-pdf"></use></svg>
+          <span class="nav-label">Отчёты</span>
+        </a>
+      </div>
+      <div class="nav-group" aria-label="Данные">
+        <span class="nav-caption">Данные</span>
+        <a href="/ui/etl" class="{{ 'active' if active == 'etl' else '' }}"{% if active == 'etl' %} aria-current="page"{% endif %}>
+          <svg class="icon"><use href="#i-etl"></use></svg>
+          <span class="nav-label">Загрузка</span>
+        </a>
+      </div>
+    </nav>
+    <a class="top-link" href="/docs" target="_blank" rel="noopener">
+      <svg class="icon"><use href="#i-api"></use></svg>
+      <span class="nav-label">API</span>
+    </a>
+  </aside>
+  <main id="main" class="wrap" tabindex="-1">
+    {% block content %}{% endblock %}
+  </main>
+  <footer class="foot">
+    Без живой 1С ·
+    <span class="chip accounting">учёт</span>
+    <span class="chip modeled">модель</span>
+    <span class="chip derived">расчёт</span>
+  </footer>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

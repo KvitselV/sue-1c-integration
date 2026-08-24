@@ -1,0 +1,7 @@
+{% macro hint(text) -%}
+<button type="button" class="q" aria-label="{{ text }}" title="{{ text }}" data-tip="{{ text }}">?</button>
+{%- endmacro %}
+
+{% macro term(word, text) -%}
+<span class="term">{{ word }}{{ hint(text) }}</span>
+{%- endmacro %}

@@ -1,0 +1,228 @@
+{% extends "base.html" %}
+{% from "_macros.html" import hint, term %}
+{% block content %}
+<section class="hero">
+  <div class="hero-copy">
+    <div class="eyebrow">
+      <svg class="icon"><use href="#i-db"></use></svg>
+      Прототип СУЭ · {{ term("контракт обмена", "JSON-пакет формата 1С:Розница версии 2.0. Живой базы 1С нет: пакеты синтетические.") }}
+    </div>
+    <h1>Рентабельность торговых точек</h1>
+    <p class="lead">
+      Показатели сети с меткой
+      {{ term("происхождения", "Учёт — из пакета обмена. Модель — расчётная величина (накладные, доля себестоимости). Расчёт — производный показатель.") }}.
+    </p>
+    <div class="hero-actions">
+      <a class="btn" href="/ui/profitability">
+        <svg class="icon"><use href="#i-chart"></use></svg> Смотреть показатели
+      </a>
+      <a class="btn ghost" href="/ui/etl">
+        <svg class="icon"><use href="#i-etl"></use></svg> Статус интеграции
+      </a>
+    </div>
+    <img src="/static/sue-banner.jpg" alt="" class="hero-banner" width="1280" height="720" loading="lazy" />
+  </div>
+  <div class="hero-panel">
+    <h2>
+      <svg class="icon"><use href="#i-check"></use></svg>
+      Контрольные суммы
+    </h2>
+    <ul class="kv">
+      <li><span>Торговые точки</span><strong>{{ recon.stores }}</strong></li>
+      <li><span>Номенклатура</span><strong>{{ recon.products }}</strong></li>
+      <li><span>Документы</span><strong>{{ recon.documents }}</strong></li>
+      <li><span>Строки документов</span><strong>{{ recon.sale_lines }}</strong></li>
+      <li><span>{{ term("Общая выручка", "Сумма выручки в копейках. Сверка с файлами обмена должна дать ноль.") }}</span><strong>{{ recon.revenue_sum | money }} ₽</strong></li>
+    </ul>
+    <p class="tiny">
+      <a href="/api/reconciliation?path=accounting" target="_blank" rel="noopener">{{ term("Отчёт сверки", "Сравнение контрольных сумм файлов обмена с тем, что лежит в СУЭ. Расхождение считается в копейках и должно быть нулевым.") }}</a>
+    </p>
+  </div>
+</section>
+
+{% with action = "/" %}
+  {% include "_period_filter.html" %}
+{% endwith %}
+
+<section class="stats">
+  <div class="stat">
+    <div class="stat-top">
+      <span class="stat-label">{{ term("Выручка сети", "Реализация за вычетом возвратов. Источник — учёт.") }}</span>
+      <span class="icon-bubble green"><svg class="icon"><use href="#i-store"></use></svg></span>
+    </div>
+    <div class="stat-value">{{ kpis.revenue | money }}</div>
+    <div class="stat-note">₽</div>
+  </div>
+  <div class="stat">
+    <div class="stat-top">
+      <span class="stat-label">{{ term("Возвраты", "Сумма документов возврата. В выручку не входит, показывается отдельно.") }}</span>
+      <span class="icon-bubble gray"><svg class="icon"><use href="#i-etl"></use></svg></span>
+    </div>
+    <div class="stat-value">{{ kpis.returns | money }}</div>
+    <div class="stat-note">₽</div>
+  </div>
+  <div class="stat">
+    <div class="stat-top">
+      <span class="stat-label">{{ term("Ср. вал. %", "Средняя валовая рентабельность точек: (выручка − себестоимость) / выручка.") }}</span>
+      <span class="icon-bubble blue"><svg class="icon"><use href="#i-chart"></use></svg></span>
+    </div>
+    <div class="stat-value">{{ kpis.avg_gross_margin | pct }}%</div>
+    <div class="stat-note">по точкам</div>
+  </div>
+  <div class="stat">
+    <div class="stat-top">
+      <span class="stat-label">{{ term("Ср. опер. %", "После модельной аллокации накладных. Порог оценки задаётся настройкой, это не учёт.") }}</span>
+      <span class="icon-bubble amber"><svg class="icon"><use href="#i-mix"></use></svg></span>
+    </div>
+    <div class="stat-value">{{ kpis.avg_op_margin | pct }}%</div>
+    <div class="stat-note">модель</div>
+  </div>
+  <div class="stat">
+    <div class="stat-top">
+      <span class="stat-label">{{ term("Опер. прибыль", "Валовая прибыль минус модельные накладные.") }}</span>
+      <span class="icon-bubble gray"><svg class="icon"><use href="#i-trend"></use></svg></span>
+    </div>
+    <div class="stat-value">{{ kpis.operating_profit | money }}</div>
+    <div class="stat-note">₽</div>
+  </div>
+</section>
+
+<section class="grid-2">
+  <div class="panel">
+    <h2><svg class="icon"><use href="#i-chart"></use></svg> Выручка по ТТ {{ hint("Оборот торговых точек за выбранный период.") }}</h2>
+    {% if profit %}
+    <div class="chart-box"><canvas id="chartRevenue"></canvas></div>
+    {% else %}
+    <p class="muted">Нет данных за выбранный период.</p>
+    {% endif %}
+  </div>
+  <div class="panel">
+    <h2><svg class="icon"><use href="#i-mix"></use></svg> Рентабельность {{ hint("Операционная ниже валовой на модельную аллокацию накладных" ~ ((" (" ~ (profit[0].overhead_rate | pct) ~ "% от выручки).") if profit else ".")) }}</h2>
+    {% if profit %}
+    <div class="chart-box"><canvas id="chartMargins"></canvas></div>
+    {% else %}
+    <p class="muted">Нет данных за выбранный период.</p>
+    {% endif %}
+  </div>
+</section>
+
+<section class="grid-2">
+  <div class="panel">
+    <h2><svg class="icon"><use href="#i-db"></use></svg> Структура себестоимости</h2>
+    <div class="legend-row">
+      <span class="chip accounting">{{ term("учёт", "Себестоимость пришла в пакете обмена.") }}</span>
+      <span class="chip modeled">{{ term("модель", "Доля по категории, если себестоимости в пакете нет.") }}</span>
+    </div>
+    {% if profit %}
+    <div class="chart-box"><canvas id="chartCostMix"></canvas></div>
+    {% else %}
+    <p class="muted">Нет данных за выбранный период.</p>
+    {% endif %}
+  </div>
+  <div class="panel">
+    <h2><svg class="icon"><use href="#i-etl"></use></svg> Последние загрузки</h2>
+    {% if runs %}
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>№</th><th>Статус</th>
+            <th class="num">Док.</th><th class="num">Стр.</th><th class="num">Откл.</th><th class="num">мс</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for r in runs[:6] %}
+          <tr>
+            <td>{{ r.id }}</td>
+            <td><span class="badge {{ r.status }}">{{ r.status | ru_status }}</span></td>
+            <td class="num">{{ r.documents_accepted }}</td>
+            <td class="num">{{ r.lines_accepted }}</td>
+            <td class="num">{{ r.records_rejected }}</td>
+            <td class="num">{{ r.duration_ms if r.duration_ms is not none else "—" }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% else %}
+    <p class="muted">Загрузок ещё не было. <a href="/ui/etl">Открыть загрузку</a></p>
+    {% endif %}
+  </div>
+</section>
+
+<script id="dash-charts" type="application/json">{{ charts | tojson }}</script>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const charts = SUE.parseJsonScript("dash-charts");
+  if (!charts || !charts.revenue_by_store.labels.length) return;
+  const c = SUE.colors;
+  SUE.makeBar(
+    document.getElementById("chartRevenue"),
+    charts.revenue_by_store.labels,
+    [{
+      label: "Выручка, ₽",
+      data: charts.revenue_by_store.values,
+      backgroundColor: c.softGreen,
+      borderColor: c.green,
+      borderWidth: 1.5,
+      borderRadius: 8,
+    }]
+  );
+  SUE.makeBar(
+    document.getElementById("chartMargins"),
+    charts.margins_by_store.labels,
+    [
+      {
+        label: "Валовая, %",
+        data: charts.margins_by_store.gross,
+        backgroundColor: c.softBlue,
+        borderColor: c.blue,
+        borderWidth: 1.5,
+        borderRadius: 8,
+      },
+      {
+        label: "Операционная, %",
+        data: charts.margins_by_store.operating,
+        backgroundColor: c.softAmber,
+        borderColor: c.amber,
+        borderWidth: 1.5,
+        borderRadius: 8,
+      },
+    ],
+    { percent: true }
+  );
+  SUE.makeBar(
+    document.getElementById("chartCostMix"),
+    charts.cost_mix.labels,
+    [
+      {
+        label: "Учёт, %",
+        data: charts.cost_mix.accounting,
+        backgroundColor: c.softGreen,
+        borderColor: c.green,
+        borderWidth: 1.5,
+        borderRadius: 8,
+      },
+      {
+        label: "Модель, %",
+        data: charts.cost_mix.modeled,
+        backgroundColor: c.softAmber,
+        borderColor: c.amber,
+        borderWidth: 1.5,
+        borderRadius: 8,
+      },
+    ],
+    {
+      percent: true,
+      scales: {
+        x: { stacked: true, grid: { display: false } },
+        y: { stacked: true, max: 100, ticks: { callback: (v) => v + "%" }, grid: { color: "rgba(0,0,0,.05)" } },
+      },
+    }
+  );
+});
+</script>
+{% endblock %}

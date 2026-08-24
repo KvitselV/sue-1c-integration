@@ -1,0 +1,286 @@
+{% extends "base.html" %}
+{% from "_macros.html" import hint, term %}
+{% block content %}
+<div class="eyebrow">
+  <svg class="icon"><use href="#i-etl"></use></svg>
+  Интеграция
+</div>
+<h1>Загрузка данных</h1>
+<p class="lead">
+  {{ term("Контракт 2.0", "JSON-пакет формата 1С:Розница. Повтор той же ссылки объекта не создаёт дублей.") }}
+  · проверка · запись · журнал.
+</p>
+
+<section class="grid-2">
+  <div class="panel">
+    <h2><svg class="icon"><use href="#i-etl"></use></svg> Файл обмена {{ hint("JSON по контракту 2.0. Основной способ передачи данных.") }}</h2>
+    {% if auth_enabled %}
+    <p class="insight">
+      Ключ задан: загрузка из браузера выключена.
+      {{ hint("Страница не показывает ключ. Приём — POST с заголовком X-API-Key или задание обмена.") }}
+    </p>
+    {% else %}
+    <form id="upload-form" class="import-box" enctype="multipart/form-data">
+      <input class="sue-file" type="file" name="file" accept="application/json,.json" required />
+      <label class="inline-check">
+        <input type="checkbox" name="dry_run" /> только проверить
+      </label>
+      <button type="submit" class="btn">
+        <svg class="icon"><use href="#i-check"></use></svg> Загрузить
+      </button>
+    </form>
+    {% endif %}
+    <p id="import-result" class="muted">
+      {{ term("Идемпотентность", "Повтор пакета обновляет ту же запись по идентификатору объекта в источнике (ref).") }}
+    </p>
+  </div>
+  <div class="panel">
+    <h2><svg class="icon"><use href="#i-check"></use></svg> Контрольные суммы {{ hint("Итоги в СУЭ. Сверка с файлами обмена считается в копейках и должна быть нулевой.") }}</h2>
+    <ul class="kv">
+      <li><span>Торговые точки</span><strong>{{ recon.stores }}</strong></li>
+      <li><span>Номенклатура</span><strong>{{ recon.products }}</strong></li>
+      <li><span>Документы</span><strong>{{ recon.documents }}</strong></li>
+      <li><span>Строки</span><strong>{{ recon.sale_lines }}</strong></li>
+      <li><span>Общая выручка</span><strong>{{ recon.revenue_sum | money }} ₽</strong></li>
+      <li><span>Общее количество</span><strong>{{ recon.quantity_sum | money }}</strong></li>
+    </ul>
+    <p class="tiny">
+      <a href="/api/reconciliation?path=accounting" target="_blank" rel="noopener">{{ term("Отчёт сверки", "Сравнение контрольных сумм файлов обмена с тем, что лежит в СУЭ. Расхождение считается в копейках и должно быть нулевым.") }}</a>
+    </p>
+  </div>
+</section>
+
+{% if emulator_enabled %}
+<section class="panel" style="margin-top:1rem">
+  <h2>
+    <svg class="icon"><use href="#i-db"></use></svg>
+    Эмулятор выгрузки 1С
+    {{ hint("Учебный HTTP-сервис /hs/exchange отдаёт синтетические пакеты контракта 2.0. Это не живая база 1С. Отдельный процесс: python -m sue.emulator --port 8001") }}
+  </h2>
+  <p id="emulator-status" class="muted">Проверка эмулятора…</p>
+  {% if not auth_enabled %}
+  <form id="pull-form" class="import-box">
+    <label class="inline-field">
+      <span>Адрес сервиса</span>
+      <input type="url" name="url" value="" placeholder="встроенный эмулятор этого приложения" />
+    </label>
+    <label class="inline-field">
+      <span>Сценарий</span>
+      <select name="scenario">
+        <option value="accounting">accounting — основной набор</option>
+        <option value="no_cost">no_cost — без себестоимости</option>
+        <option value="short_history">short_history — короткая история</option>
+        <option value="returns_heavy">returns_heavy — много возвратов</option>
+      </select>
+    </label>
+    <label class="inline-field">
+      <span>Пакет</span>
+      <select name="exchange_id">
+        <option value="">все пакеты сценария</option>
+      </select>
+    </label>
+    <label class="inline-check">
+      <input type="checkbox" name="dry_run" /> только проверить
+    </label>
+    <button type="submit" class="btn">
+      <svg class="icon"><use href="#i-etl"></use></svg> Забрать выгрузку
+    </button>
+  </form>
+  {% else %}
+  <p class="insight">
+    Подключение: <code>POST /api/etl/pull</code> с <code>X-API-Key</code>
+    {{ hint("Или команда: python -m sue.jobs.exchange --url http://127.0.0.1:8001") }}
+  </p>
+  {% endif %}
+  <p class="tiny">
+    Документация сервиса:
+    <a href="/emulator/1c/hs/exchange/info" target="_blank" rel="noopener">/emulator/1c/hs/exchange/info</a>
+  </p>
+</section>
+{% endif %}
+
+<section class="grid-2" style="margin-top:1rem">
+  <div class="panel">
+    <h2><svg class="icon"><use href="#i-chart"></use></svg> Статусы последних загрузок</h2>
+    <div class="chart-box"><canvas id="eEtlPie"></canvas></div>
+    <ul class="kv" style="margin-top:.8rem">
+      <li><span>успех</span><strong>{{ etl_stats.success }}</strong></li>
+      <li><span>частично</span><strong>{{ etl_stats.partial }}</strong></li>
+      <li><span>сбой</span><strong>{{ etl_stats.failed }}</strong></li>
+    </ul>
+  </div>
+  <div class="panel">
+    <h2><svg class="icon"><use href="#i-warn"></use></svg> Нарушения в последней загрузке</h2>
+    {% if not runs %}
+    <p class="muted">Загрузок ещё не было — проверять нарушения нечего.</p>
+    {% elif latest_errors %}
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Этап</th><th>Ур.</th><th>Адрес</th><th>Описание</th></tr></thead>
+        <tbody>
+          {% for e in latest_errors %}
+          <tr>
+            <td>{{ e.stage | ru_stage }}</td>
+            <td><span class="badge {{ 'partial' if e.severity == 'warning' else 'failed' }}">{{ e.severity | ru_severity }}</span></td>
+            <td class="clip" title="{{ e.location or '—' }}">{{ e.location or "—" }}</td>
+            <td title="{{ e.detail }}">{{ e.detail }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% else %}
+    <p class="insight">Нарушений нет — последний пакет принят полностью.</p>
+    <p class="tiny">Сценарий <code>invalid</code> — по одному нарушению на файл.</p>
+    {% endif %}
+  </div>
+</section>
+
+<section class="panel" style="margin-top:1rem">
+  <h2>Журнал загрузок</h2>
+  <div class="table-wrap">
+    <table class="wide">
+      <thead>
+        <tr>
+          <th>№</th>
+          <th>Статус</th>
+          <th>{{ term("Источник", "Имя пакета внутри каталога обмена, не путь сервера.") }}</th>
+          <th>Пакет</th>
+          <th class="num">Док.</th>
+          <th class="num">Стр.</th>
+          <th class="num">Откл.</th>
+          <th class="num">Ош.</th>
+          <th class="num">мс</th>
+          <th>Когда</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for r in runs %}
+        <tr>
+          <td>{{ r.id }}</td>
+          <td>
+            <span class="badge {{ r.status }}">{{ r.status | ru_status }}</span>
+            {% if r.dry_run %}<span class="src derived">пров.</span>{% endif %}
+          </td>
+          <td class="clip" title="{{ r.source_file }}">{{ r.source_file }}</td>
+          <td class="clip" title="{{ r.exchange_id or '—' }}">{{ r.exchange_id or "—" }}</td>
+          <td class="num">{{ r.documents_accepted }}</td>
+          <td class="num">{{ r.lines_accepted }}</td>
+          <td class="num">{{ r.records_rejected }}</td>
+          <td class="num">
+            {% if r.errors_count %}
+            <a href="/api/etl/runs/{{ r.id }}/errors" target="_blank" rel="noopener">{{ r.errors_count }}</a>
+            {% else %}0{% endif %}
+          </td>
+          <td class="num">{{ r.duration_ms if r.duration_ms is not none else "—" }}</td>
+          <td class="clip">{{ (r.finished_at or r.started_at).strftime("%d.%m %H:%M") }}</td>
+        {% else %}
+        <tr><td colspan="10">Загрузок ещё не было</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<script id="etl-charts" type="application/json">{{ charts | tojson }}</script>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const charts = SUE.parseJsonScript("etl-charts");
+  if (charts) {
+    SUE.makeDoughnut(
+      document.getElementById("eEtlPie"),
+      charts.etl_pie.labels,
+      charts.etl_pie.values,
+      [SUE.colors.green, SUE.colors.blue, SUE.colors.amber, SUE.colors.gray]
+    );
+  }
+
+  const result = document.getElementById("import-result");
+  const statusRu = { success: "успех", failed: "сбой", partial: "частично", started: "запущен" };
+
+  function report(res, data) {
+    if (!res.ok) {
+      const message = (data.error && data.error.message) || "не удалось выполнить загрузку";
+      result.textContent = `Ошибка: ${message}`;
+      return;
+    }
+    result.textContent =
+      `загрузка №${data.id}: ${statusRu[data.status] || data.status} · ` +
+      `документов ${data.documents_accepted}, строк ${data.lines_accepted}, ` +
+      `нарушений ${data.errors_count}`;
+    setTimeout(() => location.reload(), 900);
+  }
+
+  // При заданном ключе доступа формы загрузки не выводятся (см. шаблон), поэтому
+  // обработчики навешиваются только на существующие элементы.
+  const uploadForm = document.getElementById("upload-form");
+  if (uploadForm) {
+    uploadForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const form = e.target;
+      const body = new FormData();
+      body.append("file", form.file.files[0]);
+      result.textContent = "Идёт загрузка файла…";
+      const res = await fetch(`/api/etl/upload?dry_run=${form.dry_run.checked}`, { method: "POST", body });
+      report(res, await res.json());
+    });
+  }
+
+  const emulatorStatus = document.getElementById("emulator-status");
+  const pullForm = document.getElementById("pull-form");
+
+  async function loadEmulatorBatches(scenario) {
+    if (!pullForm) return;
+    const select = pullForm.elements.namedItem("exchange_id");
+    const res = await fetch(`/emulator/1c/hs/exchange/batches?scenario=${encodeURIComponent(scenario)}`);
+    const data = await res.json();
+    select.innerHTML = '<option value="">все пакеты сценария</option>';
+    (data.items || []).forEach((item) => {
+      const option = document.createElement("option");
+      option.value = item.exchange_id;
+      option.textContent = `${item.exchange_id} · ${item.documents} док.`;
+      select.appendChild(option);
+    });
+  }
+
+  if (emulatorStatus) {
+    fetch("/emulator/1c/hs/exchange/ping")
+      .then((res) => res.json())
+      .then((data) => {
+        emulatorStatus.textContent = data.live_1c
+          ? "Подключена живая 1С"
+          : `Эмулятор на связи · не живая 1С`;
+      })
+      .catch(() => {
+        emulatorStatus.textContent = "Эмулятор недоступен";
+      });
+  }
+
+  if (pullForm) {
+    pullForm.elements.namedItem("url").placeholder =
+      `${window.location.origin}/emulator/1c  (пусто — встроенный)`;
+    loadEmulatorBatches(pullForm.scenario.value);
+    pullForm.scenario.addEventListener("change", () => loadEmulatorBatches(pullForm.scenario.value));
+    pullForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const form = e.target;
+      result.textContent = "Запрос выгрузки у эмулятора…";
+      const res = await fetch("/api/etl/pull", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          url: form.url.value.trim() || null,
+          scenario: form.scenario.value,
+          exchange_id: form.exchange_id.value || null,
+          dry_run: form.dry_run.checked,
+        }),
+      });
+      report(res, await res.json());
+    });
+  }
+});
+</script>
+{% endblock %}

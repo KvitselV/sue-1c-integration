@@ -1,0 +1,160 @@
+{% extends "base.html" %}
+{% from "_macros.html" import hint, term %}
+{% macro delta(item) -%}
+  {% set cls = "up" if item.absolute > 0 else ("down" if item.absolute < 0 else "flat") %}
+  <span class="delta {{ cls }}" title="было {{ item.base | money }}">
+    {{ "+" if item.absolute > 0 else "" }}{{ item.absolute | money }}
+    {%- if item.relative_pct is not none %} ({{ "+" if item.relative_pct > 0 else "" }}{{ item.relative_pct | pct }}%){% endif %}
+  </span>
+{%- endmacro %}
+{% block content %}
+<div class="eyebrow">
+  <svg class="icon"><use href="#i-trend"></use></svg>
+  Динамика
+</div>
+<h1>Сравнение периодов</h1>
+<p class="lead">
+  Изменение по точкам.
+  {{ term("Оценка", "Сравнение операционной рентабельности с управленческими порогами. Это модель, не учёт.") }}.
+</p>
+
+<form class="filter" method="get" action="/ui/compare">
+  <label>
+    <span>Базовый с</span>
+    <input class="sue-date" type="date" name="base_from" value="{{ periods.base_from }}" required />
+  </label>
+  <label>
+    <span>по</span>
+    <input class="sue-date" type="date" name="base_to" value="{{ periods.base_to }}" required />
+  </label>
+  <label>
+    <span>Сравниваемый с</span>
+    <input class="sue-date" type="date" name="compare_from" value="{{ periods.compare_from }}" required />
+  </label>
+  <label>
+    <span>по</span>
+    <input class="sue-date" type="date" name="compare_to" value="{{ periods.compare_to }}" required />
+  </label>
+  <button class="btn" type="submit">
+    <svg class="icon"><use href="#i-check"></use></svg> Сравнить
+  </button>
+  <a class="btn ghost" href="/api/profitability/compare?base_from={{ periods.base_from }}&base_to={{ periods.base_to }}&compare_from={{ periods.compare_from }}&compare_to={{ periods.compare_to }}" target="_blank" rel="noopener">API</a>
+</form>
+
+{% if rows %}
+<section class="stats">
+  <div class="stat">
+    <div class="stat-top"><span class="stat-label">Точек</span>
+      <span class="icon-bubble green"><svg class="icon"><use href="#i-store"></use></svg></span></div>
+    <div class="stat-value">{{ kpis.stores }}</div>
+  </div>
+  <div class="stat">
+    <div class="stat-top"><span class="stat-label">{{ term("Выручка", "Сумма по точкам в сравниваемом периоде и изменение к базовому.") }}</span>
+      <span class="icon-bubble blue"><svg class="icon"><use href="#i-chart"></use></svg></span></div>
+    <div class="stat-value">{{ kpis.revenue_compare | money }}</div>
+    {% set rd = kpis.revenue_delta %}
+    <span class="delta {{ 'up' if rd > 0 else ('down' if rd < 0 else 'flat') }}">
+      {{ "+" if rd > 0 else "" }}{{ rd | money }}
+    </span>
+  </div>
+  <div class="stat">
+    <div class="stat-top"><span class="stat-label">{{ term("Ср. опер. %", "Средняя операционная рентабельность точек в сравниваемом периоде.") }}</span>
+      <span class="icon-bubble amber"><svg class="icon"><use href="#i-trend"></use></svg></span></div>
+    <div class="stat-value">{{ kpis.avg_op_compare | pct }}%</div>
+    {% set pp = kpis.avg_op_pp %}
+    <span class="delta {{ 'up' if pp > 0 else ('down' if pp < 0 else 'flat') }}" title="было {{ kpis.avg_op_base | pct }}%">
+      {{ "+" if pp > 0 else "" }}{{ pp | pct }} п. п.
+    </span>
+  </div>
+</section>
+
+<section class="grid-2">
+  <div class="panel">
+    <h2><svg class="icon"><use href="#i-chart"></use></svg> Выручка по ТТ {{ hint("Базовый и сравниваемый периоды рядом. Те же суммы, что в таблице.") }}</h2>
+    <div class="chart-box"><canvas id="cRevenue"></canvas></div>
+  </div>
+  <div class="panel">
+    <h2><svg class="icon"><use href="#i-trend"></use></svg> Опер. маржа {{ hint("Операционная рентабельность точек в обоих периодах, %.") }}</h2>
+    <div class="chart-box"><canvas id="cMargins"></canvas></div>
+  </div>
+</section>
+{% endif %}
+
+<section class="panel"{% if rows %} style="margin-top:1rem"{% endif %}>
+  <h2>
+    <svg class="icon"><use href="#i-store"></use></svg>
+    По торговым точкам
+    {{ hint("В ячейке — значение сравниваемого периода и изменение к базовому. Было — во всплывающей подсказке. Рентабельность — в п. п.") }}
+  </h2>
+  <p class="tiny">
+    {{ periods.base_from }}–{{ periods.base_to }}
+    → {{ periods.compare_from }}–{{ periods.compare_to }}
+  </p>
+  <div class="table-wrap">
+    <table class="wide">
+      <thead>
+        <tr>
+          <th>ТТ</th>
+          <th class="num">{{ term("Выручка", "Значение сравниваемого периода и изменение к базовому.") }}</th>
+          <th class="num">{{ term("Себест.", "Себестоимость: учёт и/или модель.") }}</th>
+          <th class="num">{{ term("Вал. пр.", "Выручка минус себестоимость.") }}</th>
+          <th class="num">{{ term("Опер. пр.", "После модельных накладных.") }}</th>
+          <th class="num">{{ term("Опер. %", "Изменение в процентных пунктах.") }}</th>
+          <th>{{ term("Оценка", "Порог задаётся настройкой.") }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in rows %}
+        <tr>
+          <td class="store-cell">
+            <strong>{{ row.store_code }}</strong>
+            <span class="muted" title="{{ row.store_name }}">{{ row.store_name }}</span>
+            {% if not row.has_base %}<span class="badge warn">нет базы</span>{% endif %}
+            {% if not row.has_compare %}<span class="badge bad">нет сравн.</span>{% endif %}
+          </td>
+          {% for metric in ["revenue", "cost", "gross_profit", "operating_profit"] %}
+          <td class="num">
+            {{ row.metrics[metric].compare | money }}
+            {{ delta(row.metrics[metric]) }}
+          </td>
+          {% endfor %}
+          <td class="num">
+            {{ row.operating_margin_pct.compare | pct }}%
+            {% set pp = row.operating_margin_pct.absolute_pp %}
+            <span class="delta {{ 'up' if pp > 0 else ('down' if pp < 0 else 'flat') }}" title="было {{ row.operating_margin_pct.base | pct }}%">
+              {{ "+" if pp > 0 else "" }}{{ pp | pct }} п. п.
+            </span>
+          </td>
+          <td>
+            <span class="badge {{ row.margin_status }}">{{ row.margin_status | ru_margin_status }}</span>
+          </td>
+        </tr>
+        {% else %}
+        <tr><td colspan="7">За выбранные периоды документов нет.</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% if rows %}
+<script id="compare-charts" type="application/json">{{ charts | tojson }}</script>
+{% endif %}
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const charts = SUE.parseJsonScript("compare-charts");
+  if (!charts || !charts.labels.length) return;
+  const c = SUE.colors;
+  SUE.makeBar(document.getElementById("cRevenue"), charts.labels, [
+    { label: charts.base_label, data: charts.revenue_base, backgroundColor: c.softBlue, borderColor: c.blue, borderWidth: 1.5, borderRadius: 8 },
+    { label: charts.compare_label, data: charts.revenue_compare, backgroundColor: c.softGreen, borderColor: c.green, borderWidth: 1.5, borderRadius: 8 },
+  ]);
+  SUE.makeBar(document.getElementById("cMargins"), charts.labels, [
+    { label: charts.base_label, data: charts.margin_base, backgroundColor: c.softBlue, borderColor: c.blue, borderWidth: 1.5, borderRadius: 8 },
+    { label: charts.compare_label, data: charts.margin_compare, backgroundColor: c.softAmber, borderColor: c.amber, borderWidth: 1.5, borderRadius: 8 },
+  ], { percent: true });
+});
+</script>
+{% endblock %}

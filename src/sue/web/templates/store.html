@@ -1,0 +1,203 @@
+{% extends "base.html" %}
+{% from "_macros.html" import hint, term %}
+{% block content %}
+<p><a href="/ui/profitability">← к списку</a></p>
+<div class="eyebrow">
+  <svg class="icon"><use href="#i-store"></use></svg>
+  Карточка торговой точки
+</div>
+<h1>{{ item.store_code }} — {{ item.store_name }}</h1>
+<p class="lead">{{ item.city or "" }} · период {{ item.period_from }} … {{ item.period_to }}</p>
+
+{% with action = "/ui/profitability/" ~ item.store_id %}
+  {% include "_period_filter.html" %}
+{% endwith %}
+
+<section class="stats">
+  <div class="stat">
+    <div class="stat-top"><span class="stat-label">{{ term("Выручка", "Реализация минус возвраты. Учёт.") }}</span><span class="chip accounting">учёт</span></div>
+    <div class="stat-value">{{ item.revenue.value | money }}</div>
+  </div>
+  <div class="stat">
+    <div class="stat-top"><span class="stat-label">{{ term("Вал. %", "Валовая рентабельность. Расчёт.") }}</span><span class="chip derived">расчёт</span></div>
+    <div class="stat-value">{{ item.gross_margin_pct.value | pct }}%</div>
+  </div>
+  <div class="stat">
+    <div class="stat-top"><span class="stat-label">{{ term("Опер. %", "После модельных накладных. Расчёт.") }}</span><span class="chip derived">расчёт</span></div>
+    <div class="stat-value">{{ item.operating_margin_pct.value | pct }}%</div>
+  </div>
+  <div class="stat">
+    <div class="stat-top"><span class="stat-label">{{ term("Опер. прибыль", "Валовая прибыль минус модельные накладные.") }}</span>
+      <span class="chip derived">расчёт</span></div>
+    <div class="stat-value">{{ item.operating_profit.value | money }}</div>
+  </div>
+</section>
+
+<section class="grid-2">
+  <div class="panel">
+    <h2><svg class="icon"><use href="#i-trend"></use></svg> Недельная выручка {{ hint("Сумма строк продаж по календарным неделям. Это факт, не прогноз.") }}</h2>
+    <div class="chart-box lg"><canvas id="sWeekly"></canvas></div>
+  </div>
+  <div class="panel">
+    <h2><svg class="icon"><use href="#i-mix"></use></svg> Разложение {{ hint("Выручка → себестоимость → валовая прибыль → накладные → операционная прибыль.") }}</h2>
+    <div class="chart-box lg"><canvas id="sWaterfall"></canvas></div>
+  </div>
+</section>
+
+<section class="grid-3">
+  <div class="panel">
+    <h2><svg class="icon"><use href="#i-db"></use></svg> Себестоимость: структура</h2>
+    <div class="chart-box sm"><canvas id="sCostDonut"></canvas></div>
+    <ul class="kv" style="margin-top:.8rem">
+      <li><span>Доля учёта</span><strong>{{ item.cost_accounting_share_pct | pct }}%</strong></li>
+      <li><span>Доля модели</span><strong>{{ item.cost_modeled_share_pct | pct }}%</strong></li>
+      <li><span>Строк без себестоимости</span><strong>{{ item.lines_without_cost }} из {{ item.lines }}</strong></li>
+    </ul>
+  </div>
+  <div class="panel">
+    <h2><svg class="icon"><use href="#i-warn"></use></svg> Чувствительность {{ hint("Сдвиг модельной ставки накладных на ±3 п. п. и влияние на операционную прибыль.") }}</h2>
+    <div class="chart-box sm"><canvas id="sSens"></canvas></div>
+    <div class="table-wrap" style="margin-top:.6rem">
+      <table>
+        <thead>
+          <tr>
+            <th class="num">Ставка</th>
+            <th class="num">Накл.</th>
+            <th class="num">Опер. пр.</th>
+            <th class="num">Опер. %</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for s in sensitivity %}
+          <tr>
+            <td class="num">{{ s.overhead_rate_pct | pct }}%</td>
+            <td class="num">{{ s.overhead | money }}</td>
+            <td class="num">{{ s.operating_profit | money }}</td>
+            <td class="num">{{ s.operating_margin_pct | pct }}%</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="panel">
+    <h2>Показатели {{ hint("Происхождение в колонке «Ист.». Текст правила — у знака вопроса.") }}</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Показатель</th>
+            <th class="num">Значение</th>
+            <th>Ист.</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for key, label in [
+            ('gross_revenue','Реализация'),
+            ('returns','Возвраты'),
+            ('revenue','Выручка'),
+            ('cost','Себестоимость'),
+            ('gross_profit','Вал. прибыль'),
+            ('overhead','Накладные'),
+            ('operating_profit','Опер. прибыль'),
+            ('quantity','Количество')
+          ] %}
+          <tr>
+            <td>{{ term(label, item[key].note) }}</td>
+            <td class="num">
+              {{ item[key].value | money_exact }}
+              {{ "₽" if item[key].unit == "RUB" else item[key].unit }}
+            </td>
+            <td><span class="src {{ item[key].source }}">{{ item[key].source | ru_source }}</span></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="panel" style="margin-top:1rem">
+  <h2><svg class="icon"><use href="#i-mix"></use></svg> Категории {{ hint("Выручка и валовая маржа по категориям номенклатуры за период.") }}</h2>
+  <div class="grid-2">
+    <div class="chart-box"><canvas id="sCategories"></canvas></div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Категория</th>
+            <th class="num">Выручка</th>
+            <th class="num">Себест.</th>
+            <th class="num">Вал. пр.</th>
+            <th class="num">Вал. %</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for row in categories %}
+          <tr>
+            <td class="clip" title="{{ row.category }}">{{ row.category }}</td>
+            <td class="num">{{ row.revenue | money }}</td>
+            <td class="num">{{ row.cost | money }}</td>
+            <td class="num">{{ row.gross_profit | money }}</td>
+            <td class="num">{{ row.gross_margin_pct | pct }}%</td>
+          </tr>
+          {% else %}
+          <tr><td colspan="5">Нет данных за период</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<script id="store-charts" type="application/json">{{ charts | tojson }}</script>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const charts = SUE.parseJsonScript("store-charts");
+  if (!charts) return;
+  const c = SUE.colors;
+
+  SUE.makeLine(document.getElementById("sWeekly"), charts.weekly_revenue.labels, [{
+    label: "Выручка за неделю",
+    data: charts.weekly_revenue.values,
+    borderColor: c.green,
+    backgroundColor: c.softGreen,
+    fill: true,
+    tension: 0.25,
+    pointRadius: 2,
+  }]);
+
+  SUE.makeBar(document.getElementById("sWaterfall"), charts.waterfall.labels, [{
+    label: "₽",
+    data: charts.waterfall.values,
+    backgroundColor: charts.waterfall.values.map(v => v >= 0 ? c.softGreen : c.softAmber),
+    borderColor: charts.waterfall.values.map(v => v >= 0 ? c.green : c.amber),
+    borderWidth: 1.5,
+    borderRadius: 8,
+  }]);
+
+  SUE.makeDoughnut(
+    document.getElementById("sCostDonut"),
+    charts.cost_donut.labels,
+    charts.cost_donut.values,
+    [c.green, c.amber]
+  );
+
+  SUE.makeBar(document.getElementById("sCategories"), charts.categories.labels, [
+    { label: "Выручка, ₽", data: charts.categories.revenue, backgroundColor: c.softGreen, borderColor: c.green, borderWidth: 1.5, borderRadius: 8 },
+  ]);
+
+  SUE.makeBar(document.getElementById("sSens"), charts.sensitivity.labels, [{
+    label: "Опер. рентабельность, %",
+    data: charts.sensitivity.op_margin,
+    backgroundColor: c.softBlue,
+    borderColor: c.blue,
+    borderWidth: 1.5,
+    borderRadius: 8,
+  }], { percent: true });
+});
+</script>
+{% endblock %}

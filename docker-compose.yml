@@ -1,0 +1,42 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: sue
+      POSTGRES_PASSWORD: sue
+      POSTGRES_DB: sue
+    ports:
+      - "5432:5432"
+    volumes:
+      - sue_pg:/var/lib/postgresql/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U sue -d sue"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      SUE_DATABASE_URL: postgresql+psycopg2://sue:sue@db:5432/sue
+      SUE_FIXTURES_DIR: /app/data/fixtures
+      SUE_SCHEMA_PATH: /app/schemas/1c_retail_exchange.schema.json
+      SUE_LOG_LEVEL: INFO
+    volumes:
+      - ./data/fixtures:/app/data/fixtures:ro
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS http://127.0.0.1:8000/api/health/ready || exit 1"]
+      interval: 15s
+      timeout: 5s
+      start_period: 20s
+      retries: 5
+
+volumes:
+  sue_pg:

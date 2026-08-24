@@ -1,0 +1,577 @@
+{
+  "generator": {
+    "package": "sue.datagen",
+    "app_version": "1.0.0",
+    "contract_version": "2.0",
+    "generated_at": "2026-08-11T07:25:57+03:00",
+    "reproducible": "Одинаковый seed даёт побитово одинаковые файлы"
+  },
+  "disclaimer": "Синтетические данные, структурно совместимые с контрактом обмена 1С:Розница. Не являются выгрузкой реальной информационной базы.",
+  "modeled_params": {
+    "overhead_params": {
+      "overhead_rate": 0.12,
+      "description": "Доля накладных расходов от выручки торговой точки. МОДЕЛИРУЕМЫЙ параметр: в выгрузке 1С:Розница нет аллокации аренды, ФОТ и общехозяйственных расходов по торговым точкам.",
+      "sensitivity": {
+        "delta": [
+          -0.03,
+          0.0,
+          0.03
+        ]
+      }
+    },
+    "cost_markup_by_category": {
+      "description": "cost_ratio — отношение себестоимости к выручке по категории. Применяется ТОЛЬКО к строкам, в которых поле costAmount отсутствует.",
+      "cost_ratio_by_category": {
+        "Молочная продукция": 0.7,
+        "Хлеб": 0.55,
+        "Напитки": 0.43,
+        "Овощи и фрукты": 0.6,
+        "Бакалея": 0.51,
+        "Мясо и птица": 0.74,
+        "Яйцо": 0.66,
+        "Прочее": 0.65
+      }
+    }
+  },
+  "scenarios": [
+    {
+      "scenario": "accounting",
+      "description": "Основной набор: шесть торговых точек, полтора года недельной истории, себестоимость выгружена для большинства строк, есть возвраты.",
+      "spec": {
+        "name": "accounting",
+        "description": "Основной набор: шесть торговых точек, полтора года недельной истории, себестоимость выгружена для большинства строк, есть возвраты.",
+        "seed": 42,
+        "end_week": "2026-05-25",
+        "store_refs": null,
+        "weeks_override": null,
+        "docs_per_week": [
+          5,
+          9
+        ],
+        "lines_per_doc": [
+          2,
+          5
+        ],
+        "cost_coverage": 0.8,
+        "return_rate": 0.03,
+        "discount_share": 0.25,
+        "discount_range": [
+          0.05,
+          0.15
+        ],
+        "closed_week_rate": 0.03,
+        "split_by_month": true,
+        "expectations": {
+          "cost_source": "accounting+modeled"
+        }
+      },
+      "files": [
+        {
+          "file": "accounting/exchange_accounting_001.json",
+          "documents": 23,
+          "size_bytes": 24863,
+          "sha256": "46916410417b5ed8b922fe1933eabc1a1c873e2e0271fb3eed7c2a36f329e9fc"
+        },
+        {
+          "file": "accounting/exchange_accounting_002.json",
+          "documents": 65,
+          "size_bytes": 59704,
+          "sha256": "acde607be9018a1d7cae936373bb5e2463397acdbe2ac3ea37239420c59ac77f"
+        },
+        {
+          "file": "accounting/exchange_accounting_003.json",
+          "documents": 97,
+          "size_bytes": 85623,
+          "sha256": "48d2d0a8d0255f44485676b766d66d614d54d2062e27775dd3066c57187a6757"
+        },
+        {
+          "file": "accounting/exchange_accounting_004.json",
+          "documents": 118,
+          "size_bytes": 109617,
+          "sha256": "55b6d3dc392abd9b6ef4a21457840edf0d7e360a296f616fd8b65748ccb4bebb"
+        },
+        {
+          "file": "accounting/exchange_accounting_005.json",
+          "documents": 128,
+          "size_bytes": 118819,
+          "sha256": "891b364b24f3936e22293cae2ed5a3eec013abeb3c3f9b63064631a6da847ce9"
+        },
+        {
+          "file": "accounting/exchange_accounting_006.json",
+          "documents": 150,
+          "size_bytes": 139924,
+          "sha256": "5122219ef855a6f598a38d83c45e07ea2bc27ac9123e2a2bee561a6e4f2cfac7"
+        },
+        {
+          "file": "accounting/exchange_accounting_007.json",
+          "documents": 139,
+          "size_bytes": 128868,
+          "sha256": "2e5b5eccb728d744f572794fe1885a2acb9fdbf94ec7fc098e058347961ae36e"
+        },
+        {
+          "file": "accounting/exchange_accounting_008.json",
+          "documents": 164,
+          "size_bytes": 141473,
+          "sha256": "41841cec4f0a400b686bdc68ca3fc8b621fa60735d6ff576ca0a5708cee98da7"
+        },
+        {
+          "file": "accounting/exchange_accounting_009.json",
+          "documents": 161,
+          "size_bytes": 145150,
+          "sha256": "b906b452b2f95821e3ae7a2f73f2407a42170cf825baeb03f2879b69fa451a35"
+        },
+        {
+          "file": "accounting/exchange_accounting_010.json",
+          "documents": 150,
+          "size_bytes": 133509,
+          "sha256": "8eaea7edc519af1ccba66a2b62ea4824bc831566b539546f2f327fe38271179a"
+        },
+        {
+          "file": "accounting/exchange_accounting_011.json",
+          "documents": 156,
+          "size_bytes": 142751,
+          "sha256": "894ac0e41ebb45673ca75be723905952de531c3820ead32b96403d55704c977a"
+        },
+        {
+          "file": "accounting/exchange_accounting_012.json",
+          "documents": 140,
+          "size_bytes": 122963,
+          "sha256": "9c504cc85871ca114cca90cc3a24c52bc8d532a14d63331f559b22efc0389116"
+        },
+        {
+          "file": "accounting/exchange_accounting_013.json",
+          "documents": 154,
+          "size_bytes": 137902,
+          "sha256": "98af4ab6de35a5df2f28dd40d79228c1462bc5aa2ab5e10f67acd10de773064f"
+        },
+        {
+          "file": "accounting/exchange_accounting_014.json",
+          "documents": 153,
+          "size_bytes": 137567,
+          "sha256": "97ec7d9c63635a9b8d427cb857256dcd721f36400bbaeaf5e535d9803b63d4c8"
+        },
+        {
+          "file": "accounting/exchange_accounting_015.json",
+          "documents": 117,
+          "size_bytes": 109393,
+          "sha256": "d5b3dfe6f38d985c3428befed668a4a8b9a6c3751bc3ceca3af12e44eb37fe4f"
+        },
+        {
+          "file": "accounting/exchange_accounting_016.json",
+          "documents": 167,
+          "size_bytes": 150129,
+          "sha256": "2798a1092ea9f7dfc5cc5b10b8f593708db846889450e4867a7772dcd521ee3c"
+        },
+        {
+          "file": "accounting/exchange_accounting_017.json",
+          "documents": 181,
+          "size_bytes": 157719,
+          "sha256": "07eab278aed9a1ebf4ac8bd70b17364b0e1666713e6ce769b1315f8c313d645f"
+        },
+        {
+          "file": "accounting/exchange_accounting_018.json",
+          "documents": 187,
+          "size_bytes": 164936,
+          "sha256": "0dd4a95bc3f0a885d41f6415ba8ea5744efa5ff96f0ecf6c4249991d745d0283"
+        }
+      ],
+      "control_totals": {
+        "stores": 6,
+        "products": 10,
+        "documents": 2450,
+        "lines": 8637,
+        "revenue_kopecks": 11066769415,
+        "quantity_milli": 1508022200,
+        "cost_accounting_kopecks": 5313755365
+      },
+      "expectations": {
+        "cost_source": "accounting+modeled"
+      }
+    },
+    {
+      "scenario": "no_cost",
+      "description": "Выгрузка без себестоимости: проверяет, что показатель помечается как смоделированный, а не выдаётся за учётный.",
+      "spec": {
+        "name": "no_cost",
+        "description": "Выгрузка без себестоимости: проверяет, что показатель помечается как смоделированный, а не выдаётся за учётный.",
+        "seed": 1042,
+        "end_week": "2026-05-25",
+        "store_refs": [
+          "store-01",
+          "store-02"
+        ],
+        "weeks_override": 40,
+        "docs_per_week": [
+          5,
+          9
+        ],
+        "lines_per_doc": [
+          2,
+          5
+        ],
+        "cost_coverage": 0.0,
+        "return_rate": 0.0,
+        "discount_share": 0.0,
+        "discount_range": [
+          0.05,
+          0.15
+        ],
+        "closed_week_rate": 0.0,
+        "split_by_month": true,
+        "expectations": {
+          "cost_source": "modeled",
+          "cost_modeled_share_pct": 100.0
+        }
+      },
+      "files": [
+        {
+          "file": "no_cost/exchange_no_cost_001.json",
+          "documents": 16,
+          "size_bytes": 14224,
+          "sha256": "e4e0924f751ce6d559f9b668a68108d0a2b9e71e09f1042468a34af61efac57c"
+        },
+        {
+          "file": "no_cost/exchange_no_cost_002.json",
+          "documents": 57,
+          "size_bytes": 44751,
+          "sha256": "ddd3c7c9a282b6e468f7df3ebcb28ec4fd7cf1d3aca57296b36f20dcdfe8af0d"
+        },
+        {
+          "file": "no_cost/exchange_no_cost_003.json",
+          "documents": 56,
+          "size_bytes": 43145,
+          "sha256": "86f8ba52d8ea32b9ca5f49c388492c6f8078c39430a56701fe569d8acca2c2f2"
+        },
+        {
+          "file": "no_cost/exchange_no_cost_004.json",
+          "documents": 59,
+          "size_bytes": 45436,
+          "sha256": "f10cc6c677eeda0c64b8449acb29ac6f58f49d0883820a6fefe8b7dc5789b39b"
+        },
+        {
+          "file": "no_cost/exchange_no_cost_005.json",
+          "documents": 64,
+          "size_bytes": 48562,
+          "sha256": "c20e65de013f02a152a63f9016c6a57b289f988b144c68057101dbf4ad86404d"
+        },
+        {
+          "file": "no_cost/exchange_no_cost_006.json",
+          "documents": 67,
+          "size_bytes": 52827,
+          "sha256": "3d98c9018b8dc9a6137b73174363091b6cd995577ddfe433fb5e7de15861a39c"
+        },
+        {
+          "file": "no_cost/exchange_no_cost_007.json",
+          "documents": 58,
+          "size_bytes": 45515,
+          "sha256": "2af8761853bac216b876ac05cf14c93f2a611d92284a789a2d84239cf0e549f1"
+        },
+        {
+          "file": "no_cost/exchange_no_cost_008.json",
+          "documents": 63,
+          "size_bytes": 49129,
+          "sha256": "a7b88ce7db1627c4db139de6be2e8bbbf3a784bef0612132e7b440f3bcc0f219"
+        },
+        {
+          "file": "no_cost/exchange_no_cost_009.json",
+          "documents": 56,
+          "size_bytes": 45901,
+          "sha256": "ee2e1b8811ca43fdc105e94cbfb6072287226e46ece47e43b47926555c8fd86a"
+        },
+        {
+          "file": "no_cost/exchange_no_cost_010.json",
+          "documents": 58,
+          "size_bytes": 46456,
+          "sha256": "7ab23a727abe2dba1867250c7ab6d221ec820263c6ed042db157655295127de9"
+        }
+      ],
+      "control_totals": {
+        "stores": 2,
+        "products": 10,
+        "documents": 554,
+        "lines": 1947,
+        "revenue_kopecks": 3099868900,
+        "quantity_milli": 426410600,
+        "cost_accounting_kopecks": 0
+      },
+      "expectations": {
+        "cost_source": "modeled",
+        "cost_modeled_share_pct": 100.0
+      }
+    },
+    {
+      "scenario": "short_history",
+      "description": "Короткая история (8 недель): новая точка с малым объёмом документов — проверка расчёта рентабельности на неполном периоде.",
+      "spec": {
+        "name": "short_history",
+        "description": "Короткая история (8 недель): новая точка с малым объёмом документов — проверка расчёта рентабельности на неполном периоде.",
+        "seed": 2042,
+        "end_week": "2026-05-25",
+        "store_refs": [
+          "store-04"
+        ],
+        "weeks_override": 8,
+        "docs_per_week": [
+          5,
+          9
+        ],
+        "lines_per_doc": [
+          2,
+          5
+        ],
+        "cost_coverage": 1.0,
+        "return_rate": 0.0,
+        "discount_share": 0.0,
+        "discount_range": [
+          0.05,
+          0.15
+        ],
+        "closed_week_rate": 0.0,
+        "split_by_month": false,
+        "expectations": {
+          "stores": 1,
+          "weeks": 8
+        }
+      },
+      "files": [
+        {
+          "file": "short_history/exchange_short_history_001.json",
+          "documents": 62,
+          "size_bytes": 57500,
+          "sha256": "57485a76a2e866ea3032ae1778aeb3392a6f699d4c7d1f08a3e1244cd23ca38c"
+        }
+      ],
+      "control_totals": {
+        "stores": 1,
+        "products": 10,
+        "documents": 62,
+        "lines": 221,
+        "revenue_kopecks": 158870300,
+        "quantity_milli": 18874650,
+        "cost_accounting_kopecks": 94425194
+      },
+      "expectations": {
+        "stores": 1,
+        "weeks": 8
+      }
+    },
+    {
+      "scenario": "returns_heavy",
+      "description": "Повышенная доля возвратов: проверяет, что выручка считается за вычетом возвратов, а не по сумме реализации.",
+      "spec": {
+        "name": "returns_heavy",
+        "description": "Повышенная доля возвратов: проверяет, что выручка считается за вычетом возвратов, а не по сумме реализации.",
+        "seed": 3042,
+        "end_week": "2026-05-25",
+        "store_refs": [
+          "store-03"
+        ],
+        "weeks_override": 52,
+        "docs_per_week": [
+          5,
+          9
+        ],
+        "lines_per_doc": [
+          2,
+          5
+        ],
+        "cost_coverage": 0.9,
+        "return_rate": 0.15,
+        "discount_share": 0.25,
+        "discount_range": [
+          0.05,
+          0.15
+        ],
+        "closed_week_rate": 0.0,
+        "split_by_month": true,
+        "expectations": {
+          "returns_present": true
+        }
+      },
+      "files": [
+        {
+          "file": "returns_heavy/exchange_returns_heavy_001.json",
+          "documents": 31,
+          "size_bytes": 31629,
+          "sha256": "1c067ccea937b2f998786d02020d65390440c231d5920cae49429085579b48ff"
+        },
+        {
+          "file": "returns_heavy/exchange_returns_heavy_002.json",
+          "documents": 33,
+          "size_bytes": 32610,
+          "sha256": "fc146e16371e8c4eee3b0f525c7b14dd0b10a401e4e0dfaae7be7b7dba412cae"
+        },
+        {
+          "file": "returns_heavy/exchange_returns_heavy_003.json",
+          "documents": 32,
+          "size_bytes": 30981,
+          "sha256": "b122c85e3d69beae4fcfd1eccb2b8c92589d21ed136b403754d100f689ecca0a"
+        },
+        {
+          "file": "returns_heavy/exchange_returns_heavy_004.json",
+          "documents": 34,
+          "size_bytes": 34147,
+          "sha256": "1291d9be87b46e6aa64864304a8751273eaf7d6c775cecc85411d7b82c19b3fa"
+        },
+        {
+          "file": "returns_heavy/exchange_returns_heavy_005.json",
+          "documents": 30,
+          "size_bytes": 28804,
+          "sha256": "126da45d0f1b64c6e79e723b377f0d91dc389b5d4962d05f84594224f6ebc058"
+        },
+        {
+          "file": "returns_heavy/exchange_returns_heavy_006.json",
+          "documents": 28,
+          "size_bytes": 29882,
+          "sha256": "b434e53518491c2982d0a1e1690b5dfb42e7e2239ad3a70960a7cd5ec5626b4c"
+        },
+        {
+          "file": "returns_heavy/exchange_returns_heavy_007.json",
+          "documents": 38,
+          "size_bytes": 38548,
+          "sha256": "f42b740e15c343bca0087c591697bcd6569f287f6c6ab6117c6fffe078063ea5"
+        },
+        {
+          "file": "returns_heavy/exchange_returns_heavy_008.json",
+          "documents": 32,
+          "size_bytes": 32242,
+          "sha256": "177e4d8e345a0bc571a4ee95946fa71dc0ee61b38f6c57aef9bec98a2e722c68"
+        },
+        {
+          "file": "returns_heavy/exchange_returns_heavy_009.json",
+          "documents": 29,
+          "size_bytes": 27368,
+          "sha256": "aa09124d5850f80c14fb05a470249679cacda46bc83928056945cd29627b681d"
+        },
+        {
+          "file": "returns_heavy/exchange_returns_heavy_010.json",
+          "documents": 31,
+          "size_bytes": 31332,
+          "sha256": "858e824b1e2c94772d0cc95908819fc6b61e4dd2de818baab4c69f774bd89b8a"
+        },
+        {
+          "file": "returns_heavy/exchange_returns_heavy_011.json",
+          "documents": 33,
+          "size_bytes": 30333,
+          "sha256": "a72ab31071b2600a516da60ceb6021c9eac5af12263b363fa39c45fe41dc499f"
+        },
+        {
+          "file": "returns_heavy/exchange_returns_heavy_012.json",
+          "documents": 36,
+          "size_bytes": 33287,
+          "sha256": "cd1d8f7a6818c1a1f4d077459d0f3f0ea69ac5c6b64791833b3ab28d59d91cf7"
+        }
+      ],
+      "control_totals": {
+        "stores": 1,
+        "products": 10,
+        "documents": 387,
+        "lines": 1375,
+        "revenue_kopecks": 1244629532,
+        "quantity_milli": 168837350,
+        "cost_accounting_kopecks": 674196585
+      },
+      "expectations": {
+        "returns_present": true
+      }
+    }
+  ],
+  "invalid_examples": [
+    {
+      "file": "invalid/invalid_date_out_of_period.json",
+      "violation": "date_out_of_period",
+      "description": "Дата документа вне заявленного периода",
+      "sha256": "dfc44a4a6c0e71da9c0e297a883bca8fb2492d80244822c3140d356a59cc419a"
+    },
+    {
+      "file": "invalid/invalid_duplicate_document_ref.json",
+      "violation": "duplicate_document_ref",
+      "description": "Дубль ref документа внутри пакета",
+      "sha256": "540ef4b39acf79cab0829640114245f36dbf9ac086874eb2b975b13ccea6399c"
+    },
+    {
+      "file": "invalid/invalid_duplicate_line_ref.json",
+      "violation": "duplicate_line_ref",
+      "description": "Дубль ref строки внутри пакета",
+      "sha256": "944ee8055818f7cb3a6d27edc94ec61580eacb4efb13b499b53622f95b93a362"
+    },
+    {
+      "file": "invalid/invalid_empty_sale_documents.json",
+      "violation": "empty_sale_documents",
+      "description": "Пустой массив документов реализации",
+      "sha256": "2363a927a2a3764b7378204c30f90d80d2b9169575de6ad85344e1b03e1ea0a9"
+    },
+    {
+      "file": "invalid/invalid_excess_precision.json",
+      "violation": "excess_precision",
+      "description": "Точность суммы больше двух знаков",
+      "sha256": "f57bffaf63de683105d12ff406ac35d6b161a387b85d66acd22c336706cb1b07"
+    },
+    {
+      "file": "invalid/invalid_invalid_date_format.json",
+      "violation": "invalid_date_format",
+      "description": "Дата не в формате ISO 8601",
+      "sha256": "5637a4a78bca0d55814c0cbc241ce2c8be1ba7344e2d8c5a800df62ee510be80"
+    },
+    {
+      "file": "invalid/invalid_missing_meta.json",
+      "violation": "missing_meta",
+      "description": "Отсутствует блок meta целиком",
+      "sha256": "c7e51f87f77fb19aeb3c77cff4ec9383e584fe0e2bebb49022dd9057d08509cf"
+    },
+    {
+      "file": "invalid/invalid_missing_required_field.json",
+      "violation": "missing_required_field",
+      "description": "Отсутствует обязательное поле meta/exchangeId",
+      "sha256": "850bc3018dbfb403b3bb4b9ebfdeee0ff8bec6eda59253d3e31c32e1702514d3"
+    },
+    {
+      "file": "invalid/invalid_negative_amount.json",
+      "violation": "negative_amount",
+      "description": "Отрицательная сумма в строке документа",
+      "sha256": "c974215f08f3f5c9433059b830747324c5e6afe8d2ca24a8a7c3a5efa2dfaed7"
+    },
+    {
+      "file": "invalid/invalid_negative_quantity.json",
+      "violation": "negative_quantity",
+      "description": "Отрицательное количество в строке документа",
+      "sha256": "9f35ece40e66eb7f272dd3b6935f04368c9b2fa32e5533966d0470d98c69611c"
+    },
+    {
+      "file": "invalid/invalid_unexpected_field.json",
+      "violation": "unexpected_field",
+      "description": "Лишнее поле в строке (additionalProperties: false)",
+      "sha256": "826cb753eb6c75f95fa4e1a02e21eb3b9f5d6c6cf3757d0eb70262ecaf78de29"
+    },
+    {
+      "file": "invalid/invalid_unknown_document_type.json",
+      "violation": "unknown_document_type",
+      "description": "Недопустимый тип документа",
+      "sha256": "f80c777c0c81ca6e16abd81c3d2159ee87d391ea71a223cfb037444492e697a4"
+    },
+    {
+      "file": "invalid/invalid_unknown_product_ref.json",
+      "violation": "unknown_product_ref",
+      "description": "Ссылка на отсутствующую номенклатуру",
+      "sha256": "ae3507319d088175b95e037b009595cbfd20e5af402ba3b881b62db2cf43b532"
+    },
+    {
+      "file": "invalid/invalid_unknown_store_ref.json",
+      "violation": "unknown_store_ref",
+      "description": "Ссылка на отсутствующую торговую точку",
+      "sha256": "34f67a7d6edb0e87eab061010f4cbc28a02d4316eed26bdbc718854a1f50e96d"
+    },
+    {
+      "file": "invalid/invalid_unsupported_contract_version.json",
+      "violation": "unsupported_contract_version",
+      "description": "Неподдерживаемая версия контракта",
+      "sha256": "8842ddbd048290d1a30e15915678078078a7a9e0513a3386fe99c4d2520e36df"
+    },
+    {
+      "file": "invalid/invalid_zero_quantity_with_amount.json",
+      "violation": "zero_quantity_with_amount",
+      "description": "Нулевое количество при ненулевой сумме",
+      "sha256": "f6f6a334ebf23bfeeb02c6ff3d3dfc3b482e18acc4ac53a6d765abd51b3a64bb"
+    }
+  ]
+}

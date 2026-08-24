@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% from "_macros.html" import hint, term %}
+{% set qs %}{% if period.date_from %}date_from={{ period.date_from }}{% endif %}{% if period.date_to %}{{ '&' if period.date_from else '' }}date_to={{ period.date_to }}{% endif %}{% endset %}
+{% block content %}
+<div class="eyebrow">
+  <svg class="icon"><use href="#i-pdf"></use></svg>
+  Выгрузка
+</div>
+<h1>Отчёты</h1>
+<p class="lead">
+  PDF по {{ term("рентабельности сети", "Сводная таблица всех точек за период: выручка, себестоимость, маржа и оценка.") }}
+  и по {{ term("каждой торговой точке", "Карточка точки: показатели с происхождением и разрез по категориям.") }}.
+</p>
+
+{% with action = "/ui/reports" %}
+  {% include "_period_filter.html" %}
+{% endwith %}
+
+<section class="panel">
+  <h2>
+    <svg class="icon"><use href="#i-chart"></use></svg>
+    Рентабельность в целом
+    {{ hint("Один файл по всем точкам за выбранный период. Те же KPI, что на странице рентабельности.") }}
+  </h2>
+  {% if rows %}
+  <p class="panel-sub">
+    Точек {{ kpis.stores }} · выручка {{ kpis.revenue | money }} ₽ ·
+    ср. опер. {{ kpis.avg_op_margin | pct }}%
+  </p>
+  <a class="btn" href="/api/profitability/report.pdf{% if qs %}?{{ qs }}{% endif %}">
+    <svg class="icon"><use href="#i-pdf"></use></svg> Скачать PDF
+  </a>
+  {% else %}
+  <p class="muted">Нет данных за период. <a href="/ui/etl">Загрузить пакеты</a></p>
+  {% endif %}
+</section>
+
+<section class="panel" style="margin-top:1rem">
+  <h2>
+    <svg class="icon"><use href="#i-store"></use></svg>
+    По торговым точкам
+    {{ hint("Отдельный PDF на точку: показатели, происхождение и категории.") }}
+  </h2>
+  <div class="table-wrap">
+    <table class="wide">
+      <thead>
+        <tr>
+          <th>ТТ</th>
+          <th class="num">Выручка</th>
+          <th class="num">Вал. %</th>
+          <th class="num">Опер. %</th>
+          <th>Оценка</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in rows %}
+        <tr>
+          <td class="store-cell">
+            <strong>{{ row.store_code }}</strong>
+            <span class="muted" title="{{ row.store_name }}">{{ row.store_name }}</span>
+          </td>
+          <td class="num">{{ row.revenue.value | money }}</td>
+          <td class="num">{{ row.gross_margin_pct.value | pct }}%</td>
+          <td class="num">{{ row.operating_margin_pct.value | pct }}%</td>
+          <td>
+            {% set status = row.operating_margin_pct.value | margin_status %}
+            <span class="badge {{ status }}">{{ status | ru_margin_status }}</span>
+          </td>
+          <td class="num">
+            <a class="btn ghost tiny" href="/api/profitability/{{ row.store_id }}/report.pdf{% if qs %}?{{ qs }}{% endif %}">
+              PDF
+            </a>
+          </td>
+        </tr>
+        {% else %}
+        <tr><td colspan="6">Нет торговых точек за выбранный период.</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endblock %}

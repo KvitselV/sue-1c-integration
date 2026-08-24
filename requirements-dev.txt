@@ -1,0 +1,10 @@
+-r requirements.txt
+
+pytest==8.4.1
+pytest-cov==6.2.1
+pytest-randomly==3.16.0
+httpx==0.28.1
+ruff==0.12.7
+mypy==1.17.1
+types-jsonschema==4.25.0.20250809
+pre-commit==4.2.0

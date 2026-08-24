@@ -1,0 +1,54 @@
+default_language_version:
+  python: python3.12
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: check-added-large-files
+        args: ["--maxkb=300"]
+      - id: check-json
+        exclude: ^data/fixtures/.*/invalid/
+      - id: check-toml
+      - id: check-yaml
+      - id: check-merge-conflict
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+      - id: mixed-line-ending
+        args: ["--fix=lf"]
+      - id: detect-private-key
+      - id: forbid-submodules
+
+  - repo: local
+    hooks:
+      - id: forbid-dotenv
+        name: запрет коммита .env
+        entry: файл .env содержит настройки окружения и не коммитится (см. .env.example)
+        language: fail
+        files: ^\.env$
+
+      - id: forbid-database
+        name: запрет коммита файлов БД
+        entry: файлы БД не коммитятся — база создаётся миграциями
+        language: fail
+        files: \.(db|sqlite3?)$
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.12.7
+    hooks:
+      - id: ruff
+        args: ["--fix"]
+      - id: ruff-format
+
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.17.1
+    hooks:
+      - id: mypy
+        pass_filenames: false
+        args: []
+        additional_dependencies:
+          - sqlalchemy==2.0.42
+          - pydantic==2.11.7
+          - pydantic-settings==2.10.1
+          - fastapi==0.116.1
+          - types-jsonschema==4.25.0.20250809

@@ -1,0 +1,43 @@
+{
+  "meta": {
+    "contractVersion": "2.0",
+    "exchangeId": "EX-INVALID-DEMO",
+    "sourceSystem": "1C:Retail",
+    "configuration": "1С:Розница 3.0 (контракт файлового обмена)",
+    "exportedAt": "2026-01-05T10:00:00Z"
+  },
+  "stores": [
+    {
+      "ref": "s1",
+      "code": "TT-X",
+      "name": "ТТ Демонстрационная",
+      "city": "Казань"
+    }
+  ],
+  "products": [
+    {
+      "ref": "p1",
+      "sku": "SKU-1",
+      "name": "Товар 1",
+      "category": "Прочее",
+      "unit": "шт"
+    }
+  ],
+  "saleDocuments": [
+    {
+      "ref": "d1",
+      "number": "ОРП-000001",
+      "date": "05.01.2026",
+      "storeRef": "s1",
+      "documentType": "sale",
+      "lines": [
+        {
+          "ref": "l1",
+          "productRef": "p1",
+          "quantity": 2.0,
+          "amount": 200.0
+        }
+      ]
+    }
+  ]
+}
